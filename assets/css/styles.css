@@ -22,6 +22,9 @@
   --blue: #4169E1;
   --yellow: #fff666;
   --lg-blue: linear-gradient(45deg, #00BFFF, #4364FC, #31C9FC);
+
+  /* Defaults */
+  --order: 0;
 }
 
 /* Basic resets and defaults */
@@ -348,13 +351,13 @@ main > *, #main-header .container {
 }
 #main-header li {
   animation-name: scaleIn;
-  animation-duration: 500ms;
-  animation-delay: calc(var(--order) * 500ms);
+  animation-duration: 400ms;
+  animation-delay: calc(var(--order) * 400ms);
   animation-fill-mode: both;
   animation-timing-function: ease-in-out;
   font-size: 1.2rem;
 }
-.home {
+.house {
   display: inline-block;
   position: relative;
   width: 30px;
@@ -363,7 +366,7 @@ main > *, #main-header .container {
   background: var(--grey);
   transform: scale(0.68);
 }
-.home:before {
+.house:before {
     border-bottom: solid 20px var(--grey);
     border-left: solid transparent 20px;
     border-right: solid transparent 20px;
@@ -372,7 +375,7 @@ main > *, #main-header .container {
     left: -5px;
     top: -20px;
 }
-.home:after {
+.house:after {
     width: 0;
     height: 10px;
     background: var(--yellow);
@@ -384,6 +387,10 @@ main > *, #main-header .container {
 }
 #main-header .neon-border {
   margin: 1rem 0;
+}
+audio {
+  opacity: 0.8;
+  border-radius: 0.5rem;
 }
 
 /* Main Content */
@@ -464,7 +471,7 @@ main h1, #home h4, #home p {
   color: var(--yellow);
 }
 #portfolio {
-  margin-bottom: 6rem;
+  margin-bottom: 11rem;
 }
 #portfolio h4 {
   color: var(--yellow);
@@ -481,14 +488,16 @@ footer {
   background: var(--black-a-95);
   animation: slideIn 2s ease-in-out;
 }
-footer .f-home {
-  color: #000000aa;
-  margin: 0;
-  padding: 0 0.5rem 0.25rem 0.5rem;
+footer .f-home a {
+  display: block;
+  text-align: center;
+  padding: 0 0.6rem;
   background: var(--blue-glass);
   border-radius: 50%;
+  height: 2rem;
+  color: #000000aa;
   text-shadow: 0 0 5px #FFF, 0 0 10px #FFF, 0 0 15px #FFF, 0 0 20px var(--blue), 0 0 30px var(--blue), 0 0 40px var(--blue), 0 0 55px var(--blue), 0 0 75px var(--blue);
-  font-size: 2.125rem;
+  font-size: 2rem;
 }
 footer.flex-scw {
   justify-content: center;

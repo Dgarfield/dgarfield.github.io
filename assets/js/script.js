@@ -9,9 +9,9 @@
   const styleElements = () => {
     /* Fix to make anchors jump to correct position, fixed headers cause issues with this */
     const headerHeight = document.getElementById('main-header').offsetHeight;
-    document.getElementById("home-a").style.height = `${headerHeight}px`;
-    document.getElementById("about-a").style.height = `${headerHeight}px`;
-    document.getElementById("portfolio-a").style.height = `${headerHeight}px`;
+    document.getElementById("home-a").style.height = `${headerHeight / 16 + 5}rem`;
+    document.getElementById("about-a").style.height = `${headerHeight / 16 + 5}rem`;
+    document.getElementById("portfolio-a").style.height = `${headerHeight / 16 + 5}rem`;
 
     typeWriter();
 
