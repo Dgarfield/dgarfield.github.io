@@ -22,8 +22,8 @@
 
   let i = 0;
   const typeWriter = () => {
-    const txt = `I build fun responsive websites!`;
-    const speed = 200;
+    const txt = `I build fun, responsive websites!`;
+    const speed = 150;
     
     if (i < txt.length) {
       document.getElementById("typing").innerHTML += txt.charAt(i);
