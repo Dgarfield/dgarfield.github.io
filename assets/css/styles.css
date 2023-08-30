@@ -237,7 +237,7 @@ main > *, #main-header .container {
   z-index: -1;
   opacity: 0.25;
 }
-.x1 {
+.c1 {
   -webkit-animation: animateCloud 35s linear infinite;
   -moz-animation: animateCloud 35s linear infinite;
   animation: animateCloud 35s linear infinite;
@@ -245,7 +245,7 @@ main > *, #main-header .container {
   -moz-transform: scale(0.65);
   transform: scale(0.65);
 }
-.x2 {
+.c2 {
   -webkit-animation: animateCloud 20s linear infinite;
   -moz-animation: animateCloud 20s linear infinite;
   animation: animateCloud 20s linear infinite;
@@ -253,7 +253,7 @@ main > *, #main-header .container {
   -moz-transform: scale(0.3);
   transform: scale(0.3);
 }
-.x3 {
+.c3 {
   -webkit-animation: animateCloud 30s linear infinite;
   -moz-animation: animateCloud 30s linear infinite;
   animation: animateCloud 30s linear infinite;
@@ -261,7 +261,7 @@ main > *, #main-header .container {
   -moz-transform: scale(0.5);
   transform: scale(0.5);
 }
-.x4 {
+.c4 {
   -webkit-animation: animateCloud 18s linear infinite;
   -moz-animation: animateCloud 18s linear infinite;
   animation: animateCloud 18s linear infinite;
@@ -269,7 +269,7 @@ main > *, #main-header .container {
   -moz-transform: scale(0.4);
   transform: scale(0.4);
 }
-.x5 {
+.c5 {
   -webkit-animation: animateCloud 25s linear infinite;
   -moz-animation: animateCloud 25s linear infinite;
   animation: animateCloud 25s linear infinite;
