@@ -1,13 +1,11 @@
 {
   'use strict';
 
-  /* TODO: Clean up by using more arrays, objects and loops */
-
   const toggleClass = (el, cssClass) => {
     el.classList.toggle(cssClass);
   };
   const styleElements = () => {
-    /* Fix to make anchors jump to correct position, fixed headers cause issues with this */
+    /* Fixed position headers mess up anchors, so this fix is to make anchors jump to correct positions */
     const headerHeight = document.getElementById('main-header').offsetHeight;
     document.getElementById("home-a").style.height = `${headerHeight / 16 + 5}rem`;
     document.getElementById("about-a").style.height = `${headerHeight / 16 + 5}rem`;
