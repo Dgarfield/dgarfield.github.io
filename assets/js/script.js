@@ -7,9 +7,13 @@
   const styleElements = () => {
     /* Fixed position headers mess up anchors, so this fix is to make anchors jump to correct positions */
     const headerHeight = document.getElementById('main-header').offsetHeight;
-    document.getElementById("home-a").style.height = `${headerHeight / 16 + 5}rem`;
-    document.getElementById("about-a").style.height = `${headerHeight / 16 + 5}rem`;
-    document.getElementById("portfolio-a").style.height = `${headerHeight / 16 + 5}rem`;
+    const footerHeight = document.getElementById('footer').offsetHeight;
+    const spacers = document.querySelectorAll('.spacer');
+    
+    spacers.forEach((element) => {
+      element.style.height = `${footerHeight / 10}rem`;
+    });
+    document.getElementById("home-a").style.height = `${headerHeight / 11}rem`;
 
     typeWriter();
 
@@ -20,13 +24,14 @@
 
   let i = 0;
   const typeWriter = () => {
-    const txt = `I build fun, responsive websites!`;
-    const speed = 150;
-    
+    const txt = "I build responsive websites.\nPlease check out my skills below.";
+    const speed = 80;
+    let timeoutID = null;
+
     if (i < txt.length) {
       document.getElementById("typing").innerHTML += txt.charAt(i);
       i++;
-      var timeoutID = setTimeout (
+      timeoutID = setTimeout (
         typeWriter, speed
       );
     } else {
