@@ -495,7 +495,6 @@ footer .f-home a {
   width: 2rem;
   height: 2rem;
   text-align: center;
-  padding: 0 0.6rem;
   background: var(--blue-glass);
   color: #000000aa;
   text-shadow: 0 0 5px #FFF, 0 0 10px #FFF, 0 0 15px #FFF, 0 0 20px var(--blue), 0 0 30px var(--blue), 0 0 40px var(--blue), 0 0 55px var(--blue), 0 0 75px var(--blue);
