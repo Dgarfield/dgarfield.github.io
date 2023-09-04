@@ -1,5 +1,6 @@
 {
   'use strict';
+  
   const bodyEl = document.body;
   const lightSwitchEl = document.getElementById("light-switch");
   const mainHeaderEl = document.getElementById("main-header");
