@@ -21,7 +21,18 @@
       <nav>
         <ul class="flex-scw">
           <li style="--order:1;">
-            <a class="house" aria-label="Home" href="#home-a"></a>
+            <a class="house" aria-label="Home" href="#home-a">
+              <img src="./assets/images/home.png" alt="home">
+              <div id="chimney-smoke-box">
+                <div id="chimney-smoke1" class="chimney-smoke"></div>
+                <div id="chimney-smoke2" class="chimney-smoke"></div>
+                <div id="chimney-smoke3" class="chimney-smoke"></div>
+                <div id="chimney-smoke4" class="chimney-smoke"></div>
+                <div id="chimney-smoke5" class="chimney-smoke"></div>
+                <div id="chimney-smoke6" class="chimney-smoke"></div>
+              </div>
+              <div class="house-bg flicker"></div>
+            </a>
           </li>
           <li style="--order:2;"><a href="#about-a">About</a></li>
           <li style="--order:3;"><a href="#portfolio-a">Portfolio</a></li>
@@ -35,23 +46,6 @@
       </div>
     </div>
   </header>
-  <div id="background-wrap">
-    <div class="c1">
-      <div class="cloud"></div>
-    </div>
-    <div class="c2">
-      <div class="cloud"></div>
-    </div>
-    <div class="c3">
-      <div class="cloud"></div>
-    </div>
-    <div class="c4">
-      <div class="cloud"></div>
-    </div>
-    <div class="c5">
-      <div class="cloud"></div>
-    </div>
-  </div>
   <div id="home-a"></div>
   <main id="main">
     <section id="home">
@@ -70,14 +64,14 @@
       <article>
         <header>
           <h1>About</h1>
-          <h3>SENIOR FRONT END WEB DEVELOPER</h3>
+          <h3>FRONT END WEB DEVELOPER</h3>
         </header>
         <div>
           <h4>LANGUAGES / TECHNOLOGIES</h4>
           <p>
             <strong class="pulse" style="--order:1;">JavaScript</strong> - <span>|</span> React <span>|</span> Vue <span>|</span> Node <span>|</span> NPM <span>|</span> NVM <span>|</span> Yarn <span>|</span> Gulp <span>|</span> Babel <span>|</span> ESLint <span>|</span> Webpack <span>|</span> jQuery <span>|</span> GSAP <span>|</span> Regex <span>|</span><br>
             <strong class="pulse" style="--order:2;">CSS3</strong> - <span>|</span> Sass <span>|</span> SCSS <span>|</span> Less <span>|</span> Bootstrap <span>|</span><br>
-            <strong class="pulse" style="--order:3;">HTML5</strong> - <span>|</span> Boilerplate <span>|</span> Google Fonts <span>|</span><br>
+            <strong class="pulse" style="--order:3;">HTML5</strong> - <span>|</span> Boilerplate <span>|</span><br>
             <strong class="pulse" style="--order:4;">Git</strong> - <span>|</span> GitHub <span>|</span> Bitbucket <span>|</span> Google Cloud Platform <span>|</span> Amazon Web Services <span>|</span><br>
             <strong class="pulse" style="--order:5;">PHP</strong> - <span>|</span> Zend <span>|</span> WordPress <span>|</span><br>
             <strong class="pulse" style="--order:6;">Database</strong> - <span>|</span> MYSQL <span>|</span> PHPMyAdmin <span>|</span> MAMP <span>|</span> WAMP <span>|</span> SQL <span>|</span> Oracle SQL Developer <span>|</span> PostgreSQL <span>|</span><br>
@@ -105,7 +99,7 @@
             <div class="tablet">
               <div class="screen">
                 <a href="https://www.youtube.com/watch?v=iYXeY12dqb4" target="_blank">
-                  <img src="./assets/images/cayce.png" alt="Cayce AI Website">
+                  <img loading="lazy" src="./assets/images/cayce.png" alt="Cayce AI Website">
                 </a>
               </div>
             </div>
@@ -115,7 +109,7 @@
             <div class="tablet">
               <div class="screen">
                 <a href="https://www.mrm.com/en/" target="_blank">
-                  <img src="./assets/images/mrm.png" alt="MRM Website">
+                  <img loading="lazy" src="./assets/images/mrm.png" alt="MRM Website">
                 </a>
               </div>
             </div>
@@ -125,7 +119,7 @@
             <div class="tablet">
               <div class="screen">
                 <a href="https://www.facebook.com/turnkeysocial/" target="_blank">
-                  <img src="./assets/images/turnkey.png" alt="Turnkey Social on Facebook">
+                  <img loading="lazy" src="./assets/images/turnkey.png" alt="Turnkey Social on Facebook">
                 </a>
               </div>
             </div>
@@ -135,7 +129,7 @@
             <div class="tablet">
               <div class="screen">
                 <a href="https://boxworks.com/" target="_blank">
-                  <img src="./assets/images/boxworks.png" alt="Boxworks Website">
+                  <img loading="lazy" src="./assets/images/boxworks.png" alt="Boxworks Website">
                 </a>
               </div>
             </div>
@@ -145,7 +139,7 @@
             <div class="tablet">
               <div class="screen">
                 <a href="https://www.reddit.com/r/paintball/comments/56yo6s/what_ever_happened_to_special_ops_paintball/" target="_blank">
-                  <img src="./assets/images/special-ops.png" alt="Special Ops Paintball discussion on Reddit">
+                  <img loading="lazy" src="./assets/images/special-ops.png" alt="Special Ops Paintball discussion on Reddit">
                 </a>
               </div>
             </div>
@@ -156,7 +150,7 @@
   </main>
   <div class="spacer"></div>
   <footer id="footer" class="flex-scw">
-    <div>&copy; <span id="year"></span> by <a href="dgarfield.github.io">Damon Garfield</a>. All rights reserved.</div>
+    <div>&copy; <span id="year"></span> by <a href="https://dgarfield.github.io/">Damon Garfield</a>. All rights reserved.</div>
     <div class="flex-scw cg1">
       <a href="https://www.linkedin.com/in/damongarfield/" target="_blank">
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" data-supported-dps="24x24" fill="currentColor" class="mercado-match" width="24" height="24" focusable="false">
