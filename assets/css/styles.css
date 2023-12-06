@@ -34,6 +34,9 @@ html {
 *, *:before, *:after {
   box-sizing: inherit;
 }
+canvas {
+  width: 100%;
+}
 a {
   color: var(--blue);
   text-decoration: none;
@@ -142,11 +145,13 @@ strong {
 body {
   background: var(--night);
   color: var(--white);
-  margin: 1rem;
+  margin: 0;
   overflow-x: hidden;
 }
 body.light-on {
   background: var(--day);
+  margin: 0;
+  overflow-x: hidden;
 }
 #typing {
   white-space: pre-wrap;
@@ -285,6 +290,7 @@ main > *, #main-header .container {
 }
 .house {
   position: relative;
+  display: inline-block;
 }
 .house img {
   height: 3.4375rem;
@@ -293,12 +299,15 @@ main > *, #main-header .container {
   position: absolute;
   z-index: -1;
   transform: scale(25%);
-  top: -3.5rem;
-  right: 0.25rem;
-  height: 50px;
-  width: 20px;
+  top: -1rem;
+  right: 0;
+  height: 3.125rem;
+  width: 1.25rem;
 }
 .chimney-smoke {
+  position:relative;
+  height: 100%;
+  width:100%;
   animation: smoke 3.5s infinite ease-out; -webkit-animation:smoke 3.5s infinite ease-out;
 	background: #2c2c2c;
 	background: -webkit-repeating-linear-gradient(90deg, transparent 0%, #2c2c2c 50%);
@@ -310,21 +319,18 @@ main > *, #main-header .container {
 	-ms-filter: blur(4px);
 	-o-filter: blur(4px);
 	filter: blur(4px);
-	height: 100%;
-  position:relative;
-  width:100%;
 }
-#chimney-smoke2 {top:-55px; animation-delay:0.5s;}
-#chimney-smoke3 {top:-105px; animation-delay:1s;}
-#chimney-smoke4 {top:-155px; animation-delay:1.5s;}
-#chimney-smoke5 {top:-205px; animation-delay:2.5s;}
-#chimney-smoke6 {top:-255px; animation-delay:3s;}
+#chimney-smoke2 {top:-3.4375rem; animation-delay:0.5s;}
+#chimney-smoke3 {top:-6.5625rem; animation-delay:1s;}
+#chimney-smoke4 {top:-8.5625rem; animation-delay:1.5s;}
+#chimney-smoke5 {top:-12.8125rem; animation-delay:2.5s;}
+#chimney-smoke6 {top:-15.9375rem; animation-delay:3s;}
 .house-bg {
   position: absolute;
   z-index: -1;
   transform: translateX(-50%);
-  top: -1.8rem;
-  left: 48%;
+  bottom: 0.8rem;
+  left: 50%;
   border-bottom: 2.4rem solid #f70;
   border-left: 1.3rem solid transparent;
   border-right: 1.3rem solid transparent;
@@ -430,12 +436,18 @@ footer {
   animation: slideIn 2s ease-in-out;
 }
 footer .f-home a {
+  position: relative;
   display: block;
   border-radius: 50%;
   width: 2rem;
   height: 2rem;
-  text-align: center;
   background: var(--blue-glass);
+}
+footer .f-home a div {
+  position: absolute;
+  top: 1.3rem;
+  left: 50%;
+  transform: translate(-50%, -50%);
   color: #000000aa;
   text-shadow: 0 0 5px var(--white), 0 0 10px var(--white), 0 0 15px var(--white), 0 0 20px var(--blue), 0 0 30px var(--blue), 0 0 40px var(--blue), 0 0 55px var(--blue), 0 0 75px var(--blue);
   font-size: 2rem;
@@ -445,15 +457,17 @@ footer.flex-scw {
 }
 
 /* Media Queries */ 
+@media only screen and (max-width: 525px) {
+  footer {
+    flex-direction: column-reverse;
+  }
+}
 @media only screen and (max-width: 600px) {
   #me h1 {
     margin: 0;
   }
   header nav {
     display: none;
-  }
-  footer {
-    flex-direction: column-reverse;
   }
 }
 @media only screen and (max-width: 768px) {
