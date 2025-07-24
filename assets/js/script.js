@@ -37,7 +37,7 @@ const els = {
 let typeWriterInt = 0;
 let timeoutID = {};
 const typeWriter = () => {
-  const typeWriterTxt = "I build responsive websites.\nMore info below.";
+  const typeWriterTxt = "I've been a front end web developer for over 10 years.\nPlease check out some of my skills below.";
   const typeWriterTxtLen = typeWriterTxt.length;
 
   if (typeWriterInt < typeWriterTxtLen) {

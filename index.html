@@ -42,7 +42,11 @@
         <button id="light-switch" aria-label="Change Theme" title="Change Theme" data-theme-btn>
           <span class="icon pulse"></span>
         </button>
-        <h5 class="neon-border">"The energy saved in Dark Mode is 3%-9%"</h5>
+        <h5 class="neon-border">
+          <a href="https://engineering.purdue.edu/ECE/News/2022/shedding-light-on-dark-mode-to-save-energy" style="color: inherit;" target="_blank">
+            "The energy saved in Dark Mode is 3%-9%"
+          </a>
+        </h5>
       </div>
     </div>
   </header>
@@ -147,14 +151,71 @@
     </section>
   </main>
   <div class="spacer"></div>
+  
+  <!-- <script src="./assets/js/matter.min.js"></script>
+  <script>
+    
+    let engine = Matter.Engine.create();
+    let render = Matter.Render.create({
+      element: document.body,
+      engine: engine,
+      options: {
+        width: window.screen.width,
+        height: window.screen.height / 1.5,
+        //background: "transparent",
+        wireframes: false
+      }
+    });
+    
+    let ground = Matter.Bodies.rectangle(1200, 500, 300, 20, { isStatic: true });
+    let ball = Matter.Bodies.circle(300, 600, 20);
+    let sling = Matter.Constraint.create({ 
+      pointA: { x: 300, y: 600 },
+      bodyB: ball, 
+      stiffness: 0.05
+    });
+    
+    let mouse = Matter.Mouse.create(render.canvas);
+    let mouseConstraint = Matter.MouseConstraint.create(engine, {
+      mouse: mouse,
+      constraint: {
+        render: {visible: false}
+      }
+    });
+    mouseConstraint.mouse.element.removeEventListener("mousewheel", mouseConstraint.mouse.mousewheel);
+    mouseConstraint.mouse.element.removeEventListener("DOMMouseScroll", mouseConstraint.mouse.mousewheel);
+    render.mouse = mouse;
+    
+    let firing = false;
+    Matter.Events.on(mouseConstraint,'enddrag', function(e) {
+      if(e.body === ball) firing = true;
+    });
+    Matter.Events.on(engine,'afterUpdate', function() {
+      if (firing && Math.abs(ball.position.x-300) < 20 && Math.abs(ball.position.y-600) < 20) {
+        ball = Matter.Bodies.circle(300, 600, 20);
+        Matter.World.add(engine.world, ball);
+        sling.bodyB = ball;
+        firing = false;
+      }
+    });
+
+    let stack = Matter.Composites.stack(1100, 270, 4, 4, 0, 0, function(x, y) { 
+      return Matter.Bodies.polygon(x, y, 8, 30);
+    });
+
+    Matter.World.add(engine.world, [stack, ground, ball, sling, mouseConstraint]);
+    Matter.Runner.run(engine);
+    Matter.Render.run(render);
+  </script> -->
+  <div class="spacer"></div>
   <footer id="footer" class="flex-scw">
     <div>&copy; <span id="year"></span> by <a href="https://dgarfield.github.io/">Damon Garfield</a>. All rights reserved.</div>
     <div class="flex-scw cg1">
-      <a href="https://www.linkedin.com/in/damongarfield/" target="_blank">
+      <!-- <a href="https://www.linkedin.com/in/damongarfield/" target="_blank">
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" data-supported-dps="24x24" fill="currentColor" class="mercado-match" width="24" height="24" focusable="false">
           <path d="M20.5 2h-17A1.5 1.5 0 002 3.5v17A1.5 1.5 0 003.5 22h17a1.5 1.5 0 001.5-1.5v-17A1.5 1.5 0 0020.5 2zM8 19H5v-9h3zM6.5 8.25A1.75 1.75 0 118.3 6.5a1.78 1.78 0 01-1.8 1.75zM19 19h-3v-4.74c0-1.42-.6-1.93-1.38-1.93A1.74 1.74 0 0013 14.19a.66.66 0 000 .14V19h-3v-9h2.9v1.3a3.11 3.11 0 012.7-1.4c1.55 0 3.36.86 3.36 3.66z"></path>
         </svg>
-      </a>
+      </a> -->
       <div class="f-home pulse"><a aria-label="Home" href="#home-a"><div>&#42779;</div></a></div>
     </div>
   </footer>
