@@ -1,158 +1,242 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-  <title>Damon Garfield's Portfolio</title>
+    <title>Damon Garfield's Portfolio</title>
 
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Akaya+Telivigala&family=Roboto:wght@400;700&display=swap" rel="stylesheet"> 
-  <link rel="stylesheet" href="./assets/css/styles.css">
-  <link rel="icon" type="image/x-icon" href="./favicon.ico">
-</head>
-<body>
-  <header id="main-header">
-    <div class="container flex-scw">
-      <div id="me">
-        <h1>Damon Garfield</h1>
-      </div>
-      <nav>
-        <ul class="flex-scw">
-          <li style="--order:1;">
-            <a class="house" aria-label="Home" href="#home-a">
-              <img src="./assets/images/home.png" alt="home">
-              <div id="chimney-smoke-box">
-                <div id="chimney-smoke1" class="chimney-smoke"></div>
-                <div id="chimney-smoke2" class="chimney-smoke"></div>
-                <div id="chimney-smoke3" class="chimney-smoke"></div>
-                <div id="chimney-smoke4" class="chimney-smoke"></div>
-                <div id="chimney-smoke5" class="chimney-smoke"></div>
-                <div id="chimney-smoke6" class="chimney-smoke"></div>
-              </div>
-              <div class="house-bg flicker"></div>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Akaya+Telivigala&family=Roboto:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./assets/css/styles.css" />
+    <link rel="icon" type="image/x-icon" href="./favicon.ico" />
+  </head>
+  <body>
+    <header id="main-header">
+      <div class="container flex-scw">
+        <div id="me">
+          <h1>Damon Garfield</h1>
+        </div>
+        <nav>
+          <ul class="flex-scw">
+            <li style="--order: 1">
+              <a class="house" aria-label="Home" href="#home-a">
+                <img src="./assets/images/home.png" alt="home" />
+                <div id="chimney-smoke-box">
+                  <div id="chimney-smoke1" class="chimney-smoke"></div>
+                  <div id="chimney-smoke2" class="chimney-smoke"></div>
+                  <div id="chimney-smoke3" class="chimney-smoke"></div>
+                  <div id="chimney-smoke4" class="chimney-smoke"></div>
+                  <div id="chimney-smoke5" class="chimney-smoke"></div>
+                  <div id="chimney-smoke6" class="chimney-smoke"></div>
+                </div>
+                <div class="house-bg flicker"></div>
+              </a>
+            </li>
+            <li style="--order: 2"><a href="#about-a">About</a></li>
+            <li style="--order: 3"><a href="#portfolio-a">Portfolio</a></li>
+          </ul>
+        </nav>
+        <div class="flex-scw">
+          <button
+            id="light-switch"
+            aria-label="Change Theme"
+            title="Change Theme"
+            data-theme-btn
+          >
+            <span class="icon pulse"></span>
+          </button>
+          <h5 class="neon-border">
+            <a
+              href="https://www.valtech.com/en-us/blog/does-dark-mode-win-on-sustainability-and-accessibility/"
+              style="color: inherit"
+              target="_blank"
+            >
+              Dark mode can save energy!
             </a>
-          </li>
-          <li style="--order:2;"><a href="#about-a">About</a></li>
-          <li style="--order:3;"><a href="#portfolio-a">Portfolio</a></li>
-        </ul>
-      </nav>
-      <div class="flex-scw">
-        <button id="light-switch" aria-label="Change Theme" title="Change Theme" data-theme-btn>
-          <span class="icon pulse"></span>
-        </button>
-        <h5 class="neon-border">
-          <a href="https://engineering.purdue.edu/ECE/News/2022/shedding-light-on-dark-mode-to-save-energy" style="color: inherit;" target="_blank">
-            "The energy saved in Dark Mode is 3%-9%"
-          </a>
-        </h5>
+          </h5>
+        </div>
       </div>
-    </div>
-  </header>
-  <div id="home-a"></div>
-  <main>
-    <section id="home">
-      <article>
+    </header>
+    <div id="home-a"></div>
+    <main>
+      <section id="home">
+        <article>
+          <header>
+            <h1>Home</h1>
+            <p id="typing"></p>
+          </header>
+        </article>
+        <div>
+          <img
+            class="box-shadow"
+            src="./assets/images/me.png"
+            alt="Damon Garfield"
+          />
+        </div>
+      </section>
+      <div id="about-a" class="spacer"></div>
+      <section id="about">
+        <article>
+          <header>
+            <h1>About</h1>
+            <h3>FRONT END WEB DEVELOPER</h3>
+          </header>
+          <div>
+            <h4>LANGUAGES / TECHNOLOGIES</h4>
+            <p class="c-txt">
+              <strong class="pulse" style="--order: 4">- HTML5:</strong>
+              Semantic markup
+              <span>,</span>
+              accessibility (ARIA)
+              <span>,</span>
+              SEO optimization
+              <br />
+              <strong class="pulse" style="--order: 5">- CSS3:</strong>
+              Sass
+              <span>,</span>
+              SCSS
+              <span>,</span>
+              CSS-in-JS
+              <span>,</span>
+              Tailwind CSS
+              <br />
+              <strong class="pulse" style="--order: 6">
+                - JavaScript (ES15+):
+              </strong>
+              React (Hooks
+              <span>,</span>
+              Context API
+              <span>,</span>
+              Next.js)
+              <span>,</span>
+              GSAP
+              <br />
+            </p>
+          </div>
+          <div>
+            <h4>Software & Development Tools</h4>
+            <p class="c-txt">
+              <strong class="pulse" style="--order: 7">
+                - Marketing Automation:
+              </strong>
+              Eloqua
+              <span>,</span>
+              IBM Campaign
+              <br />
+              <strong class="pulse" style="--order: 8">- Testing:</strong>
+              BrowserStack
+              <span>,</span>
+              Litmus
+              <span>,</span>
+              Email on Acid
+              <br />
+              <strong class="pulse" style="--order: 9">-</strong>
+              Visual Studio (Live Server
+              <span>,</span>
+              Prettier
+              <span>,</span>
+              ESLint)
+              <span>,</span>
+              Adobe Suite (XD
+              <span>,</span>
+              Figma
+              <span>,</span>
+              Illustrator
+              <span>,</span>
+              Photoshop
+              <span>,</span>
+              AEM)
+              <span>,</span>
+              GCP
+              <span>,</span>
+              AWS
+              <br />
+            </p>
+          </div>
+        </article>
+      </section>
+      <div id="portfolio-a" class="spacer"></div>
+      <section id="portfolio">
         <header>
-          <h1>Home</h1>
-          <p id="typing"></p>
-        </header>
-      </article>
-      <div>
-        <img class="box-shadow" src="./assets/images/me.png" alt="Damon Garfield">
-      </div>
-    </section>
-    <div id="about-a" class="spacer"></div>
-    <section id="about">
-      <article>
-        <header>
-          <h1>About</h1>
-          <h3>FRONT END WEB DEVELOPER</h3>
+          <h1>Portfolio</h1>
         </header>
         <div>
-          <h4>LANGUAGES / TECHNOLOGIES</h4>
-          <p class="c-txt">
-            <strong class="pulse" style="--order:1;">JavaScript</strong> - <span>|</span> React <span>|</span> Node <span>|</span> NPM <span>|</span> NVM <span>|</span> Yarn <span>|</span> Gulp <span>|</span> Babel <span>|</span> ESLint <span>|</span> Webpack <span>|</span><br>
-            <strong class="pulse" style="--order:2;">CSS3</strong> - <span>|</span> Sass <span>|</span> SCSS <span>|</span> Less <span>|</span> Bootstrap <span>|</span><br>
-            <strong class="pulse" style="--order:3;">HTML5</strong> - <span>|</span> Boilerplate <span>|</span><br>
-            <strong class="pulse" style="--order:4;">Git</strong> - <span>|</span> GitHub <span>|</span> Bitbucket <span>|</span> Google Cloud Platform <span>|</span> Amazon Web Services <span>|</span><br>
-            <strong class="pulse" style="--order:7;">Other</strong> - <span>|</span> APIs / JSON <span>|</span> REST APIs <span>|</span><br>
-          </p>
-        </div>
-        <div>
-          <h4>SOFTWARE</h4>
-          <p>
-            Visual&nbsp;Studio<span>,</span> Adobe&nbsp;Creative&nbsp;Suite&nbsp;(Including&nbsp;AEM&nbsp;&&nbsp;DAM)<span>,</span> GarageBand<span>,</span> FileZilla<span>,</span> BrowserStack<span>,</span> Litmus<span>,</span> Email&nbsp;On&nbsp;Acid<span>,</span> Google&nbsp;Workspace<span>,</span> Command&nbsp;Line<span>,</span> Terminal<span>,</span> Ion&nbsp;Interactive<span>,</span> SiteCore<span>,</span> IBM&nbsp;Campaign<span>,</span> Eloqua<span>,</span> Marketo & much more.
-          </p>
-        </div>
-      </article>
-    </section>
-    <div id="portfolio-a" class="spacer"></div>
-    <section id="portfolio">
-      <header>
-        <h1>Portfolio</h1>
-      </header>
-      <div>
-        <h3>CLIENTS</h3>
-        <div class="flex-scw c-txt">
-          <div>
-            <h4 class="pulse" style="--order:1;">CAYCE AI</h4>
-            <div class="tablet box-shadow">
-              <div class="screen">
-                <a href="https://web.archive.org/web/20220913193940/https://cayce.ai/" target="_blank">
-                  <img loading="lazy" src="./assets/images/cayce.png" alt="Cayce AI Website">
-                </a>
+          <h3>CLIENTS</h3>
+          <div class="flex-scw c-txt">
+            <div>
+              <h4 class="pulse" style="--order: 10">CAYCE AI</h4>
+              <div class="tablet box-shadow">
+                <div class="screen">
+                  <a
+                    href="https://web.archive.org/web/20220913193940/https://cayce.ai/"
+                    target="_blank"
+                  >
+                    <img
+                      loading="lazy"
+                      src="./assets/images/cayce.png"
+                      alt="Cayce AI Website"
+                    />
+                  </a>
+                </div>
               </div>
             </div>
-          </div>
-          <div>
-            <h4 class="pulse" style="--order:2;">MRM</h4>
-            <div class="tablet">
-              <div class="screen">
-                <a href="https://www.mrm.com/en/" target="_blank">
-                  <img loading="lazy" src="./assets/images/mrm.png" alt="MRM Website">
-                </a>
+            <div>
+              <h4 class="pulse" style="--order: 11">MRM</h4>
+              <div class="tablet">
+                <div class="screen">
+                  <a href="https://www.mrm.com/en/" target="_blank">
+                    <img
+                      loading="lazy"
+                      src="./assets/images/mrm.png"
+                      alt="MRM Website"
+                    />
+                  </a>
+                </div>
               </div>
             </div>
-          </div>
-          <div>
-            <h4 class="pulse" style="--duration: 5; --order: 3;">TURNKEY SOCIAL</h4>
-            <div class="tablet">
-              <div class="screen">
-                <a href="https://www.facebook.com/turnkeysocial/" target="_blank">
-                  <img loading="lazy" src="./assets/images/turnkey.png" alt="Turnkey Social on Facebook">
-                </a>
+            <div>
+              <h4 class="pulse" style="--order: 12">BOXWORKS</h4>
+              <div class="tablet">
+                <div class="screen">
+                  <a href="https://boxworks.com/" target="_blank">
+                    <img
+                      loading="lazy"
+                      src="./assets/images/boxworks.png"
+                      alt="Boxworks Website"
+                    />
+                  </a>
+                </div>
               </div>
             </div>
-          </div>
-          <div>
-            <h4 class="pulse" style="--order:4;">BOXWORKS</h4>
-            <div class="tablet">
-              <div class="screen">
-                <a href="https://boxworks.com/" target="_blank">
-                  <img loading="lazy" src="./assets/images/boxworks.png" alt="Boxworks Website">
-                </a>
-              </div>
-            </div>
-          </div>
-          <div>
-            <h4 class="pulse" style="--order:5;">SPECIAL OPS PAINTBALL</h4>
-            <div class="tablet">
-              <div class="screen">
-                <a href="https://www.reddit.com/r/paintball/comments/56yo6s/what_ever_happened_to_special_ops_paintball/" target="_blank">
-                  <img loading="lazy" src="./assets/images/special-ops.png" alt="Special Ops Paintball discussion on Reddit">
-                </a>
+            <div>
+              <h4 class="pulse" style="--order: 13">SPECIAL OPS PAINTBALL</h4>
+              <div class="tablet">
+                <div class="screen">
+                  <a
+                    href="https://www.reddit.com/r/paintball/comments/56yo6s/what_ever_happened_to_special_ops_paintball/"
+                    target="_blank"
+                  >
+                    <img
+                      loading="lazy"
+                      src="./assets/images/special-ops.png"
+                      alt="Special Ops Paintball discussion on Reddit"
+                    />
+                  </a>
+                </div>
               </div>
             </div>
           </div>
         </div>
-      </div>
-    </section>
-  </main>
-  <div class="spacer"></div>
-  
-  <!-- <script src="./assets/js/matter.min.js"></script>
+      </section>
+    </main>
+    <div class="spacer"></div>
+
+    <!-- <script src="./assets/js/matter.min.js"></script>
   <script>
     
     let engine = Matter.Engine.create();
@@ -207,19 +291,27 @@
     Matter.Runner.run(engine);
     Matter.Render.run(render);
   </script> -->
-  <div class="spacer"></div>
-  <footer id="footer" class="flex-scw">
-    <div>&copy; <span id="year"></span> by <a href="https://dgarfield.github.io/">Damon Garfield</a>. All rights reserved.</div>
-    <div class="flex-scw cg1">
-      <!-- <a href="https://www.linkedin.com/in/damongarfield/" target="_blank">
+    <div class="spacer"></div>
+    <footer id="footer" class="flex-scw">
+      <div>
+        &copy;
+        <span id="year"></span>
+        by
+        <a href="https://dgarfield.github.io/">Damon Garfield</a>
+        . All rights reserved.
+      </div>
+      <div class="flex-scw cg1">
+        <!-- <a href="https://www.linkedin.com/in/damongarfield/" target="_blank">
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" data-supported-dps="24x24" fill="currentColor" class="mercado-match" width="24" height="24" focusable="false">
           <path d="M20.5 2h-17A1.5 1.5 0 002 3.5v17A1.5 1.5 0 003.5 22h17a1.5 1.5 0 001.5-1.5v-17A1.5 1.5 0 0020.5 2zM8 19H5v-9h3zM6.5 8.25A1.75 1.75 0 118.3 6.5a1.78 1.78 0 01-1.8 1.75zM19 19h-3v-4.74c0-1.42-.6-1.93-1.38-1.93A1.74 1.74 0 0013 14.19a.66.66 0 000 .14V19h-3v-9h2.9v1.3a3.11 3.11 0 012.7-1.4c1.55 0 3.36.86 3.36 3.66z"></path>
         </svg>
       </a> -->
-      <div class="f-home pulse"><a aria-label="Home" href="#home-a"><div>&#42779;</div></a></div>
-    </div>
-  </footer>
+        <div class="f-home pulse">
+          <a aria-label="Home" href="#home-a"><div>&#42779;</div></a>
+        </div>
+      </div>
+    </footer>
 
-  <script src="./assets/js/script.js"></script>
-</body>
+    <script src="./assets/js/script.js"></script>
+  </body>
 </html>
