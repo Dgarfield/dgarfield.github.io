@@ -1,6 +1,6 @@
 # Hi, I'm Damon Garfield
 
-I'm a senior front-end developer in Clearfield, Utah with 15 years of experience building responsive, accessible web applications with JavaScript, React, and Vue. I build reusable, self-contained components, I care about semantic HTML and performance, and I've trained and mentored other developers along the way.
+I'm a senior front-end developer in Clearfield, Utah building responsive, accessible web applications with JavaScript, React, and Vue. I build reusable, self-contained components, I care about semantic HTML and performance, and I've trained and mentored other developers along the way.
 
 **My portfolio:** https://dgarfield.github.io/
 Poke the buttons while you're there. They do things.
