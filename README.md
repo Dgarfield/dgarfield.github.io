@@ -18,4 +18,4 @@ JavaScript (ES6+), React, Vue, HTML5, CSS3, Sass and SCSS, Tailwind, PHP, Node, 
 
 ## What I'm looking for
 
-Senior front-end roles, remote or hybrid in Utah. The fastest way to reach me is email: damongarfield@gmail.com
+Senior front-end roles, remote or hybrid in Utah. The fastest way to reach me is email: damongarfield [at] gmail [dot] com

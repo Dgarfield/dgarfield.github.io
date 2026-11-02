@@ -226,7 +226,7 @@ canvas#game{display:block;width:100%;height:auto;image-rendering:pixelated;backg
     <img class="portrait" src="assets/portrait-damon-garfield.webp" alt="Portrait of Damon Garfield" width="120" height="120" loading="lazy" style="object-fit:cover;padding:0">
     <div class="actions">
       <a class="btn-real" href="#work-a">See my work</a>
-      <a class="btn-real" href="mailto:damongarfield@gmail.com">Email me</a>
+      <a class="btn-real eml" href="#">Email me</a>
       <a class="btn-real" href="https://github.com/dgarfield" target="_blank" rel="noopener">GitHub</a>
       <a class="btn-real" href="damon-garfield-resume.pdf" target="_blank" rel="noopener">Resume (PDF)</a>
     </div>
@@ -332,14 +332,14 @@ canvas#game{display:block;width:100%;height:auto;image-rendering:pixelated;backg
     <h2>Contact</h2>
     <p>I'm looking for senior front-end roles, remote or hybrid in Utah. The fastest way to reach me is email.</p>
     <div class="actions">
-      <a class="btn-real" href="mailto:damongarfield@gmail.com">damongarfield@gmail.com</a>
+      <a class="btn-real eml" href="#">Email me</a>
       <a class="btn-real" href="damon-garfield-resume.pdf" target="_blank" rel="noopener">Resume (PDF)</a>
     </div>
     <address class="addr" style="margin-top:1rem;color:var(--tx2)">Based in Clearfield, Utah 84015, working remote or hybrid in Utah.</address>
   </section>
 </main>
 <footer>
-  <p>© 2026 Damon Garfield · Clearfield, Utah · Built by hand, including the game. · <a href="mailto:damongarfield@gmail.com">damongarfield@gmail.com</a></p>
+  <p>© 2026 Damon Garfield · Clearfield, Utah · Built by hand, including the game. · <a class="eml" href="#">Email me</a></p>
 </footer>
 
 <!-- ================= THE CABINET ================= -->
@@ -791,5 +791,16 @@ window.__G={state:()=>({phase:G.phase,x:Math.round(P.x),y:Math.round(P.y),orbs:o
   warp:(x)=>{ P.x=x; P.y=GY-46; P.vy=0; }, press:(k,down)=>{ keys[k]=down; if(k===" "&&down)P.buffer=.12; }, open:openCab, go:()=>$("#goBtn").click(), next:()=>cardNext()};
 </script>
 
+<script>
+/* Email links: the address is assembled only when clicked, so it never
+   sits on the page as readable text. Same pattern as Fair Filter. */
+document.querySelectorAll(".eml").forEach(function (a) {
+  a.addEventListener("click", function (e) {
+    e.preventDefault();
+    var addr = ["damon", "garfield"].join("") + "@" + ["gmail", "com"].join(".");
+    window.location.href = "mailto:" + addr;
+  });
+});
+</script>
 </body>
 </html>
