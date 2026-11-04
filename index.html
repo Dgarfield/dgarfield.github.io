@@ -13,9 +13,18 @@
 <meta property="og:description" content="Senior front-end developer in Clearfield, Utah building responsive, accessible web applications with JavaScript, React, and Vue. Currently building and shipping live products.">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://dgarfield.github.io/">
+<meta property="og:image" content="https://dgarfield.github.io/assets/og-card-v1.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Damon Garfield, Senior Front End Developer">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Damon Garfield | Senior Front End Developer">
+<meta name="twitter:description" content="Senior front-end developer in Clearfield, Utah building responsive, accessible web applications with JavaScript, React, and Vue. Currently building and shipping live products.">
+<meta name="twitter:image" content="https://dgarfield.github.io/assets/og-card-v1.png">
+<meta name="twitter:image:alt" content="Damon Garfield, Senior Front End Developer">
 <style>
 :root{color-scheme:dark;--night:#000a28;--day:#00beff;--royal-blue:#4169e1;--yellow:#fff666;--lg-blue:linear-gradient(90deg,#00bfff,#4364fc,#31c9fc);
---bg14:#0A1628;--s1:#10233F;--s2:#16305A;--line14:#233D66;--royal14:#2563EB;--tx:#D7E1F2;--tx2:#93A5C4;--tx3:#5F7396;--acc:#FFD02E;--glow14:0 0 18px rgba(255,208,46,.45);--sh14:0 20px 40px rgba(2,6,17,.45);--ease:cubic-bezier(.22,1,.36,1)}
+--bg14:#0A1628;--s1:#10233F;--s2:#16305A;--line14:#233D66;--royal14:#2563EB;--tx:#D7E1F2;--tx2:#93A5C4;--tx3:#7A90B4;--acc:#FFD02E;--glow14:0 0 18px rgba(255,208,46,.45);--sh14:0 20px 40px rgba(2,6,17,.45);--ease:cubic-bezier(.22,1,.36,1)}
 *{box-sizing:border-box}
 body{margin:0;background:var(--bg14);color:var(--tx);font-family:Roboto,system-ui,Arial,sans-serif;font-size:16px;line-height:1.6;overflow-x:hidden}
 body::before{content:"";position:fixed;inset:0;z-index:-2;background:radial-gradient(720px 480px at 12% -6%,#4364fc3d,transparent 62%),radial-gradient(820px 560px at 96% 22%,#00bfff2e,transparent 60%),radial-gradient(900px 700px at 50% 115%,#4169e126,transparent 62%),var(--bg14)}
@@ -33,8 +42,9 @@ body{padding-top:138px}
 body.light-on .name{color:#000}
 nav{display:flex;gap:16px} nav a{color:var(--tx2);text-decoration:none;font-weight:700} nav a:hover{color:var(--acc)}
 body.light-on nav a{color:#000}
-#startBtn{font:inherit;font-weight:900;cursor:pointer;border:none;border-radius:999px;padding:.6rem 1.3rem;background:var(--acc);color:#1A1400;box-shadow:var(--glow14);animation:pulse 2.2s infinite}
-@keyframes pulse{0%,100%{transform:scale(1)}50%{transform:scale(1.05)}}
+#startBtn{font:inherit;font-weight:800;cursor:pointer;border-radius:999px;padding:.6rem 1.25rem;background:#0B1B33;color:var(--tx);border:1.5px solid var(--royal14);transition:border-color .2s var(--ease),color .2s var(--ease)}
+#startBtn:hover{border-color:var(--acc);color:var(--acc)}
+body.light-on #startBtn{background:#ffffffcc;color:#000;border-color:var(--royal-blue)}
 .neon-badge{position:relative;isolation:isolate;background:#00000093;color:#fff;border:none;border-radius:3.125rem;padding:.55rem 1.15rem;font-weight:800;font-size:.85rem}
 .neon-badge::before,.neon-badge::after{content:"";position:absolute;left:-2px;top:-2px;width:calc(100% + 4px);height:calc(100% + 4px);background:var(--lg-blue);background-size:500%;z-index:-1;border-radius:3.125rem;animation:moveBG 20s linear infinite}
 .neon-badge::after{filter:blur(3.125rem)}
@@ -73,10 +83,10 @@ body.light-on .card{background:#fff}
 .chips{display:flex;gap:.5rem;flex-wrap:wrap;margin-top:1rem}
 .chip{background:#0B1B33;border:1px solid var(--line14);color:var(--tx2);border-radius:999px;padding:.35rem .9rem;font-weight:600;font-size:.9rem}
 body.light-on .chip{background:#ffffffcc;color:#000;border-color:#4169e1}
-.floater{position:fixed !important;z-index:90;margin:0 !important;box-shadow:var(--glow14);will-change:transform,left,top}
 footer{max-width:1120px;margin:0 auto;padding:0 16px 60px;color:var(--tx3);font-size:.92rem}
 body.light-on footer{color:#3D5878}
-.addr{font-style:normal}
+.addr{font-style:normal;color:var(--tx2)}
+body.light-on .addr{color:#3D5878}
 /* ---------- the cabinet: the game in its own box ---------- */
 #cabWrap{position:fixed;inset:0;z-index:200;display:none;align-items:center;justify-content:center;background:rgba(2,6,17,.82);backdrop-filter:blur(4px);padding:14px;overflow-y:auto}
 #cabWrap.open{display:flex}
@@ -127,7 +137,7 @@ canvas#game{display:block;width:100%;height:auto;image-rendering:pixelated;backg
   .neon-badge::after{display:none}
   .bar2{gap:8px;flex-wrap:nowrap;overflow-x:auto;padding-top:.45rem}
   .bar2 .tog{font-size:.82rem;padding:.42rem .7rem;white-space:nowrap}
-  body{padding-top:236px}
+  body{padding-top:214px}
 }
 
 #game{touch-action:none}
@@ -137,7 +147,7 @@ canvas#game{display:block;width:100%;height:auto;image-rendering:pixelated;backg
 
 /* anchor jumps land below the fixed bar, not under it */
 *[id$="-a"]{scroll-margin-top:152px}
-@media (max-width:760px){ *[id$="-a"]{scroll-margin-top:254px} }
+@media (max-width:760px){ *[id$="-a"]{scroll-margin-top:214px} }
 /* cabinet polish: vignette + scanlines over the screen, cards glide in, boss bar eases */
 #screenBox::after{content:"";position:absolute;inset:0;pointer-events:none;z-index:2;background:radial-gradient(ellipse at center,transparent 60%,rgba(0,0,12,.40) 100%),repeating-linear-gradient(0deg,rgba(255,255,255,.022) 0 1px,transparent 1px 3px)}
 #gHud{z-index:5} #dlg{z-index:6} #gate{z-index:6} #gCard{z-index:7}
@@ -201,6 +211,29 @@ canvas#game{display:block;width:100%;height:auto;image-rendering:pixelated;backg
 #gatePadState{color:var(--acc);font-weight:700}
 #cabWrap.pad-on #touchRow{display:none}
 </style>
+
+<style id="v32-changes">
+/* v32 (Nov 4, 2026), from the three-lane expert review: the hero speaks on first
+   paint (a real static headline, portrait at the left, words and actions at the
+   right, the typed line demoted to support), START GAME sits in the header as a
+   quiet outline pill, and the work buttons never float. Header heights are
+   re-measured below now that the neon badge is gone from the bar. */
+.hero-flex{display:flex;gap:2.2rem;align-items:flex-start}
+.hero-main{flex:1;min-width:0}
+.hero-main .hero-role{margin-top:.4rem}
+.hero-head{font-size:clamp(1.85rem,4vw,2.55rem);line-height:1.15;letter-spacing:-.02em;color:var(--tx);margin:.3em 0 .45em}
+body.light-on .hero-head{color:#12233F}
+.hero-flex .portrait{width:176px;height:176px;margin:.5rem 0 0;flex:none}
+.hero-main .type{font-size:1.05rem;min-height:6.4em;max-width:56ch}
+/* the Experience subhead had no light-mode override and rendered near-white
+   on the pale card once the stub grid above it was deleted; it now takes the
+   same ink as the section headings in light mode (#12233F, ~13:1 here) */
+body.light-on .subhead{color:#12233F}
+@media (max-width:640px){
+  .hero-flex{flex-direction:column;gap:.4rem}
+  .hero-flex .portrait{width:132px;height:132px}
+}
+</style>
 </head>
 <body>
 <script>(function(){try{var t=localStorage.getItem("theme");if(t==="light"){document.body.classList.add("light-on");}else if(t!=="dark"&&window.matchMedia("(prefers-color-scheme: light)").matches){document.body.classList.add("light-on");}}catch(e){if(window.matchMedia("(prefers-color-scheme: light)").matches){document.body.classList.add("light-on");}}})();</script>
@@ -214,7 +247,6 @@ canvas#game{display:block;width:100%;height:auto;image-rendering:pixelated;backg
       </nav>
     </div>
     <button id="startBtn" type="button">▶ START GAME</button>
-    <span class="neon-badge">Dark mode can save energy!</span>
   </div>
   <div class="bar2">
     <button class="tog" id="soundBtn" type="button">Sound: on</button>
@@ -224,16 +256,20 @@ canvas#game{display:block;width:100%;height:auto;image-rendering:pixelated;backg
 </header>
 <main id="top">
   <section>
-    <p class="hero-role">SENIOR FRONT END DEVELOPER</p>
-    <p class="type" id="typing"></p>
-    <img class="portrait" src="assets/portrait-damon-garfield.webp" alt="Portrait of Damon Garfield" width="120" height="120" loading="lazy" style="object-fit:cover;padding:0">
-    <div class="actions">
-      <a class="btn-real" href="#work-a">See my work</a>
-      <a class="btn-real eml" href="#">Email me</a>
-      <a class="btn-real" href="https://github.com/dgarfield" target="_blank" rel="noopener">GitHub</a>
-      <a class="btn-real" href="damon-garfield-resume.pdf" target="_blank" rel="noopener">Resume (PDF)</a>
+    <div class="hero-flex">
+      <img class="portrait" src="assets/portrait-damon-garfield.webp" alt="Portrait of Damon Garfield" width="176" height="176" loading="lazy" style="object-fit:cover;padding:0">
+      <div class="hero-main">
+        <p class="hero-role">SENIOR FRONT END DEVELOPER</p>
+        <h2 class="hero-head">Senior front-end developer for responsive, accessible web apps.</h2>
+        <p class="type" id="typing">I'm a senior Web Developer. Six years at MRM building localized, accessible pages for about 10 countries, then a React product at Cayce AI. These days I build and ship my own products too, including the live products in my work below.</p>
+        <div class="actions">
+          <a class="btn-real" href="#work-a">See my work</a>
+          <a class="btn-real eml" href="#">Email me</a>
+          <a class="btn-real" href="https://github.com/dgarfield" target="_blank" rel="noopener">GitHub</a>
+          <a class="btn-real" href="damon-garfield-resume.pdf" target="_blank" rel="noopener">Resume (PDF)</a>
+        </div>
+      </div>
     </div>
-    
   </section>
 
   <section id="about-a">
@@ -292,23 +328,13 @@ canvas#game{display:block;width:100%;height:auto;image-rendering:pixelated;backg
   <section>
     <div class="legend">
       <p class="legend-title">Every part of this page has a job</p>
-      <p><strong>Buttons</strong> (solid, royal blue) take you somewhere real, and they always work. One warning, in the spirit of honesty: this page has a sense of humor, and about <strong>1 click in 3</strong>, one of the work-card buttons loses its gravity for about 10 seconds and floats around before it comes home. It still works while it floats. The Calm button calls them all home early.</p>
+      <p><strong>Buttons</strong> (solid, royal blue) take you somewhere real, and they always work. This page has a sense of humor, but the buttons are not part of the joke: they stay right where they belong. The play lives in the game at the top of the page and in the little house logo, which likes being clicked.</p>
       <p><strong>START GAME</strong> opens the cabinet at the top of the page's arcade, one self-contained 2D game in its own box. The page stays exactly as you left it underneath.</p>
     </div>
   </section>
   <section id="exp-a">
     <p class="world-tag">The Long Road</p>
     <h2>Experience</h2>
-    <div class="grid">
-      <div class="card">
-        <h3>Cayce AI</h3>
-        <p>Senior Front End Developer, July 2021 to September 2022. See Selected Work above for details.</p>
-      </div>
-      <div class="card">
-        <h3>MRM</h3>
-        <p>Front End Developer, July 2014 to December 2020. See Selected Work above for details.</p>
-      </div>
-    </div>
     <h3 class="subhead">Since 2023 I have also run my own businesses and worked hands-on</h3>
     <div class="grid">
       <div class="card">
@@ -338,7 +364,7 @@ canvas#game{display:block;width:100%;height:auto;image-rendering:pixelated;backg
       <a class="btn-real eml" href="#">Email me</a>
       <a class="btn-real" href="damon-garfield-resume.pdf" target="_blank" rel="noopener">Resume (PDF)</a>
     </div>
-    <address class="addr" style="margin-top:1rem;color:var(--tx2)">Based in Clearfield, Utah 84015, working remote or hybrid in Utah.</address>
+    <address class="addr" style="margin-top:1rem">Based in Clearfield, Utah 84015, working remote or hybrid in Utah.</address>
   </section>
 </main>
 <footer>
@@ -401,7 +427,7 @@ function beep(f0,f1,dur,type,vol,delay){ if(!soundOn)return; const c=ac(); if(!c
 const sClick=()=>beep(660,660,.06,"square",.03), sFloat=()=>{beep(300,720,.22,"sine",.05);}, sHome=()=>beep(520,780,.12,"sine",.04);
 
 /* typewriter, his own words */
-(function(){ const el=$("#typing"); const txt="I'm a senior Web Developer. Six years at MRM building localized, accessible pages for about 10 countries, then a React product at Cayce AI. These days I build and ship my own products too, including the two live sites in my work below."; let i=0; const reduced=matchMedia("(prefers-reduced-motion: reduce)").matches; if(reduced){ el.textContent=txt; return; } (function tick(){ if(i<=txt.length){ el.textContent=txt.slice(0,i); i++; setTimeout(tick, txt[i-1]==="."?300:11); } })(); })();
+(function(){ const el=$("#typing"); const txt="I'm a senior Web Developer. Six years at MRM building localized, accessible pages for about 10 countries, then a React product at Cayce AI. These days I build and ship my own products too, including the live products in my work below."; let i=0; const reduced=matchMedia("(prefers-reduced-motion: reduce)").matches; if(reduced){ el.textContent=txt; return; } el.textContent=""; (function tick(){ if(i<=txt.length){ el.textContent=txt.slice(0,i); i++; setTimeout(tick, txt[i-1]==="."?300:11); } })(); })();
 
 /* theme */
 $("#themeBtn").addEventListener("click",()=>{ document.body.classList.toggle("light-on"); try{ localStorage.setItem("theme",document.body.classList.contains("light-on")?"light":"dark"); }catch(e){} sClick(); });
@@ -415,44 +441,8 @@ $("#houseBtn").addEventListener("click",()=>{ const h=$("#houseBtn"), s=$("#smok
 /* ambient dots, quiet stars on the page */
 (function(){ const reduced=matchMedia("(prefers-reduced-motion: reduce)").matches; for(let i=0;i<26;i++){ const d=document.createElement("div"); d.className="dot"; const sz=4+Math.random()*11; d.style.cssText=`width:${sz}px;height:${sz}px;left:${Math.random()*100}vw;top:${Math.random()*100}vh;background:${["#00bfff","#4364fc","#7db4ff","#31c9fc"][i%4]};opacity:${.12+Math.random()*.2}`; document.body.appendChild(d); if(!reduced) d.animate([{transform:"translateY(0)"},{transform:"translateY(-26px)"}],{duration:3800+Math.random()*3800,direction:"alternate",iterations:Infinity,easing:"ease-in-out"}); } })();
 
-/* ---- the 1-in-3 gravity habit: a clicked real button may float for 10s, then come home ---- */
-const floaters=new Set();
-function floatButton(el){
-  if(el.classList.contains("floater"))return;
-  const r=el.getBoundingClientRect(); if(r.width<10)return;
-  const ph=document.createElement("span"); ph.style.cssText=`display:inline-block;width:${r.width}px;height:${r.height}px;vertical-align:middle;visibility:hidden`; el.parentNode.insertBefore(ph,el);
-  const home={ph, sx:r.left, sy:r.top};
-  el.classList.add("floater"); el.style.left=r.left+"px"; el.style.top=r.top+"px"; el.style.width=r.width+"px";
-  const a=Math.random()*Math.PI*2, sp=55+Math.random()*75;
-  const F={el,ph,x:r.left,y:r.top,vx:Math.cos(a)*sp,vy:Math.sin(a)*sp,rot:(Math.random()-.5)*14,t0:performance.now(),returning:false};
-  floaters.add(F); sFloat();
-  const step=now=>{
-    if(!floaters.has(F))return;
-    const age=(now-F.t0)/1000;
-    if(age>=10&&!F.returning){ F.returning=true; const hr=ph.getBoundingClientRect(); F.hx=hr.left; F.hy=hr.top; }
-    if(F.returning){
-      F.x+=(F.hx-F.x)*.14; F.y+=(F.hy-F.y)*.14; F.rot*=.86;
-      el.style.left=F.x+"px"; el.style.top=F.y+"px"; el.style.transform=`rotate(${F.rot}deg)`;
-      if(Math.abs(F.hx-F.x)<1.5&&Math.abs(F.hy-F.y)<1.5){ endFloat(F,true); return; }
-    } else {
-      F.x+=F.vx/60; F.y+=F.vy/60;
-      const w=el.offsetWidth,h=el.offsetHeight;
-      if(F.x<4){F.x=4;F.vx=Math.abs(F.vx);} if(F.x>innerWidth-w-4){F.x=innerWidth-w-4;F.vx=-Math.abs(F.vx);}
-      if(F.y<4){F.y=4;F.vy=Math.abs(F.vy);} if(F.y>innerHeight-h-4){F.y=innerHeight-h-4;F.vy=-Math.abs(F.vy);}
-      el.style.left=F.x+"px"; el.style.top=F.y+"px"; el.style.transform=`rotate(${F.rot*Math.sin(age*1.7)}deg)`;
-    }
-    requestAnimationFrame(step);
-  };
-  requestAnimationFrame(step);
-}
-function endFloat(F,home){
-  floaters.delete(F); const el=F.el;
-  el.classList.remove("floater"); el.style.left=""; el.style.top=""; el.style.width=""; el.style.transform="";
-  if(F.ph&&F.ph.parentNode)F.ph.remove();
-  if(home)sHome();
-}
-$$(".btn-real").forEach(el=>el.addEventListener("click",()=>{ sClick(); if(el.closest(".actions"))return; if(Math.random()<1/3) floatButton(el); }));
-$("#calmBtn").addEventListener("click",()=>{ const n=floaters.size; [...floaters].forEach(F=>endFloat(F,false)); sClick(); if(!n)$("#houseBtn").click(); });
+/* buttons stay put: the play lives in the game and the little house, not in the work links */
+$("#calmBtn").addEventListener("click",()=>{ sClick(); $("#houseBtn").click(); });
 </script>
 
 <script>
@@ -460,10 +450,16 @@ $("#calmBtn").addEventListener("click",()=>{ const n=floaters.size; [...floaters
    2D platformer on canvas. Parallax wall, sprite-sheet hero, story cards, two bosses.
    The page underneath is never touched. */
 const cv=$("#game"), ctx=cv.getContext("2d");
-const ATLAS=new Image(); ATLAS.src="assets/game-enemy-atlas.webp";
-const HERO=new Image(); HERO.src="assets/game-hero-sprites.webp";
-const FAR=new Image(); FAR.src="assets/game-background-far.webp";
-const WALLIMG=new Image(); WALLIMG.src="assets/game-background-wall.webp";
+/* v32: the game's images load only when the cabinet first opens, so a visitor
+   who never plays does not download ~687 KB of sprites. Every draw call below
+   already guards on image readiness and falls back gracefully until they land. */
+const ATLAS=new Image(), HERO=new Image(), FAR=new Image(), WALLIMG=new Image();
+let gameAssetsStarted=false;
+function loadGameAssets(){ if(gameAssetsStarted)return; gameAssetsStarted=true;
+  ATLAS.src="assets/game-enemy-atlas.webp";
+  HERO.src="assets/game-hero-sprites.webp";
+  FAR.src="assets/game-background-far.webp";
+  WALLIMG.src="assets/game-background-wall.webp"; }
 const W=960,H=540,WORLD=4600,GY=472;
 const SEGS=[[0,1240],[1420,1620],[1760,4600]];
 const segAt=x=>SEGS.some(s=>x>=s[0]&&x<=s[1]);
@@ -529,7 +525,7 @@ function pick(a){ return a[Math.floor(Math.random()*a.length)]; }
 /* --- audio (cabinet cues) --- */
 const sJump=()=>beep(300,640,.14,"square",.035), sCoin=()=>{beep(880,880,.07,"square",.04);beep(1320,1320,.12,"square",.04,0.07);}, sHit=()=>beep(160,60,.18,"sawtooth",.06), sStomp=()=>beep(220,90,.12,"square",.05), sDash=()=>beep(500,900,.1,"sawtooth",.025), sCannon=()=>beep(120,60,.12,"square",.05);
 /* --- cabinet open/close --- */
-function openCab(){ $("#cabWrap").classList.add("open"); RM=matchMedia("(prefers-reduced-motion: reduce)").matches; ac(); if(!G.started){ G.started=true; resetRun(); } G.phase = (G.phase==="play") ? "play" : "gate"; $("#gate").style.display = G.phase==="gate" ? "flex":"none"; requestAnimationFrame(loop); }
+function openCab(){ loadGameAssets(); $("#cabWrap").classList.add("open"); RM=matchMedia("(prefers-reduced-motion: reduce)").matches; ac(); if(!G.started){ G.started=true; resetRun(); } G.phase = (G.phase==="play") ? "play" : "gate"; $("#gate").style.display = G.phase==="gate" ? "flex":"none"; requestAnimationFrame(loop); }
 function closeCab(){ $("#cabWrap").classList.remove("open"); G.phase="closed"; $("#gate").style.display="none"; $("#gCard").style.display="none"; }
 $("#startBtn").addEventListener("click",()=>{ if(document.activeElement)document.activeElement.blur(); openCab(); });
 $("#cabClose").addEventListener("click",closeCab);
