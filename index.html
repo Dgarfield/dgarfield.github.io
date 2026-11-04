@@ -7,17 +7,20 @@
 <link rel="canonical" href="https://dgarfield.github.io/">
 <title>Damon Garfield | Senior Front End Developer</title>
 <meta name="description" content="Senior front-end developer in Clearfield, Utah building responsive, accessible web applications with JavaScript, React, and Vue. Currently building and shipping live products.">
+<meta name="theme-color" media="(prefers-color-scheme: dark)" content="#0A1628">
+<meta name="theme-color" media="(prefers-color-scheme: light)" content="#ffffff">
 <meta property="og:title" content="Damon Garfield | Senior Front End Developer">
 <meta property="og:description" content="Senior front-end developer in Clearfield, Utah building responsive, accessible web applications with JavaScript, React, and Vue. Currently building and shipping live products.">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://dgarfield.github.io/">
 <style>
-:root{--night:#000a28;--day:#00beff;--royal-blue:#4169e1;--yellow:#fff666;--lg-blue:linear-gradient(90deg,#00bfff,#4364fc,#31c9fc);
+:root{color-scheme:dark;--night:#000a28;--day:#00beff;--royal-blue:#4169e1;--yellow:#fff666;--lg-blue:linear-gradient(90deg,#00bfff,#4364fc,#31c9fc);
 --bg14:#0A1628;--s1:#10233F;--s2:#16305A;--line14:#233D66;--royal14:#2563EB;--tx:#D7E1F2;--tx2:#93A5C4;--tx3:#5F7396;--acc:#FFD02E;--glow14:0 0 18px rgba(255,208,46,.45);--sh14:0 20px 40px rgba(2,6,17,.45);--ease:cubic-bezier(.22,1,.36,1)}
 *{box-sizing:border-box}
 body{margin:0;background:var(--bg14);color:var(--tx);font-family:Roboto,system-ui,Arial,sans-serif;font-size:16px;line-height:1.6;overflow-x:hidden}
 body::before{content:"";position:fixed;inset:0;z-index:-2;background:radial-gradient(720px 480px at 12% -6%,#4364fc3d,transparent 62%),radial-gradient(820px 560px at 96% 22%,#00bfff2e,transparent 60%),radial-gradient(900px 700px at 50% 115%,#4169e126,transparent 62%),var(--bg14)}
-body.light-on{background:var(--day);color:#101828}
+body.light-on::before{background:radial-gradient(720px 480px at 12% -6%,#4364fc26,transparent 62%),radial-gradient(820px 560px at 96% 22%,#00bfff38,transparent 60%),radial-gradient(900px 700px at 50% 115%,#4169e11f,transparent 62%),#EAF7FF}
+body.light-on{background:var(--day);color:#101828;color-scheme:light}
 a{color:#7db4ff} body.light-on a{color:#0b3d91}
 header.site{position:fixed;top:0;left:0;right:0;z-index:60;background:#000;border-bottom:1px solid var(--line14);padding:.7rem 1rem}
 body.light-on header.site{background:#fff}
