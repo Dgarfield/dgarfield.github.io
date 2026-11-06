@@ -121,7 +121,7 @@ canvas#game{display:block;width:100%;height:auto;image-rendering:pixelated;backg
 #cabFoot{font-family:ui-monospace,Menlo,monospace;font-size:.72rem;color:var(--tx3);letter-spacing:.14em;padding:8px 4px 2px;text-align:center}
 .dot{position:fixed;border-radius:50%;pointer-events:none;z-index:1}
 @media (max-width:640px){ section{margin-bottom:56px} .name{font-size:1.25rem} }
-@media (prefers-reduced-motion:reduce){ #startBtn{animation:none} }
+/* reduced-motion rules live in the v35-a11y style block (they used to be a token rule here) */
 
 /* mobile header: one-line name, scrollable nav row, slim badge, no halo smear */
 @media (max-width:760px){
@@ -233,40 +233,64 @@ body.light-on .subhead{color:#12233F}
   .hero-flex{flex-direction:column;gap:.4rem}
   .hero-flex .portrait{width:132px;height:132px}
 }
+
+<style id="v35-a11y">
+/* v35 (Nov 6, 2026), the accessibility pass. Native fixes only, no overlay widget.
+   Contents: a skip link, a visible focus ring that passes in BOTH themes, the
+   screen-reader-only utility, two light-mode contrast repairs found by computing
+   the actual CSS values (card meta gold was 1.47:1 on white cards; the world-tag
+   slate was 3.07:1 on the light section wash; both now use inks already on the
+   page that pass AA), a real reduced-motion block replacing the v30 token rule,
+   and the cabinet game's visible text-alternative paragraph. Dark theme needed
+   no color changes: every dark pairing computed at 4.88:1 or better. */
+.sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap;border:0}
+.skip-link{position:fixed;top:-120px;left:12px;z-index:300;background:#0B1B33;color:#fff;border:2px solid var(--acc);border-radius:999px;padding:.6rem 1.2rem;font-weight:800;text-decoration:none}
+.skip-link:focus{top:10px}
+:focus-visible{outline:3px solid var(--acc);outline-offset:2px}
+body.light-on :focus-visible{outline-color:#0B3D91}
+body.light-on .card .meta{color:#8a6d00}
+body.light-on .world-tag{color:#3D5878}
+.cab-alt{color:var(--tx2);font-size:.92rem;line-height:1.55;max-width:88ch;margin:.8rem auto .2rem;text-align:left}
+.cab-alt strong{color:var(--tx)}
+@media (prefers-reduced-motion:reduce){
+  *,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important;scroll-behavior:auto!important}
+  .card:hover{transform:none}
+}
 </style>
 </head>
 <body>
 <script>(function(){try{var t=localStorage.getItem("theme");if(t==="light"){document.body.classList.add("light-on");}else if(t!=="dark"&&window.matchMedia("(prefers-color-scheme: light)").matches){document.body.classList.add("light-on");}}catch(e){if(window.matchMedia("(prefers-color-scheme: light)").matches){document.body.classList.add("light-on");}}})();</script>
+<a class="skip-link" href="#top">Skip to main content</a>
 <header class="site">
   <div class="bar">
     <div class="brand">
-      <button class="house" id="houseBtn" type="button" aria-label="The little house, Damon's logo. Click it, it likes that.">🏠<span class="smoke" id="smoke">💨</span></button>
+      <button class="house" id="houseBtn" type="button" aria-label="The little house, Damon's logo. Click it, it likes that.">🏠<span class="smoke" id="smoke" aria-hidden="true">💨</span></button>
       <h1 class="name">Damon Garfield</h1>
       <nav aria-label="Sections">
         <a href="#about-a">About</a><a href="#work-a">Portfolio</a><a href="#exp-a">Experience</a><a href="#contact-a">Contact</a>
       </nav>
     </div>
-    <button id="startBtn" type="button">▶ START GAME</button>
+    <button id="startBtn" type="button"><span aria-hidden="true">▶</span> START GAME</button>
   </div>
   <div class="bar2">
     <button class="tog" id="soundBtn" type="button">Sound: on</button>
-    <button class="tog" id="themeBtn" type="button">🌓 Theme</button>
+    <button class="tog" id="themeBtn" type="button" aria-pressed="false"><span aria-hidden="true">🌓</span> Theme <span class="sr-only" id="themeState">Dark theme is on</span></button>
     <button class="tog" id="calmBtn" type="button">Calm</button>
   </div>
 </header>
-<main id="top">
+<main id="top" tabindex="-1">
   <section>
     <div class="hero-flex">
       <img class="portrait" src="assets/portrait-damon-garfield.webp" alt="Portrait of Damon Garfield" width="176" height="176" loading="lazy" style="object-fit:cover;padding:0">
       <div class="hero-main">
         <p class="hero-role">SENIOR FRONT END DEVELOPER</p>
         <h2 class="hero-head">Senior front-end developer for responsive, accessible web apps.</h2>
-        <p class="type" id="typing">I'm a senior Web Developer. Six years at MRM building localized, accessible pages for about 10 countries, then a React product at Cayce AI. These days I build and ship my own products too, including the live products in my work below.</p>
+        <p class="type" id="typing"><span class="sr-only">I'm a senior Web Developer. Six years at MRM building localized, accessible pages for about 10 countries, then a React product at Cayce AI. These days I build and ship my own products too, including the live products in my work below.</span><span id="typeVis" aria-hidden="true">I'm a senior Web Developer. Six years at MRM building localized, accessible pages for about 10 countries, then a React product at Cayce AI. These days I build and ship my own products too, including the live products in my work below.</span></p>
         <div class="actions">
           <a class="btn-real" href="#work-a">See my work</a>
-          <a class="btn-real eml" href="#">Email me</a>
-          <a class="btn-real" href="https://github.com/dgarfield" target="_blank" rel="noopener">GitHub</a>
-          <a class="btn-real" href="damon-garfield-resume.pdf" target="_blank" rel="noopener">Resume (PDF)</a>
+          <a class="btn-real eml" href="#" aria-label="Email me (opens your email app)">Email me</a>
+          <a class="btn-real" href="https://github.com/dgarfield" target="_blank" rel="noopener">GitHub<span class="sr-only"> (opens in a new tab)</span></a>
+          <a class="btn-real" href="damon-garfield-resume.pdf" target="_blank" rel="noopener">Resume (PDF)<span class="sr-only"> (opens in a new tab)</span></a>
         </div>
       </div>
     </div>
@@ -290,25 +314,25 @@ body.light-on .subhead{color:#12233F}
         <h3>Cayce AI</h3>
         <p class="meta">Senior Front End Developer · July 2021 to September 2022 · React, GCP</p>
         <p>I built and updated React components for audio upload, user management, and transcript search and sort. I collaborated with backend developers on Stripe integration, improved application speed and performance, and set up GCP for the marketing site.</p>
-        <p><a class="btn-real" href="https://web.archive.org/web/2022/https://cayce.ai/" target="_blank" rel="noopener">Archived site (2022 snapshot) ↗</a></p>
+        <p><a class="btn-real" href="https://web.archive.org/web/2022/https://cayce.ai/" target="_blank" rel="noopener">Archived site (2022 snapshot) ↗<span class="sr-only"> (opens in a new tab)</span></a></p>
       </div>
       <div class="card">
         <h3>MRM Agency Work</h3>
         <p class="meta">Front End Developer · July 2014 to December 2020 · HTML5, CSS, JavaScript, Eloqua, Marketo</p>
         <p>I built around 100 pixel-accurate, responsive, localized, accessible landing pages, microsites, and emails over six years, localized for about 10 countries and languages. I converted localized banner ads into reusable templates, and trained international teams, about 6 developers, on best practices. The Salt Lake City office I worked in had about 100 people in the building.</p>
-        <p><a class="btn-real" href="https://www.mrm.com/" target="_blank" rel="noopener">Visit MRM ↗</a></p>
+        <p><a class="btn-real" href="https://www.mrm.com/" target="_blank" rel="noopener">Visit MRM ↗<span class="sr-only"> (opens in a new tab)</span></a></p>
       </div>
       <div class="card">
         <h3>Special Elements Epoxy Tables</h3>
         <p class="meta">Designer and Developer · 2026 · HTML, CSS, JavaScript</p>
         <p>I designed and built this site for Daven Garfield's epoxy table studio, Special Elements. Real photos of his tables, a gallery you can zoom, and a guide to what a custom piece runs. It is live and taking inquiries.</p>
-        <p><a class="btn-real" href="https://special-elements.pages.dev/" target="_blank" rel="noopener">Visit the site ↗</a></p>
+        <p><a class="btn-real" href="https://special-elements.pages.dev/" target="_blank" rel="noopener">Visit the site ↗<span class="sr-only"> (opens in a new tab)</span></a></p>
       </div>
       <div class="card">
         <h3>Wasatch Permit Digest</h3>
         <p class="meta">Creator and Developer · 2026 · Live product</p>
         <p>My own product, built and running: a weekly digest that rounds up new building permits in Weber County, with Davis County coming online, and sends contractors the job leads in their trade. The site is live now.</p>
-        <p><a class="btn-real" href="https://wasatch-permit-digest.pages.dev/" target="_blank" rel="noopener">Visit the site ↗</a></p>
+        <p><a class="btn-real" href="https://wasatch-permit-digest.pages.dev/" target="_blank" rel="noopener">Visit the site ↗<span class="sr-only"> (opens in a new tab)</span></a></p>
       </div>
       <div class="card">
         <h3>AI Help Tools</h3>
@@ -319,20 +343,20 @@ body.light-on .subhead{color:#12233F}
         <h3>Emoji Families</h3>
         <p class="meta">Creator and Developer · 2026 · Live product</p>
         <p>My own live site for finding emojis by family: tap a family to get the whole family, tap any emoji to copy it, plus a text emojifier that fills in or strips emojis. Free, with a tip jar.</p>
-        <p><a class="btn-real" href="https://emoji-families.pages.dev/" target="_blank" rel="noopener">Visit the site ↗</a></p>
+        <p><a class="btn-real" href="https://emoji-families.pages.dev/" target="_blank" rel="noopener">Visit the site ↗<span class="sr-only"> (opens in a new tab)</span></a></p>
       </div>
       <div class="card">
         <h3>Service Quest</h3>
         <p class="meta">Creator and Developer · 2026 · Live product</p>
         <!-- v34 fix: the old blurb promised a feature the live site does not have; live Service Quest is a demo, so the blurb now describes what a visitor actually finds. -->
         <p>My own live demo where community service is tracked like a video game: a quest board for trying out service project ideas, with XP to earn, levels to gain, and titles to unlock. Free, with a tip jar.</p>
-        <p><a class="btn-real" href="https://service-quest.pages.dev/" target="_blank" rel="noopener">Visit the site ↗</a></p>
+        <p><a class="btn-real" href="https://service-quest.pages.dev/" target="_blank" rel="noopener">Visit the site ↗<span class="sr-only"> (opens in a new tab)</span></a></p>
       </div>
       <div class="card">
         <h3>Free Educational Games</h3>
         <p class="meta">Creator and Developer · 2026 · Live product</p>
         <p>My own live site of free learning games for kids, preschool through high school. No accounts, no ads, no chat, nothing to download: just games that teach, ready to play.</p>
-        <p><a class="btn-real" href="https://free-educational-games.pages.dev/" target="_blank" rel="noopener">Visit the site ↗</a></p>
+        <p><a class="btn-real" href="https://free-educational-games.pages.dev/" target="_blank" rel="noopener">Visit the site ↗<span class="sr-only"> (opens in a new tab)</span></a></p>
       </div>
     </div>
   </section>
@@ -373,38 +397,38 @@ body.light-on .subhead{color:#12233F}
     <h2>Contact</h2>
     <p>I'm looking for senior front-end roles, remote or hybrid in Utah. The fastest way to reach me is email.</p>
     <div class="actions">
-      <a class="btn-real eml" href="#">Email me</a>
-      <a class="btn-real" href="damon-garfield-resume.pdf" target="_blank" rel="noopener">Resume (PDF)</a>
+      <a class="btn-real eml" href="#" aria-label="Email me (opens your email app)">Email me</a>
+      <a class="btn-real" href="damon-garfield-resume.pdf" target="_blank" rel="noopener">Resume (PDF)<span class="sr-only"> (opens in a new tab)</span></a>
     </div>
     <address class="addr" style="margin-top:1rem">Based in Clearfield, Utah 84015, working remote or hybrid in Utah.</address>
   </section>
 </main>
 <footer>
-  <p>© 2026 Damon Garfield · Clearfield, Utah · Built by hand, including the game. · <a class="eml" href="#">Email me</a></p>
+  <p>© 2026 Damon Garfield · Clearfield, Utah · Built by hand, including the game. · <a class="eml" href="#" aria-label="Email me (opens your email app)">Email me</a></p>
 </footer>
 
 <!-- ================= THE CABINET ================= -->
-<div id="cabWrap" role="dialog" aria-modal="true" aria-label="The game cabinet">
+<div id="cabWrap" role="dialog" aria-modal="true" aria-label="The game cabinet" aria-describedby="cabDesc">
   <div id="cabinet">
     <div id="cabTop">
-      <span class="marquee">★ The Portfolio · A Tiny Epic ★</span>
+      <span class="marquee" aria-hidden="true">★ The Portfolio · A Tiny Epic ★</span>
       <span class="sp"></span>
       <button class="cabBtn" id="gSoundBtn" type="button">Sound: on</button>
       <button class="cabBtn" id="cabClose" type="button">✕ Close</button>
     </div>
     <div id="screenBox">
-      <canvas id="game" width="960" height="540"></canvas>
+      <canvas id="game" width="960" height="540" tabindex="0" role="img" aria-label="The game screen: a 2D platform game in pixels. Byte, a tiny caretaker, runs along a moonlit wall collecting light orbs. The game is visual, and a full description in words sits under the screen.">A hand-built 2D platform game drawn on this canvas. Byte, a tiny caretaker, runs along a moonlit wall collecting 14 lost light orbs and dodging spam-bot enemies. It is a visual game; the paragraph under the screen describes it in words.</canvas>
       <div id="gHud">
         <span class="box">♥ <span id="gHearts">3</span> · Orbs <span id="gOrbs">0/14</span> · Score <span id="gScore">0</span></span>
         <span class="box" id="gBossBox" style="display:none">BOSS <span id="gBossName">THE GLITCH</span><span id="bossBar"><i></i></span></span>
         <span class="box">ESC closes</span>
       </div>
-      <div id="dlg"><b>Byte:</b> <span id="dlgTxt"></span></div>
-      <div id="rotChip">📱 Tip: sideways is the big screen <button id="rotX" type="button" aria-label="Dismiss tip">✕</button></div>
+      <div id="dlg" role="status" aria-live="polite"><b aria-hidden="true">Byte:</b> <span id="dlgTxt"></span></div>
+      <div id="rotChip" role="status">📱 Tip: sideways is the big screen <button id="rotX" type="button" aria-label="Dismiss tip">✕</button></div>
       <div id="padPill" role="status">🎮 Controller connected: <span class="nm" id="padName"></span></div>
       <div id="gate">
         <div class="ticket">
-          <div style="font-size:2rem">🕹️</div>
+          <div style="font-size:2rem" aria-hidden="true">🕹️</div>
           <h2>A Tiny Epic</h2>
           <p>One caretaker. Fourteen lost orbs. A villain with opinions.<br>← → run · SPACE jump · SHIFT dash · stomp the bad guys.<br>On a phone: the big buttons under the screen are your hands, and sideways is the big screen.</p>
           <p id="gatePad">🎮 Got a controller? Any modern controller works here, Xbox, PlayStation, or Switch. Stick or D-pad to run · bottom button to jump · right button or bumper to dash. <span id="gatePadState">Plug one in and press any button, it connects itself.</span></p>
@@ -414,7 +438,7 @@ body.light-on .subhead{color:#12233F}
       <div id="gCard">
         <div class="inner">
           <div class="who" id="gCardWho">THE PAGE, A TINY EPIC</div>
-          <p id="gCardTxt"></p>
+          <p id="gCardTxt" tabindex="-1"></p>
           <div class="row">
             <button class="cabBtn" id="gCardSkip" type="button" style="border-color:var(--line14)">Skip</button>
             <button id="gCardNext" type="button" style="font:inherit;font-weight:900;cursor:pointer;border:none;border-radius:999px;padding:.6rem 1.6rem;background:var(--acc);color:#1A1400">Next</button>
@@ -423,9 +447,11 @@ body.light-on .subhead{color:#12233F}
       </div>
     </div>
     <div id="touchRow">
-      <div class="grp"><button id="tL" type="button">◀</button><button id="tR" type="button">▶</button></div>
-      <div class="grp"><button id="tD" type="button">»</button><button id="tJ" type="button">▲</button></div>
+      <div class="grp"><button id="tL" type="button" aria-label="Move left">◀</button><button id="tR" type="button" aria-label="Move right">▶</button></div>
+      <div class="grp"><button id="tD" type="button" aria-label="Dash">»</button><button id="tJ" type="button" aria-label="Jump">▲</button></div>
     </div>
+    <p class="cab-alt" id="cabDesc"><strong>About this game, in words:</strong> A Tiny Epic is a hand-built 2D platform game drawn on a canvas. You play Byte, a tiny caretaker, running right along a moonlit wall to collect 14 lost light orbs, stomping or dodging spam-bot enemies, with two bosses waiting down the road: CAPTCHA, the Gatekeeper of Forms, and THE GLITCH. On a keyboard: arrow keys or A and D run, Space jumps, Shift dashes, Escape closes the cabinet. A game controller works too, and on a touch screen the round buttons under the screen are the controls. The story is told in text cards, and Byte’s dialogue appears as text on screen as you play. Honest note: the game itself is pictures and motion, so it cannot be played by screen reader alone. This description, the story cards, the dialogue, and the spoken score and heart updates are its text alternative.</p>
+    <div class="sr-only" id="cabStatus" aria-live="polite"></div>
     <div id="cabFoot">A HAND-BUILT GAME · NO LIBRARIES WERE HARMED · THE PAGE BELOW IS UNTOUCHED</div>
   </div>
 </div>
@@ -439,16 +465,19 @@ function beep(f0,f1,dur,type,vol,delay){ if(!soundOn)return; const c=ac(); if(!c
 const sClick=()=>beep(660,660,.06,"square",.03), sFloat=()=>{beep(300,720,.22,"sine",.05);}, sHome=()=>beep(520,780,.12,"sine",.04);
 
 /* typewriter, his own words */
-(function(){ const el=$("#typing"); const txt="I'm a senior Web Developer. Six years at MRM building localized, accessible pages for about 10 countries, then a React product at Cayce AI. These days I build and ship my own products too, including the live products in my work below."; let i=0; const reduced=matchMedia("(prefers-reduced-motion: reduce)").matches; if(reduced){ el.textContent=txt; return; } el.textContent=""; (function tick(){ if(i<=txt.length){ el.textContent=txt.slice(0,i); i++; setTimeout(tick, txt[i-1]==="."?300:11); } })(); })();
+(function(){ const el=$("#typeVis"); const txt="I'm a senior Web Developer. Six years at MRM building localized, accessible pages for about 10 countries, then a React product at Cayce AI. These days I build and ship my own products too, including the live products in my work below."; let i=0; const reduced=matchMedia("(prefers-reduced-motion: reduce)").matches; if(reduced){ el.textContent=txt; return; } el.textContent=""; (function tick(){ if(i<=txt.length){ el.textContent=txt.slice(0,i); i++; setTimeout(tick, txt[i-1]==="."?300:11); } })(); })();
 
 /* theme */
-$("#themeBtn").addEventListener("click",()=>{ document.body.classList.toggle("light-on"); try{ localStorage.setItem("theme",document.body.classList.contains("light-on")?"light":"dark"); }catch(e){} sClick(); });
+$("#themeBtn").addEventListener("click",()=>{ document.body.classList.toggle("light-on"); try{ localStorage.setItem("theme",document.body.classList.contains("light-on")?"light":"dark"); }catch(e){} syncThemeBtn(); sClick(); });
+/* v35: the theme button reports its state to screen readers (pressed means light theme is on). */
+function syncThemeBtn(){ const light=document.body.classList.contains("light-on"); const b=$("#themeBtn"); if(!b)return; b.setAttribute("aria-pressed",light?"true":"false"); const st=$("#themeState"); if(st)st.textContent=light?"Light theme is on":"Dark theme is on"; }
+syncThemeBtn();
 /* sound */
 function syncSound(){ $("#soundBtn").textContent="Sound: "+(soundOn?"on":"off"); const g=$("#gSoundBtn"); if(g)g.textContent="Sound: "+(soundOn?"on":"off"); }
 $("#soundBtn").addEventListener("click",()=>{ soundOn=!soundOn; syncSound(); if(soundOn)sClick(); });
 
 /* the house likes being clicked */
-$("#houseBtn").addEventListener("click",()=>{ const h=$("#houseBtn"), s=$("#smoke"); s.animate([{opacity:0,transform:"translateY(0) scale(.6)"},{opacity:1,transform:"translateY(-16px) scale(1.3)",offset:.4},{opacity:0,transform:"translateY(-30px) scale(1.7)"}],{duration:900,easing:"ease-out"}); h.animate([{transform:"translateY(0)"},{transform:"translateY(-7px)"},{transform:"translateY(0)"}],{duration:360,easing:"ease-out"}); beep(240,420,.15,"sine",.04); });
+$("#houseBtn").addEventListener("click",()=>{ const h=$("#houseBtn"), s=$("#smoke"); if(matchMedia("(prefers-reduced-motion: reduce)").matches){ beep(240,420,.15,"sine",.04); return; } s.animate([{opacity:0,transform:"translateY(0) scale(.6)"},{opacity:1,transform:"translateY(-16px) scale(1.3)",offset:.4},{opacity:0,transform:"translateY(-30px) scale(1.7)"}],{duration:900,easing:"ease-out"}); h.animate([{transform:"translateY(0)"},{transform:"translateY(-7px)"},{transform:"translateY(0)"}],{duration:360,easing:"ease-out"}); beep(240,420,.15,"sine",.04); });
 
 /* ambient dots, quiet stars on the page */
 (function(){ const reduced=matchMedia("(prefers-reduced-motion: reduce)").matches; for(let i=0;i<26;i++){ const d=document.createElement("div"); d.className="dot"; const sz=4+Math.random()*11; d.style.cssText=`width:${sz}px;height:${sz}px;left:${Math.random()*100}vw;top:${Math.random()*100}vh;background:${["#00bfff","#4364fc","#7db4ff","#31c9fc"][i%4]};opacity:${.12+Math.random()*.2}`; document.body.appendChild(d); if(!reduced) d.animate([{transform:"translateY(0)"},{transform:"translateY(-26px)"}],{duration:3800+Math.random()*3800,direction:"alternate",iterations:Infinity,easing:"ease-in-out"}); } })();
@@ -517,13 +546,13 @@ const ENDL=["And so the orbs came home, the wall stood quiet, and dawn came up o
 const OVERL=["Byte fell in the Battle of the Buttons. The house went dark, and the orbs waited in the quiet.","But a page is not a kingdom, and its hero is not gone. He is in the little house, having a small lie-down and a smaller snack. The road is still there."];
 /* --- cards --- */
 let cardCb=null,cardLines=[],cardIdx=0,cardSkip=null,cardLast="Begin";
-function showCard(lines,cb,opts){ opts=opts||{}; cardLines=lines; cardCb=cb||null; cardSkip=opts.skipCb||null; cardLast=opts.last||"Begin"; cardIdx=0; G.phase="card"; $("#gCardTxt").textContent=lines[0]; $("#gCardNext").textContent="Next"; $("#gCardSkip").textContent=opts.skipLabel||"Skip story"; $("#gCard").style.display="flex"; }
-function cardNext(){ cardIdx++; if(cardIdx>=cardLines.length){ $("#gCard").style.display="none"; if(cardCb)cardCb(); } else { $("#gCardTxt").textContent=cardLines[cardIdx]; if(cardIdx===cardLines.length-1)$("#gCardNext").textContent=cardLast; } }
+function showCard(lines,cb,opts){ opts=opts||{}; cardLines=lines; cardCb=cb||null; cardSkip=opts.skipCb||null; cardLast=opts.last||"Begin"; cardIdx=0; G.phase="card"; $("#gCardTxt").textContent=lines[0]; $("#gCardNext").textContent="Next"; $("#gCardSkip").textContent=opts.skipLabel||"Skip story"; $("#gCard").style.display="flex"; const gcT=$("#gCardTxt"); if(gcT)gcT.focus(); }
+function cardNext(){ cardIdx++; if(cardIdx>=cardLines.length){ $("#gCard").style.display="none"; if(cardCb)cardCb(); } else { $("#gCardTxt").textContent=cardLines[cardIdx]; if(cardIdx===cardLines.length-1)$("#gCardNext").textContent=cardLast; const gcT=$("#gCardTxt"); if(gcT)gcT.focus(); } }
 $("#gCardNext").addEventListener("click",()=>{ ac(); cardNext(); });
 $("#gCardSkip").addEventListener("click",()=>{ if(cardSkip){ $("#gCard").style.display="none"; const f=cardSkip; cardSkip=null; f(); } else { cardIdx=cardLines.length-1; cardNext(); } });
 /* --- dialogue --- */
 let dlgTO=null;
-function say(text,ms,name){ $("#dlgTxt").textContent=text; $("#dlg").querySelector("b").textContent=(name||"Byte")+":"; $("#dlg").style.display="block"; clearTimeout(dlgTO); dlgTO=setTimeout(()=>$("#dlg").style.display="none",ms||2600); }
+function say(text,ms,name){ const d=$("#dlg"); d.style.display="block"; clearTimeout(dlgTO); /* v35: #dlg is a live region; show it first and set the words a beat later, so screen readers announce the line instead of missing it in the same frame as the display change. The speaker name rides inside the announced text. */ setTimeout(()=>{ d.querySelector("b").textContent=(name||"Byte")+":"; $("#dlgTxt").textContent=((name||"Byte")+": "+text); },30); dlgTO=setTimeout(()=>{ d.style.display="none"; },(ms||2600)+30); }
 let sayQueue=[],sayBusy=false;
 function sayQ(lines){ sayQueue.push(...lines); if(!sayBusy)nextSay(); }
 function nextSay(){ const L=sayQueue.shift(); if(!L){ sayBusy=false; return; } sayBusy=true; say(L.t,L.ms||2400,L.n); setTimeout(nextSay,(L.ms||2400)+150); }
@@ -537,15 +566,20 @@ function pick(a){ return a[Math.floor(Math.random()*a.length)]; }
 /* --- audio (cabinet cues) --- */
 const sJump=()=>beep(300,640,.14,"square",.035), sCoin=()=>{beep(880,880,.07,"square",.04);beep(1320,1320,.12,"square",.04,0.07);}, sHit=()=>beep(160,60,.18,"sawtooth",.06), sStomp=()=>beep(220,90,.12,"square",.05), sDash=()=>beep(500,900,.1,"sawtooth",.025), sCannon=()=>beep(120,60,.12,"square",.05);
 /* --- cabinet open/close --- */
-function openCab(){ loadGameAssets(); $("#cabWrap").classList.add("open"); RM=matchMedia("(prefers-reduced-motion: reduce)").matches; ac(); if(!G.started){ G.started=true; resetRun(); } G.phase = (G.phase==="play") ? "play" : "gate"; $("#gate").style.display = G.phase==="gate" ? "flex":"none"; requestAnimationFrame(loop); }
-function closeCab(){ $("#cabWrap").classList.remove("open"); G.phase="closed"; $("#gate").style.display="none"; $("#gCard").style.display="none"; }
+function openCab(){ loadGameAssets(); $("#cabWrap").classList.add("open"); RM=matchMedia("(prefers-reduced-motion: reduce)").matches; ac(); if(!G.started){ G.started=true; resetRun(); } G.phase = (G.phase==="play") ? "play" : "gate"; $("#gate").style.display = G.phase==="gate" ? "flex":"none"; /* v35: focus moves into the dialog on open (the gate’s LET’S GO, or Close when returning to a game in progress). */ const ft=G.phase==="gate"?$("#goBtn"):$("#cabClose"); if(ft)ft.focus(); requestAnimationFrame(loop); }
+function closeCab(){ $("#cabWrap").classList.remove("open"); G.phase="closed"; $("#gate").style.display="none"; $("#gCard").style.display="none"; const sb=$("#startBtn"); if(sb)sb.focus(); }
 $("#startBtn").addEventListener("click",()=>{ if(document.activeElement)document.activeElement.blur(); openCab(); });
 $("#cabClose").addEventListener("click",closeCab);
 $("#gSoundBtn").addEventListener("click",()=>{ soundOn=!soundOn; syncSound(); });
 $("#rotX").addEventListener("click",()=>{ $("#rotChip").style.display="none"; });
 function goStart(){ if(document.activeElement&&document.activeElement.blur)document.activeElement.blur(); ac(); $("#gate").style.display="none"; resetRun(); showCard(STORY,()=>{ G.phase="play"; $("#gHud").style.display="flex"; }); }
 $("#goBtn").addEventListener("click",goStart);
-addEventListener("keydown",e=>{ if(G.phase==="closed"||!$("#cabWrap").classList.contains("open"))return; if(e.key==="Escape"){ closeCab(); return; } keys[e.key.toLowerCase()]=true; if([" ","arrowleft","arrowright","arrowup","arrowdown"].includes(e.key.toLowerCase()))e.preventDefault(); if(e.key===" ")P.buffer=.12; });
+addEventListener("keydown",e=>{ const wrap=$("#cabWrap"); if(G.phase==="closed"||!wrap.classList.contains("open"))return; if(e.key==="Escape"){ closeCab(); return; }
+ /* v35: Tab stays inside the open dialog (it is aria-modal), cycling through the controls that are actually visible. */
+ if(e.key==="Tab"){ const f=[...wrap.querySelectorAll("button, a[href], [tabindex]")].filter(el=>el.getClientRects().length>0); if(f.length){ const first=f[0], last=f[f.length-1]; if(e.shiftKey&&document.activeElement===first){ e.preventDefault(); last.focus(); } else if(!e.shiftKey&&document.activeElement===last){ e.preventDefault(); first.focus(); } } return; }
+ /* v35: when a cabinet button holds focus, its keys belong to the button: Space and Enter must press it, not feed the game. */
+ if(e.target&&e.target.closest&&e.target.closest("#cabWrap button, #cabWrap a"))return;
+ keys[e.key.toLowerCase()]=true; if([" ","arrowleft","arrowright","arrowup","arrowdown"].includes(e.key.toLowerCase()))e.preventDefault(); if(e.key===" ")P.buffer=.12; });
 addEventListener("keyup",e=>{ keys[e.key.toLowerCase()]=false; });
 function bindTouch(id,key){ const el=$(id); const on=e=>{e.preventDefault(); keys[key]=true; if(key===" ")P.buffer=.12;}; const off=e=>{e.preventDefault(); keys[key]=false;}; el.addEventListener("pointerdown",on); el.addEventListener("pointerup",off); el.addEventListener("pointerleave",off); }
 bindTouch("#tL","arrowleft"); bindTouch("#tR","arrowright"); bindTouch("#tJ"," "); bindTouch("#tD","shift");
@@ -554,6 +588,14 @@ function hud(){ const oc=orbs.filter(o=>o.got).length;
   if(hudCache.h!==G.hearts){ hudCache.h=G.hearts; $("#gHearts").textContent=G.hearts; }
   const os=oc+"/"+orbs.length; if(hudCache.o!==os){ hudCache.o=os; $("#gOrbs").textContent=os; }
   if(hudCache.s!==G.score){ hudCache.s=G.score; $("#gScore").textContent=G.score; }
+  /* v35: hearts and orbs are announced in words on a polite live region, on change only (hud() runs every frame). */
+  const cst=$("#cabStatus");
+  if(cst){ if(hudCache.ah===undefined){ hudCache.ah=G.hearts; hudCache.ao=oc; } else { let msg="";
+    if(oc>hudCache.ao)msg="Orb collected. "+oc+" of "+orbs.length+". Score "+G.score+".";
+    if(G.hearts<hudCache.ah)msg="Byte was hit. "+G.hearts+(G.hearts===1?" heart":" hearts")+" left.";
+    else if(G.hearts>hudCache.ah)msg="Byte healed. "+G.hearts+" hearts.";
+    hudCache.ah=G.hearts; hudCache.ao=oc;
+    if(msg){ cst.textContent=""; setTimeout(()=>{ cst.textContent=msg; },40); } } }
   const bb=$("#gBossBox"); let mode="",nm="",pct=0;
   if(GLI.alive&&(P.x>3880)){ mode="g"; nm="THE GLITCH"; pct=GLI.hp/3*100; }
   else if(CAP.alive&&Math.abs(P.x-CAP.x)<420){ mode="c"; nm="CAPTCHA"; pct=CAP.hp/2*100; }
