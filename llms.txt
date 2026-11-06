@@ -1,0 +1,17 @@
+# Damon Garfield
+
+> Senior front-end developer in Clearfield, Utah building responsive, accessible web applications with JavaScript, React, and Vue. This file describes his portfolio site: https://dgarfield.github.io/
+
+## Selected work
+
+- [Special Elements Epoxy Tables](https://special-elements.pages.dev/): a live site Damon designed and built for an epoxy table studio, with a zoomable gallery of tables and a guide to what a custom piece runs.
+- [Wasatch Permit Digest](https://wasatch-permit-digest.pages.dev/): his own live product, a weekly digest that sends Utah contractors new building permit job leads in their trade and county.
+- [Emoji Families](https://emoji-families.pages.dev/): his own live site for finding emojis by family and copying them, plus a text emojifier. Free, with a tip jar.
+- [Service Quest](https://service-quest.pages.dev/): his own live demo where community service is tracked like a video game, a quest board for trying out service project ideas. Free, with a tip jar.
+- [Free Educational Games](https://free-educational-games.pages.dev/): his own live site of free learning games for kids, preschool through high school. No accounts, no ads, nothing to download.
+- Cayce AI (Senior Front End Developer, 2021 to 2022): React components for audio upload, user management, and transcript search and sort, plus Stripe integration work with the backend team.
+- MRM (Front End Developer, 2014 to 2020): around 100 pixel-accurate, responsive, accessible landing pages, microsites, and emails, localized for about 10 countries and languages.
+
+## Also by Damon
+
+- AI Help Tools: his own live site of small, free tools that help AI assistants help people, including clean page text extraction, a link checker, date, math and unit checkers, a file fingerprint tool, and a verified help directory an AI can fetch in one file. It is described here without a link, on purpose.
