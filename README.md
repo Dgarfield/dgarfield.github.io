@@ -1,6 +1,6 @@
 # Hi, I'm Damon Garfield
 
-I'm a senior front-end developer in Clearfield, Utah building responsive, accessible web applications with JavaScript, React, and Vue. I build reusable, self-contained components, I care about semantic HTML and performance, and I've trained and mentored other developers along the way.
+I build and run seven live websites from Clearfield, Utah: my own products, a toolbox and craft-guide library written for AI assistants, a subscription business for contractors, client sites, and free learning games for kids. I direct a team of AI agents the way a lead directs a team, and I still write plenty of code myself: JavaScript, React, Vue, and plain hand-built HTML and CSS, with accessibility in every page.
 
 **My portfolio:** https://dgarfield.github.io/
 Poke the buttons while you're there. They do things.
@@ -18,4 +18,4 @@ JavaScript (ES6+), React, Vue, HTML5, CSS3, Sass and SCSS, Tailwind, PHP, Node, 
 
 ## What I'm looking for
 
-Senior front-end roles, remote or hybrid in Utah. The fastest way to reach me is email: damongarfield [at] gmail [dot] com
+Work that fits the range above: building websites, putting AI to work on real projects, or a role that uses both. Remote or hybrid in Utah. The fastest way to reach me is email: damongarfield [at] gmail [dot] com
