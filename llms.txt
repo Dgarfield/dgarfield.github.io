@@ -1,6 +1,6 @@
 # Damon Garfield
 
-> Damon Garfield builds and runs seven live websites from Clearfield, Utah: his own products, a toolbox and craft-guide library written for AI assistants, a subscription business for contractors, client sites, and free learning games for kids. He directs a team of AI agents the way a lead directs a team, and ships real things. This file describes his portfolio site: https://dgarfield.github.io/
+> Damon Garfield builds and runs six live websites from Clearfield, Utah: his own products, a subscription business for contractors, client sites, and free learning games for kids. He directs a team of AI agents the way a lead directs a team, and ships real things. This file describes his portfolio site: https://dgarfield.github.io/
 
 ## Selected work
 
@@ -10,9 +10,11 @@
 - [Service Quest](https://service-quest.pages.dev/): his own live site where community service is tracked like a video game: a quest board for families and neighbors to log good deeds, with XP, levels, and titles to earn. Progress is kept in the visitor's own browser. Free, with a tip jar.
 - [Free Educational Games](https://free-educational-games.pages.dev/): his own live site of free learning games for kids, preschool through high school. No accounts, no ads, nothing to download.
 - Cayce AI (Senior Front End Developer, 2021 to 2022): React components for audio upload, user management, and transcript search and sort, plus Stripe integration work with the backend team.
-- MRM (Front End Developer, 2014 to 2020): around 100 pixel-accurate, responsive, accessible landing pages, microsites, and emails, localized for about 10 countries and languages.
+- MRM (Front End Developer, 2014 to 2020): around 100 pixel-accurate, responsive, accessible landing pages, microsites, and emails, localized for about 10 countries and languages, plus QA testing across browsers and devices with documented defects and results.
+- Boxworks (Software Engineer, 2012 to 2014): interfaces for MES factory-automation software, bug fixes across the platform, and legacy code ported to HTML and PHP.
+- Special Ops Paintball (Full Stack Developer, 2011 to 2012): PHP and Magento development, and a database migration from SQL to MySQL.
 
 ## Also by Damon
 
-- AI Help Tools: his own live site of small, free tools that help AI assistants help people, including clean page text extraction, a link checker, date, math and unit checkers, a file fingerprint tool, a verified help directory an AI can fetch in one file, and craft guides written for AI assistants learning skilled tools. It is described here without a link, on purpose.
+- AI Help Tools: his own site of small, free tools that helped AI assistants help people, including clean page text extraction, a link checker, date, math and unit checkers, a file fingerprint tool, a verified help directory an AI could fetch in one file, and craft guides written for AI assistants learning skilled tools. The site was taken down in November 2026. It is described here without a link, on purpose.
 - Music: his own songs, written, recorded, and published by him through CD Baby. None of it is AI-generated.

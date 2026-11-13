@@ -1,6 +1,6 @@
 # Hi, I'm Damon Garfield
 
-I build and run seven live websites from Clearfield, Utah: my own products, a toolbox and craft-guide library written for AI assistants, a subscription business for contractors, client sites, and free learning games for kids. I direct a team of AI agents the way a lead directs a team, and I still write plenty of code myself: JavaScript, React, Vue, and plain hand-built HTML and CSS, with accessibility in every page.
+I build and run six live websites from Clearfield, Utah: my own products, a subscription business for contractors, client sites, and free learning games for kids. I direct a team of AI agents the way a lead directs a team, and I still write plenty of code myself: JavaScript, React, Vue, and plain hand-built HTML and CSS, with accessibility in every page.
 
 **My portfolio:** https://dgarfield.github.io/
 Poke the buttons while you're there. They do things.
@@ -18,4 +18,4 @@ JavaScript (ES6+), React, Vue, HTML5, CSS3, Sass and SCSS, Tailwind, PHP, Node, 
 
 ## What I'm looking for
 
-Work that fits the range above: building websites, putting AI to work on real projects, or a role that uses both. Remote or hybrid in Utah. The fastest way to reach me is email: damongarfield [at] gmail [dot] com
+Work that fits the range above: building websites, putting AI to work on real projects, or a role that uses both. On-site, hybrid, or remote in Utah. Available to start right away. The fastest way to reach me is email: damongarfield [at] gmail [dot] com
