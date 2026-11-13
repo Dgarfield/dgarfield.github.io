@@ -36,19 +36,11 @@ body.light-on header.site{background:#fff}
 body{padding-top:138px}
 .bar{max-width:1120px;margin:0 auto;display:flex;align-items:center;gap:16px;flex-wrap:wrap}
 .brand{display:flex;align-items:center;gap:12px;margin-right:auto}
-.house{font-size:30px;line-height:1;cursor:pointer;background:none;border:none;padding:2px;position:relative}
-.house .smoke{position:absolute;top:-8px;left:20px;font-size:11px;opacity:0;pointer-events:none}
+.house{font-size:30px;line-height:1;padding:2px}
 .name{font-family:Georgia,'Times New Roman',serif;font-size:1.55rem;color:#fff}
 body.light-on .name{color:#000}
 nav{display:flex;gap:16px} nav a{color:var(--tx2);text-decoration:none;font-weight:700} nav a:hover{color:var(--acc)}
 body.light-on nav a{color:#000}
-#startBtn{font:inherit;font-weight:800;cursor:pointer;border-radius:999px;padding:.6rem 1.25rem;background:#0B1B33;color:var(--tx);border:1.5px solid var(--royal14);transition:border-color .2s var(--ease),color .2s var(--ease)}
-#startBtn:hover{border-color:var(--acc);color:var(--acc)}
-body.light-on #startBtn{background:#ffffffcc;color:#000;border-color:var(--royal-blue)}
-.neon-badge{position:relative;isolation:isolate;background:#00000093;color:#fff;border:none;border-radius:3.125rem;padding:.55rem 1.15rem;font-weight:800;font-size:.85rem}
-.neon-badge::before,.neon-badge::after{content:"";position:absolute;left:-2px;top:-2px;width:calc(100% + 4px);height:calc(100% + 4px);background:var(--lg-blue);background-size:500%;z-index:-1;border-radius:3.125rem;animation:moveBG 20s linear infinite}
-.neon-badge::after{filter:blur(3.125rem)}
-@keyframes moveBG{0%{background-position:0 0}50%{background-position:600% 0}100%{background-position:0 0}}
 .bar2{max-width:1120px;margin:.5rem auto 0;display:flex;gap:10px;flex-wrap:wrap}
 .tog{font:inherit;font-weight:700;cursor:pointer;background:transparent;border:1px solid var(--line14);color:var(--tx2);border-radius:999px;padding:.42rem 1rem;min-height:40px}
 body.light-on .tog{border-color:#00000040;color:#000}
@@ -62,19 +54,14 @@ body.light-on section h2{color:#12233F}
 .world-tag{font-family:ui-monospace,Menlo,monospace;font-size:.72rem;letter-spacing:.28em;color:var(--tx3);text-transform:uppercase;margin:0}
 .hero-role{font-family:ui-monospace,Menlo,monospace;font-size:.78rem;letter-spacing:.32em;color:var(--acc)}
 body.light-on .hero-role{color:#8a6d00}
-.type{font-size:clamp(1.05rem,2.4vw,1.3rem);color:var(--tx);max-width:62ch;min-height:5.2em}
+.type{font-size:clamp(1.05rem,2.4vw,1.3rem);color:var(--tx);max-width:62ch}
 .hero-proof{font-size:1.08rem;font-weight:600;color:var(--tx);max-width:62ch;margin:.7rem 0 .4rem}
 body.light-on .type{color:#12233F}
-.type::after{content:"▌";animation:blink 1s steps(1) infinite;color:var(--acc)}
-@keyframes blink{50%{opacity:0}}
 .portrait{width:120px;height:120px;border-radius:50%;background:var(--s2);border:2px solid var(--royal14);box-shadow:0 10px 16px 0 #00000040,0 6px 20px 0 #000000e6,0 0 70px #4364fc59;display:block;margin:1.4rem 0 1rem}
 .actions{display:flex;gap:.7rem;flex-wrap:wrap;margin-top:1.2rem}
 .btn-real{font:inherit;font-weight:800;cursor:pointer;border-radius:999px;padding:.6rem 1.25rem;background:#0B1B33;color:var(--tx);border:1.5px solid var(--royal14);text-decoration:none;display:inline-block;min-height:46px;transition:border-color .2s var(--ease),color .2s var(--ease)}
 .btn-real:hover{border-color:var(--acc);color:var(--acc)}
 body.light-on .btn-real{background:#ffffffcc;color:#000;border-color:var(--royal-blue)}
-.legend{background:#ffffff09;border:1px solid #ffffff1c;border-radius:12px;padding:1.1rem 1.3rem;margin-top:2rem;max-width:72ch;box-shadow:0 4px 30px #0000001a;backdrop-filter:blur(4px);-webkit-backdrop-filter:blur(4px)}
-body.light-on .legend{background:#ffffffb8}
-.legend h3{margin:.1em 0 .5em;color:var(--tx)} body.light-on .legend h3{color:#12233F}
 .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:18px;margin-top:1.2rem}
 .card{background:var(--s2);border:1px solid var(--line14);border-radius:8px;padding:1.3rem 1.4rem;transition:transform .25s var(--ease),border-color .25s var(--ease)}
 body.light-on .card{background:#fff}
@@ -88,43 +75,10 @@ footer{max-width:1120px;margin:0 auto;padding:0 16px 60px;color:var(--tx3);font-
 body.light-on footer{color:#3D5878}
 .addr{font-style:normal;color:var(--tx2)}
 body.light-on .addr{color:#3D5878}
-/* ---------- the cabinet: the game in its own box ---------- */
-#cabWrap{position:fixed;inset:0;z-index:200;display:none;align-items:center;justify-content:center;background:rgba(2,6,17,.82);backdrop-filter:blur(4px);padding:14px;overflow-y:auto}
-#cabWrap.open{display:flex}
-#cabinet{width:min(1020px,98vw);background:#060D1A;border:2px solid var(--line14);border-radius:18px;box-shadow:0 40px 90px rgba(0,0,0,.7),0 0 0 6px #0B1B33,0 0 44px rgba(37,99,235,.25);padding:14px 14px 10px;position:relative}
-#cabTop{display:flex;align-items:center;gap:12px;padding:2px 4px 10px}
-#cabTop .marquee{font-family:ui-monospace,Menlo,monospace;letter-spacing:.24em;font-size:.78rem;color:var(--acc);text-transform:uppercase}
-#cabTop .sp{flex:1}
-.cabBtn{font:inherit;font-weight:800;cursor:pointer;border-radius:999px;padding:.4rem 1rem;background:transparent;border:1px solid var(--line14);color:var(--tx2);min-height:40px}
-.cabBtn:hover{color:var(--acc);border-color:var(--acc)}
-#screenBox{position:relative;border-radius:10px;overflow:hidden;border:1px solid #000;background:#060d24}
-canvas#game{display:block;width:100%;height:auto;image-rendering:pixelated;background:#060d24}
-#gHud{position:absolute;top:0;left:0;right:0;display:none;justify-content:space-between;align-items:flex-start;padding:10px 12px;pointer-events:none;font-family:ui-monospace,Menlo,monospace;font-weight:700;font-size:.85rem;color:#fff;text-shadow:0 2px 8px #000}
-#gHud .box{background:rgba(2,6,17,.66);border:1px solid var(--line14);border-radius:8px;padding:.3rem .7rem}
-#bossBar{display:none;width:210px;height:10px;background:#00000090;border:1px solid var(--acc);border-radius:99px;overflow:hidden;margin-top:5px}
-#bossBar i{display:block;height:100%;background:var(--acc);width:100%}
-#dlg{position:absolute;left:12px;right:12px;bottom:10px;display:none;background:rgba(2,6,17,.88);border:1.5px solid var(--royal14);border-radius:12px;padding:.6rem 1rem;font-weight:600;color:#fff}
-#dlg b{color:var(--acc)}
-#gCard{position:absolute;inset:0;display:none;align-items:center;justify-content:center;background:rgba(2,6,17,.72);text-align:center;padding:20px}
-#gCard .inner{max-width:560px;background:#060D1A;border:1px solid var(--line14);border-radius:14px;padding:1.6rem 1.8rem;box-shadow:var(--sh14)}
-#gCard .who{font-family:ui-monospace,Menlo,monospace;font-size:.7rem;letter-spacing:.3em;color:var(--acc)}
-#gCard p{font-size:1.12rem;line-height:1.55;color:var(--tx)}
-#gCard .row{display:flex;gap:10px;justify-content:center;margin-top:1rem;flex-wrap:wrap}
-#gate{position:absolute;inset:0;display:none;align-items:center;justify-content:center;background:radial-gradient(ellipse at 50% 40%,#10233F,#060D1A 75%)}
-#gate .ticket{border:2.5px dashed var(--acc);border-radius:18px;padding:2rem 2.4rem;text-align:center;background:rgba(2,6,17,.55)}
-#gate h2{margin:.2em 0 .3em;font-size:clamp(1.5rem,4vw,2.2rem);color:#fff;letter-spacing:-.01em}
-#gate p{color:var(--tx2);margin:.2em 0 1.1em}
-#goBtn{font:inherit;font-size:1.05rem;font-weight:900;cursor:pointer;border:none;border-radius:999px;padding:.8rem 2.2rem;background:var(--acc);color:#1A1400;box-shadow:var(--glow14)}
-#touchRow{display:none;gap:10px;justify-content:space-between;padding-top:10px}
-#touchRow .grp{display:flex;gap:10px}
-#touchRow button{font:inherit;font-weight:900;width:58px;height:58px;border-radius:50%;border:1.5px solid var(--royal14);background:#0B1B33;color:#fff}
-@media (pointer:coarse){#touchRow{display:flex}}
-#cabFoot{font-family:ui-monospace,Menlo,monospace;font-size:.72rem;color:var(--tx3);letter-spacing:.14em;padding:8px 4px 2px;text-align:center}
-.dot{position:fixed;border-radius:50%;pointer-events:none;z-index:1}
 @media (max-width:640px){ section{margin-bottom:56px} .name{font-size:1.25rem} }
 /* reduced-motion rules live in the v35-a11y style block (they used to be a token rule here) */
 
-/* mobile header: one-line name, scrollable nav row, slim badge, no halo smear */
+/* mobile header: one-line name, scrollable nav row */
 @media (max-width:760px){
   header.site{padding:.55rem .7rem}
   .bar{gap:10px}
@@ -133,99 +87,44 @@ canvas#game{display:block;width:100%;height:auto;image-rendering:pixelated;backg
   .brand nav{order:3;flex-basis:100%;display:flex;gap:16px;overflow-x:auto;white-space:nowrap;padding:2px 0 4px;scrollbar-width:none}
   .brand nav::-webkit-scrollbar{display:none}
   .brand nav a{font-size:.95rem}
-  #startBtn{font-size:.8rem;padding:.55rem .85rem;white-space:nowrap}
-  .neon-badge{order:4;flex-basis:100%;text-align:center;font-size:.78rem;padding:.42rem .8rem}
-  .neon-badge::after{display:none}
   .bar2{gap:8px;flex-wrap:nowrap;overflow-x:auto;padding-top:.45rem}
   .bar2 .tog{font-size:.82rem;padding:.42rem .7rem;white-space:nowrap}
   body{padding-top:214px}
 }
 
-#game{touch-action:none}
-#touchRow button{min-width:62px;min-height:56px;font-size:1.25rem;border-radius:14px;touch-action:none;user-select:none;-webkit-user-select:none;cursor:pointer}
-@media (max-width:760px){ #touchRow{display:flex} #cabWrap{padding:6px;align-items:flex-start} #cabinet{padding:10px 8px 8px} #touchRow{position:sticky;bottom:6px;background:rgba(6,13,26,.88);border-radius:14px;padding:6px;z-index:5} #gate{overflow-y:auto} #gate .ticket{padding:.7rem .85rem} #gate .ticket div{font-size:1.25rem!important} #gate h2{font-size:1.2rem;margin:.15rem 0} #gate p{font-size:.78rem;line-height:1.4} #goBtn{padding:.55rem 1.3rem} }
-@media (max-height:520px){ #cabWrap{align-items:flex-start} }
 
 /* anchor jumps land below the fixed bar, not under it */
 *[id$="-a"]{scroll-margin-top:152px}
 @media (max-width:760px){ *[id$="-a"]{scroll-margin-top:214px} }
-/* cabinet polish: vignette + scanlines over the screen, cards glide in, boss bar eases */
-#screenBox::after{content:"";position:absolute;inset:0;pointer-events:none;z-index:2;background:radial-gradient(ellipse at center,transparent 60%,rgba(0,0,12,.40) 100%),repeating-linear-gradient(0deg,rgba(255,255,255,.022) 0 1px,transparent 1px 3px)}
-#gHud{z-index:5} #dlg{z-index:6} #gate{z-index:6} #gCard{z-index:7}
-#bossBar i{transition:width .25s ease}
-@keyframes cardIn{from{opacity:0;transform:translateY(12px) scale(.96)}to{opacity:1;transform:none}}
-#gCard .inner{animation:cardIn .35s ease both}
-.ticket{animation:cardIn .35s ease both}
 </style>
 
 <style id="v21-fixes">
-/* v21 fixes (Oct 30, 2026): anchor landing at mid widths, mobile game gate, h1 reset.
+/* v21 fixes (Oct 30, 2026): anchor landing at mid widths, h1 reset.
    QA found: at 761-900px the fixed header is ~173px tall but scroll-margin was 152px,
-   so Portfolio landed 21px under the header. Gate ticket was flex-centered inside the
-   shorter screen box, spilling LET'S GO below it; margin:auto centers when it fits
-   so on phones the gate lifts to a full-viewport layer where the whole ticket fits. */
+   so Portfolio landed 21px under the header. */
 .name{margin:0}
 @media (min-width:761px) and (max-width:920px){ *[id$="-a"]{scroll-margin-top:196px} }
-#gate{overflow-y:auto}
-@media (max-width:760px){ #gate{position:fixed;inset:0;z-index:60} }
-</style>
-
-<style id="v22-fixes">
-/* v22 fixes (Oct 30, 2026): on phones the story card (#gCard) had the same trap as the
-   gate, taller than the little game screen, so its top and its Skip / Next buttons were
-   clipped away. It now lifts to a full-viewport layer on small screens, same as #gate.
-   Header backgrounds also went fully solid: page chips were ghosting through the 95%
-   opaque bar after scrolling. */
-@media (max-width:760px){ #gCard{position:fixed;inset:0;z-index:70} }
 </style>
 
 <style id="v24-fixes">
-/* v24 (Oct 30, 2026), from the portfolio specialist review: case-study meta lines,
-   the Experience split subhead, and the explainer heading as a styled paragraph so
-   the heading outline stays clean (h1, then h2s). */
+/* v24 (Oct 30, 2026), from the portfolio specialist review: case-study meta lines
+   and the Experience split subhead. */
 .card .meta{font-family:ui-monospace,Menlo,monospace;font-size:.72rem;letter-spacing:.08em;color:var(--acc);margin:.1em 0 .5em}
 .subhead{margin:1.6rem 0 .8rem;color:var(--tx);font-size:1.05rem}
-.legend-title{font-weight:700;color:var(--tx);margin:.1em 0 .5em;font-size:1rem}
 </style>
 
-<style id="v25-fixes">
-/* v25 (Oct 30, 2026), from the game design review: the dialogue box moves to the top of
-   the screen, under the HUD, so it stops covering the ground Byte runs on; in portrait
-   phones it is capped to a single line. The rotate tip chip sits at the screen bottom. */
-#dlg{top:52px;bottom:auto}
-#rotChip{position:absolute;left:50%;transform:translateX(-50%);bottom:10px;z-index:6;display:none;align-items:center;gap:8px;background:rgba(2,6,17,.88);border:1.5px solid var(--royal14);border-radius:999px;padding:.35rem .8rem;color:#fff;font-weight:600;font-size:.85rem;white-space:nowrap}
-#rotChip button{font:inherit;font-weight:900;cursor:pointer;background:transparent;border:none;color:var(--acc);padding:0 .1rem;line-height:1}
-@media (max-width:760px) and (orientation:portrait){
-  #dlg{font-size:.82rem;padding:.4rem .7rem}
-  #dlgTxt{display:inline-block;max-width:60vw;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;vertical-align:bottom}
-}
-</style>
-<style id="v26-fixes">
-/* v26 (Oct 30, 2026), owner ask: controller support, and make it obvious. The pad pill
-   sits in the game screen's bottom right corner, a corner the HUD (top) and the rotate
-   tip (bottom center) leave free, and it rides above the gate and the cards so a fresh
-   connection gets announced wherever the player is. While a pad is connected the touch
-   buttons stand down: the controller is the hands now. */
-#padPill{position:absolute;right:10px;bottom:10px;z-index:8;display:none;align-items:center;gap:7px;max-width:64%;background:rgba(2,6,17,.9);border:1.5px solid var(--acc);border-radius:999px;padding:.35rem .8rem;color:#fff;font-weight:700;font-size:.82rem;box-shadow:0 4px 18px rgba(0,0,0,.45)}
-#padPill .nm{white-space:nowrap;overflow:hidden;text-overflow:ellipsis;color:var(--acc)}
-#gatePad{font-size:.92rem;line-height:1.5}
-#gatePadState{color:var(--acc);font-weight:700}
-#cabWrap.pad-on #touchRow{display:none}
-</style>
 
 <style id="v32-changes">
 /* v32 (Nov 4, 2026), from the three-lane expert review: the hero speaks on first
    paint (a real static headline, portrait at the left, words and actions at the
-   right, the typed line demoted to support), START GAME sits in the header as a
-   quiet outline pill, and the work buttons never float. Header heights are
-   re-measured below now that the neon badge is gone from the bar. */
+   right). */
 .hero-flex{display:flex;gap:2.2rem;align-items:flex-start}
 .hero-main{flex:1;min-width:0}
 .hero-main .hero-role{margin-top:.4rem}
 .hero-head{font-size:clamp(1.85rem,4vw,2.55rem);line-height:1.15;letter-spacing:-.02em;color:var(--tx);margin:.3em 0 .45em}
 body.light-on .hero-head{color:#12233F}
 .hero-flex .portrait{width:176px;height:176px;margin:.5rem 0 0;flex:none}
-.hero-main .type{font-size:1.05rem;min-height:6.4em;max-width:56ch}
+.hero-main .type{font-size:1.05rem;max-width:56ch}
 /* the Experience subhead had no light-mode override and rendered near-white
    on the pale card once the stub grid above it was deleted; it now takes the
    same ink as the section headings in light mode (#12233F, ~13:1 here) */
@@ -242,9 +141,9 @@ body.light-on .subhead{color:#12233F}
    screen-reader-only utility, two light-mode contrast repairs found by computing
    the actual CSS values (card meta gold was 1.47:1 on white cards; the world-tag
    slate was 3.07:1 on the light section wash; both now use inks already on the
-   page that pass AA), a real reduced-motion block replacing the v30 token rule,
-   and the cabinet game's visible text-alternative paragraph. Dark theme needed
-   no color changes: every dark pairing computed at 4.88:1 or better. */
+   page that pass AA), and a real reduced-motion block replacing the v30 token
+   rule. Dark theme needed no color changes: every dark pairing computed at
+   4.88:1 or better. */
 .sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap;border:0}
 .skip-link{position:fixed;top:-120px;left:12px;z-index:300;background:#0B1B33;color:#fff;border:2px solid var(--acc);border-radius:999px;padding:.6rem 1.2rem;font-weight:800;text-decoration:none}
 .skip-link:focus{top:10px}
@@ -252,8 +151,6 @@ body.light-on .subhead{color:#12233F}
 body.light-on :focus-visible{outline-color:#0B3D91}
 body.light-on .card .meta{color:#8a6d00}
 body.light-on .world-tag{color:#3D5878}
-.cab-alt{color:var(--tx2);font-size:.92rem;line-height:1.55;max-width:88ch;margin:.8rem auto .2rem;text-align:left}
-.cab-alt strong{color:var(--tx)}
 @media (prefers-reduced-motion:reduce){
   *,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important;scroll-behavior:auto!important}
   .card:hover{transform:none}
@@ -287,18 +184,15 @@ body.light-on .world-tag{color:#3D5878}
 <header class="site">
   <div class="bar">
     <div class="brand">
-      <button class="house" id="houseBtn" type="button" aria-label="The little house, Damon's logo. Click it, it likes that.">🏠<span class="smoke" id="smoke" aria-hidden="true">💨</span></button>
+      <span class="house" role="img" aria-label="Damon's logo, a little house">🏠</span>
       <h1 class="name">Damon Garfield</h1>
       <nav aria-label="Sections">
         <a href="#about-a">About</a><a href="#work-a">Portfolio</a><a href="#exp-a">Experience</a><a href="#contact-a">Contact</a>
       </nav>
     </div>
-    <button id="startBtn" type="button"><span aria-hidden="true">▶</span> START GAME</button>
   </div>
   <div class="bar2">
-    <button class="tog" id="soundBtn" type="button">Sound: on</button>
     <button class="tog" id="themeBtn" type="button" aria-pressed="false"><span aria-hidden="true">🌓</span> Theme <span class="sr-only" id="themeState">Dark theme is on</span></button>
-    <button class="tog" id="calmBtn" type="button">Calm</button>
   </div>
 </header>
 <main id="top" tabindex="-1">
@@ -309,7 +203,7 @@ body.light-on .world-tag{color:#3D5878}
         <p class="hero-role">BUILDER OF WEBSITES, TOOLS, AND AI-ASSISTED WORK</p>
         <h2 class="hero-head">I design, build, and run six live websites, with AI on my team.</h2>
         <p class="hero-proof">15 years of front-end development and QA testing: six years at MRM, a senior front-end role at Cayce AI. Now applying that experience to QA/testing, IT support, and web roles across the Wasatch Front.</p>
-        <p class="type" id="typing"><span class="sr-only">I'm Damon Garfield, a builder in Clearfield, Utah. I design, build, and run six live websites: my own products, a subscription digest for Utah contractors, client sites, and free learning games for kids. I direct AI agents the way a lead directs a team. Before all this, six years at MRM building localized, accessible pages for about 10 countries, then a React product at Cayce AI.</span><span id="typeVis" aria-hidden="true">I'm Damon Garfield, a builder in Clearfield, Utah. I design, build, and run six live websites: my own products, a subscription digest for Utah contractors, client sites, and free learning games for kids. I direct AI agents the way a lead directs a team. Before all this, six years at MRM building localized, accessible pages for about 10 countries, then a React product at Cayce AI.</span></p>
+        <p class="type">I'm Damon Garfield, a builder in Clearfield, Utah. I design, build, and run six live websites: my own products, a subscription digest for Utah contractors, client sites, and free learning games for kids. I direct AI agents the way a lead directs a team. Before all this, six years at MRM building localized, accessible pages for about 10 countries, then a React product at Cayce AI.</p>
         <div class="actions">
           <a class="btn-real" href="#work-a">See my work</a>
           <a class="btn-real eml" href="#" aria-label="Email me (opens your email app)">Email me</a>
@@ -321,7 +215,6 @@ body.light-on .world-tag{color:#3D5878}
   </section>
 
   <section id="about-a">
-    <p class="world-tag">The Skills Wilds</p>
     <h2>About</h2>
     <p>I'm a builder with a wide bench: I design, build, and run six live websites, from my own products and client sites to a subscription business and free tools and games. The web work is hand-built and responsive, with accessibility in every page, using JavaScript, React, Vue, or plain HTML and CSS, whichever fits the job.</p>
     <p>A lot of my work now is directing AI. I built AI Help Tools, a toolbox and craft-guide library written for AI assistants, since taken down in November 2026, and I run a team of AI agents that builds and maintains my sites and projects with me. I work the way a lead works: I set the direction, review everything, and ship only what is real. The rest of my background is hands-on: years of front-end development, construction and handyman work, and my own published music.</p>
@@ -331,7 +224,6 @@ body.light-on .world-tag{color:#3D5878}
   </section>
 
   <section id="work-a">
-    <p class="world-tag">The Agency Lands</p>
     <h2>Selected Work</h2>
     <div class="grid">
       <div class="card">
@@ -385,15 +277,7 @@ body.light-on .world-tag{color:#3D5878}
     </div>
   </section>
 
-  <section>
-    <div class="legend">
-      <p class="legend-title">Every part of this page has a job</p>
-      <p><strong>Buttons</strong> (solid, royal blue) take you somewhere real, and they always work. This page has a sense of humor, but the buttons are not part of the joke: they stay right where they belong. The play lives in the game at the top of the page and in the little house logo, which likes being clicked.</p>
-      <p><strong>START GAME</strong> opens the cabinet at the top of the page's arcade, one self-contained 2D game in its own box. The page stays exactly as you left it underneath.</p>
-    </div>
-  </section>
   <section id="exp-a">
-    <p class="world-tag">The Long Road</p>
     <h2>Experience</h2>
     <h3 class="subhead">Since 2023 I have also run my own businesses and worked hands-on</h3>
     <div class="grid">
@@ -430,7 +314,6 @@ body.light-on .world-tag{color:#3D5878}
   </section>
 
   <section id="contact-a">
-    <p class="world-tag">The Lighthouse · End of the Road</p>
     <h2>Contact</h2>
     <p>I'm open to work that fits the range above: building websites, putting AI to work on real projects, or a role that uses both. On-site, hybrid, or remote in Utah. I'm available to start right away, and I'm based in Clearfield for the Wasatch Front commute. The fastest way to reach me is email.</p>
     <div class="actions">
@@ -441,445 +324,21 @@ body.light-on .world-tag{color:#3D5878}
   </section>
 </main>
 <footer>
-  <p>© 2026 Damon Garfield · Clearfield, Utah · Built by hand, including the game. · <a class="eml" href="#" aria-label="Email me (opens your email app)">Email me</a></p>
+  <p>© 2026 Damon Garfield · Clearfield, Utah · Built by hand. · <a class="eml" href="#" aria-label="Email me (opens your email app)">Email me</a></p>
 </footer>
 
-<!-- ================= THE CABINET ================= -->
-<div id="cabWrap" role="dialog" aria-modal="true" aria-label="The game cabinet" aria-describedby="cabDesc">
-  <div id="cabinet">
-    <div id="cabTop">
-      <span class="marquee" aria-hidden="true">★ The Portfolio · A Tiny Epic ★</span>
-      <span class="sp"></span>
-      <button class="cabBtn" id="gSoundBtn" type="button">Sound: on</button>
-      <button class="cabBtn" id="cabClose" type="button">✕ Close</button>
-    </div>
-    <div id="screenBox">
-      <canvas id="game" width="960" height="540" tabindex="0" role="img" aria-label="The game screen: a 2D platform game in pixels. Byte, a tiny caretaker, runs along a moonlit wall collecting light orbs. The game is visual, and a full description in words sits under the screen.">A hand-built 2D platform game drawn on this canvas. Byte, a tiny caretaker, runs along a moonlit wall collecting 14 lost light orbs and dodging spam-bot enemies. It is a visual game; the paragraph under the screen describes it in words.</canvas>
-      <div id="gHud">
-        <span class="box">♥ <span id="gHearts">3</span> · Orbs <span id="gOrbs">0/14</span> · Score <span id="gScore">0</span></span>
-        <span class="box" id="gBossBox" style="display:none">BOSS <span id="gBossName">THE GLITCH</span><span id="bossBar"><i></i></span></span>
-        <span class="box">ESC closes</span>
-      </div>
-      <div id="dlg" role="status" aria-live="polite"><b aria-hidden="true">Byte:</b> <span id="dlgTxt"></span></div>
-      <div id="rotChip" role="status">📱 Tip: sideways is the big screen <button id="rotX" type="button" aria-label="Dismiss tip">✕</button></div>
-      <div id="padPill" role="status">🎮 Controller connected: <span class="nm" id="padName"></span></div>
-      <div id="gate">
-        <div class="ticket">
-          <div style="font-size:2rem" aria-hidden="true">🕹️</div>
-          <h2>A Tiny Epic</h2>
-          <p>One caretaker. Fourteen lost orbs. A villain with opinions.<br>← → run · SPACE jump · SHIFT dash · stomp the bad guys.<br>On a phone: the big buttons under the screen are your hands, and sideways is the big screen.</p>
-          <p id="gatePad">🎮 Got a controller? Any modern controller works here, Xbox, PlayStation, or Switch. Stick or D-pad to run · bottom button to jump · right button or bumper to dash. <span id="gatePadState">Plug one in and press any button, it connects itself.</span></p>
-          <button id="goBtn" type="button">LET'S GO</button>
-        </div>
-      </div>
-      <div id="gCard">
-        <div class="inner">
-          <div class="who" id="gCardWho">THE PAGE, A TINY EPIC</div>
-          <p id="gCardTxt" tabindex="-1"></p>
-          <div class="row">
-            <button class="cabBtn" id="gCardSkip" type="button" style="border-color:var(--line14)">Skip</button>
-            <button id="gCardNext" type="button" style="font:inherit;font-weight:900;cursor:pointer;border:none;border-radius:999px;padding:.6rem 1.6rem;background:var(--acc);color:#1A1400">Next</button>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div id="touchRow">
-      <div class="grp"><button id="tL" type="button" aria-label="Move left">◀</button><button id="tR" type="button" aria-label="Move right">▶</button></div>
-      <div class="grp"><button id="tD" type="button" aria-label="Dash">»</button><button id="tJ" type="button" aria-label="Jump">▲</button></div>
-    </div>
-    <p class="cab-alt" id="cabDesc"><strong>About this game, in words:</strong> A Tiny Epic is a hand-built 2D platform game drawn on a canvas. You play Byte, a tiny caretaker, running right along a moonlit wall to collect 14 lost light orbs, stomping or dodging spam-bot enemies, with two bosses waiting down the road: CAPTCHA, the Gatekeeper of Forms, and THE GLITCH. On a keyboard: arrow keys or A and D run, Space jumps, Shift dashes, Escape closes the cabinet. A game controller works too, and on a touch screen the round buttons under the screen are the controls. The story is told in text cards, and Byte’s dialogue appears as text on screen as you play. Honest note: the game itself is pictures and motion, so it cannot be played by screen reader alone. This description, the story cards, the dialogue, and the spoken score and heart updates are its text alternative.</p>
-    <div class="sr-only" id="cabStatus" aria-live="polite"></div>
-    <div id="cabFoot">A HAND-BUILT GAME · NO LIBRARIES WERE HARMED · THE PAGE BELOW IS UNTOUCHED</div>
-  </div>
-</div>
 
 <script>
-/* ================= THE PAGE LAYER: charm, and buttons with a gravity habit ================= */
-const $=s=>document.querySelector(s), $$=s=>[...document.querySelectorAll(s)];
-let AC=null, soundOn=true;
-function ac(){ if(!AC){ try{ AC=new (window.AudioContext||window.webkitAudioContext)(); }catch(e){} } if(AC&&AC.state==="suspended")AC.resume(); return AC; }
-function beep(f0,f1,dur,type,vol,delay){ if(!soundOn)return; const c=ac(); if(!c)return; const t=c.currentTime+(delay||0); const o=c.createOscillator(), g=c.createGain(); o.type=type||"square"; o.frequency.setValueAtTime(f0,t); o.frequency.exponentialRampToValueAtTime(Math.max(f1,1),t+dur); g.gain.setValueAtTime(vol||.04,t); g.gain.exponentialRampToValueAtTime(.0008,t+dur); o.connect(g); g.connect(c.destination); o.start(t); o.stop(t+dur+.02); }
-const sClick=()=>beep(660,660,.06,"square",.03), sFloat=()=>{beep(300,720,.22,"sine",.05);}, sHome=()=>beep(520,780,.12,"sine",.04);
-
-/* typewriter, his own words */
-(function(){ const el=$("#typeVis"); const txt="I'm Damon Garfield, a builder in Clearfield, Utah. I design, build, and run six live websites: my own products, a subscription digest for Utah contractors, client sites, and free learning games for kids. I direct AI agents the way a lead directs a team. Before all this, six years at MRM building localized, accessible pages for about 10 countries, then a React product at Cayce AI."; let i=0; const reduced=matchMedia("(prefers-reduced-motion: reduce)").matches; if(reduced){ el.textContent=txt; return; } el.textContent=""; (function tick(){ if(i<=txt.length){ el.textContent=txt.slice(0,i); i++; setTimeout(tick, txt[i-1]==="."?300:11); } })(); })();
-
-/* theme */
-$("#themeBtn").addEventListener("click",()=>{ document.body.classList.toggle("light-on"); try{ localStorage.setItem("theme",document.body.classList.contains("light-on")?"light":"dark"); }catch(e){} syncThemeBtn(); sClick(); });
-/* v35: the theme button reports its state to screen readers (pressed means light theme is on). */
+/* Theme toggle: switches between the dark and light themes and remembers the
+   choice in localStorage. The pre-paint script at the top of the body applies
+   the saved theme before first paint. (v38: this is the page's only behavior
+   script besides the email link assembler below.) */
+const $=s=>document.querySelector(s);
 function syncThemeBtn(){ const light=document.body.classList.contains("light-on"); const b=$("#themeBtn"); if(!b)return; b.setAttribute("aria-pressed",light?"true":"false"); const st=$("#themeState"); if(st)st.textContent=light?"Light theme is on":"Dark theme is on"; }
+$("#themeBtn").addEventListener("click",()=>{ document.body.classList.toggle("light-on"); try{ localStorage.setItem("theme",document.body.classList.contains("light-on")?"light":"dark"); }catch(e){} syncThemeBtn(); });
 syncThemeBtn();
-/* sound */
-function syncSound(){ $("#soundBtn").textContent="Sound: "+(soundOn?"on":"off"); const g=$("#gSoundBtn"); if(g)g.textContent="Sound: "+(soundOn?"on":"off"); }
-$("#soundBtn").addEventListener("click",()=>{ soundOn=!soundOn; syncSound(); if(soundOn)sClick(); });
-
-/* the house likes being clicked */
-$("#houseBtn").addEventListener("click",()=>{ const h=$("#houseBtn"), s=$("#smoke"); if(matchMedia("(prefers-reduced-motion: reduce)").matches){ beep(240,420,.15,"sine",.04); return; } s.animate([{opacity:0,transform:"translateY(0) scale(.6)"},{opacity:1,transform:"translateY(-16px) scale(1.3)",offset:.4},{opacity:0,transform:"translateY(-30px) scale(1.7)"}],{duration:900,easing:"ease-out"}); h.animate([{transform:"translateY(0)"},{transform:"translateY(-7px)"},{transform:"translateY(0)"}],{duration:360,easing:"ease-out"}); beep(240,420,.15,"sine",.04); });
-
-/* ambient dots, quiet stars on the page */
-(function(){ const reduced=matchMedia("(prefers-reduced-motion: reduce)").matches; for(let i=0;i<26;i++){ const d=document.createElement("div"); d.className="dot"; const sz=4+Math.random()*11; d.style.cssText=`width:${sz}px;height:${sz}px;left:${Math.random()*100}vw;top:${Math.random()*100}vh;background:${["#00bfff","#4364fc","#7db4ff","#31c9fc"][i%4]};opacity:${.12+Math.random()*.2}`; document.body.appendChild(d); if(!reduced) d.animate([{transform:"translateY(0)"},{transform:"translateY(-26px)"}],{duration:3800+Math.random()*3800,direction:"alternate",iterations:Infinity,easing:"ease-in-out"}); } })();
-
-/* buttons stay put: the play lives in the game and the little house, not in the work links */
-$("#calmBtn").addEventListener("click",()=>{ sClick(); $("#houseBtn").click(); });
 </script>
 
-<script>
-/* ================= THE CABINET GAME: a tiny epic in its own box =================
-   2D platformer on canvas. Parallax wall, sprite-sheet hero, story cards, two bosses.
-   The page underneath is never touched. */
-const cv=$("#game"), ctx=cv.getContext("2d");
-/* v32: the game's images load only when the cabinet first opens, so a visitor
-   who never plays does not download ~687 KB of sprites. Every draw call below
-   already guards on image readiness and falls back gracefully until they land. */
-const ATLAS=new Image(), HERO=new Image(), FAR=new Image(), WALLIMG=new Image();
-let gameAssetsStarted=false;
-function loadGameAssets(){ if(gameAssetsStarted)return; gameAssetsStarted=true;
-  ATLAS.src="assets/game-enemy-atlas.webp";
-  HERO.src="assets/game-hero-sprites.webp";
-  FAR.src="assets/game-background-far.webp";
-  WALLIMG.src="assets/game-background-wall.webp"; }
-const W=960,H=540,WORLD=4600,GY=472;
-const SEGS=[[0,1240],[1420,1620],[1760,4600]];
-const segAt=x=>SEGS.some(s=>x>=s[0]&&x<=s[1]);
-const G={phase:"gate",t:0,cam:0,score:0,hearts:3,combo:0,comboT:0,dawn:false,midShown:false,gateWarned:false,healCD:0,hitstop:0,shake:0,started:false,checkpoint:70,playT:0,objShown:false,sandwich:false};
-/* v25: reduced-motion flag (read when the cabinet opens) + rotate-tip state. */
-let RM=false, rotT=0, rotDone=false;
-const P={platRef:null,x:70,y:GY-46,w:30,h:46,vx:0,vy:0,face:1,on:false,coyote:0,buffer:0,dashT:0,dashCD:0,invuln:0,anim:0,sq:0};
-const keys={};
-const PLATS=[{x:0,y:GY,w:1240},{x:1420,y:GY,w:200},{x:1760,y:GY,w:2840},
- {x:300,y:384,w:112},{x:520,y:302,w:112},{x:764,y:362,w:124},{x:1016,y:282,w:112},
- {x:1470,y:368,w:100},{x:1830,y:372,w:120},{x:1960,y:296,w:150},
- {x:2540,y:404,w:110},{x:2700,y:344,w:110},{x:2860,y:284,w:110},{x:3020,y:224,w:110},{x:3160,y:292,w:160},{x:3340,y:308,w:110},{x:3500,y:378,w:120},
- {x:3680,y:318,w:120},{x:3920,y:382,w:120},
- {x:1252,y:428,w:84,mover:1,from:1252,to:1336,spd:.75,ph:0},{x:1632,y:428,w:84,mover:1,from:1632,to:1716,spd:.75,ph:2.4}];
-const SIGNS=[{x:520,t:"Byte: The wall. Population: bricks. Morale: high."},{x:1150,t:"Byte: Bridge is out. Been out for years. Nobody fixes the bridge."},{x:2530,t:"Byte: The Ascent. Leg day was invented here."},{x:3560,t:"Byte: The Court of the Glitch. Mind your manners. And your head."}];
-let CANNON=null,pops=[],signsSeen=new Set();
-let orbs=[],foes=[],hazards=[],parts=[];
-function seedWorld(){
-  orbs=[[430,428],[556,258],[806,318],[1052,238],[1330,384],[1542,258],[1710,384],[1788,328],[2376,270],[2620,372],[2940,252],[3100,192],[3420,268],[3980,350]].map(([x,y])=>({x,y,got:false}));
-  foes=[
-    {type:"walk",x:700,y:GY-40,w:32,h:40,min:640,max:840,vx:55,t:0,dead:false},
-    {type:"walk",x:1130,y:GY-40,w:32,h:40,min:940,max:1090,vx:55,t:0,dead:false},
-    {type:"walk",x:1900,y:GY-40,w:32,h:40,min:1830,max:2040,vx:62,t:0,dead:false},
-    {type:"walk",x:2660,y:GY-40,w:32,h:40,min:2560,max:2790,vx:62,t:0,dead:false},
-    {type:"walk",x:3620,y:GY-40,w:32,h:40,min:3540,max:3760,vx:66,t:0,dead:false},
-    {type:"walk",x:3880,y:GY-40,w:32,h:40,min:3800,max:3980,vx:66,t:0,dead:false},
-    {type:"fly",x:980,y:210,w:32,h:40,cx:980,cy:210,t:0,dead:false},
-    {type:"fly",x:1690,y:290,w:32,h:40,cx:1690,cy:290,t:1.7,dead:false},
-    {type:"fly",x:2920,y:206,w:32,h:40,cx:2920,cy:206,t:.8,dead:false},
-    {type:"fly",x:3110,y:232,w:32,h:40,cx:3110,cy:232,t:1.2,dead:false},
-    {type:"fly",x:3380,y:238,w:32,h:40,cx:3380,cy:238,t:2.4,dead:false}];
-  pops=[]; signsSeen=new Set(); CANNON={x:3240,y:240,cd:1.6};
-  hazards=[]; parts=[];
-}
-const CAP={x:2160,y:GY-92,w:92,h:92,hp:2,state:"idle",t:0,vx:0,alive:true,dir:-1};
-const GLI={x:4260,y:262,w:104,h:104,hp:3,alive:true,t:0,dropT:2.4,cx:4260};
-function resetRun(){ G.score=0;G.hearts=3;G.checkpoint=70;G.playT=0;G.combo=0;G.dawn=false;G.midShown=false;G.gateWarned=false;G.healCD=0;G.banter=false;G.cannonSaid=false;G.firstStomp=false;G.objShown=false;G.sandwich=false; popups=[]; deaths=[]; airChain=0; P.x=70;P.y=GY-46;P.vx=0;P.vy=0;P.invuln=0; CAP.hp=2;CAP.alive=true;CAP.state="idle";CAP.x=2160;CAP.spin=0;CAP.hitWall=false; GLI.hp=3;GLI.alive=true;GLI.dropT=2.4;GLI.cx=4260; G.lastSafe=70; seedWorld(); hud(); }
-const STORY=["First, the quiet. A lone caretaker on the wall of the page, the moon up, the little house smoking its chimney below. Everything in its place. The night shift was, historically, a quiet one.",
-"Then THE GLITCH scattered the page's 14 light orbs down the road and handed them to an army of spam. His stated reason? 'Vibes.' Direct quote.",
-"So the caretaker goes down the road to take them back. His name is Byte. He is very small. The road is not. The army has been warned about the crown."];
-const MID=["Halfway down the road, the Gatekeeper of Forms slid into view. CAPTCHA has one question, and he asks it with his whole body. Select all squares containing a hero to proceed."];
-const ENDL=["And so the orbs came home, the wall stood quiet, and dawn came up over the Lighthouse like somebody left a light on for him. The Glitch waved a small white flag. He made it himself. It says 'OK'.","The page is whole. The caretaker is Byte. The developer is Damon Garfield, and everything you just played was built by hand. Thanks for playing."];
-const OVERL=["Byte fell in the Battle of the Buttons. The house went dark, and the orbs waited in the quiet.","But a page is not a kingdom, and its hero is not gone. He is in the little house, having a small lie-down and a smaller snack. The road is still there."];
-/* --- cards --- */
-let cardCb=null,cardLines=[],cardIdx=0,cardSkip=null,cardLast="Begin";
-function showCard(lines,cb,opts){ opts=opts||{}; cardLines=lines; cardCb=cb||null; cardSkip=opts.skipCb||null; cardLast=opts.last||"Begin"; cardIdx=0; G.phase="card"; $("#gCardTxt").textContent=lines[0]; $("#gCardNext").textContent="Next"; $("#gCardSkip").textContent=opts.skipLabel||"Skip story"; $("#gCard").style.display="flex"; const gcT=$("#gCardTxt"); if(gcT)gcT.focus(); }
-function cardNext(){ cardIdx++; if(cardIdx>=cardLines.length){ $("#gCard").style.display="none"; if(cardCb)cardCb(); } else { $("#gCardTxt").textContent=cardLines[cardIdx]; if(cardIdx===cardLines.length-1)$("#gCardNext").textContent=cardLast; const gcT=$("#gCardTxt"); if(gcT)gcT.focus(); } }
-$("#gCardNext").addEventListener("click",()=>{ ac(); cardNext(); });
-$("#gCardSkip").addEventListener("click",()=>{ if(cardSkip){ $("#gCard").style.display="none"; const f=cardSkip; cardSkip=null; f(); } else { cardIdx=cardLines.length-1; cardNext(); } });
-/* --- dialogue --- */
-let dlgTO=null;
-function say(text,ms,name){ const d=$("#dlg"); d.style.display="block"; clearTimeout(dlgTO); /* v35: #dlg is a live region; show it first and set the words a beat later, so screen readers announce the line instead of missing it in the same frame as the display change. The speaker name rides inside the announced text. */ setTimeout(()=>{ d.querySelector("b").textContent=(name||"Byte")+":"; $("#dlgTxt").textContent=((name||"Byte")+": "+text); },30); dlgTO=setTimeout(()=>{ d.style.display="none"; },(ms||2600)+30); }
-let sayQueue=[],sayBusy=false;
-function sayQ(lines){ sayQueue.push(...lines); if(!sayBusy)nextSay(); }
-function nextSay(){ const L=sayQueue.shift(); if(!L){ sayBusy=false; return; } sayBusy=true; say(L.t,L.ms||2400,L.n); setTimeout(nextSay,(L.ms||2400)+150); }
-const WALK_LINES=["Spam Bot down. He had 4,000 unread emails.","He died as he lived: in the promotions tab.","His last words were 'unsubscribe'.","Somewhere, a newsletter mourns.","He never did get to tell you about the crypto."];
-const FLY_LINES=["Pop-Up down. Nobody clicked. Tragic.","He just wanted to be noticed.","Blocked. Like all his ancestors."];
-const PIT_LINES=["Byte: The bridge union sends its regards.","Byte: Gravity and I are having a talk.","Byte: Noted. The floor was optional there."];
-const BONKS=["BONK!","POW!","CLANG!","SQUISH!","WHAM!"];
-let popups=[],deaths=[],airChain=0;
-function popup(x,y,str,col){ popups.push({x,y,str,col:col||"#FFD02E",t:1.1}); }
-function pick(a){ return a[Math.floor(Math.random()*a.length)]; }
-/* --- audio (cabinet cues) --- */
-const sJump=()=>beep(300,640,.14,"square",.035), sCoin=()=>{beep(880,880,.07,"square",.04);beep(1320,1320,.12,"square",.04,0.07);}, sHit=()=>beep(160,60,.18,"sawtooth",.06), sStomp=()=>beep(220,90,.12,"square",.05), sDash=()=>beep(500,900,.1,"sawtooth",.025), sCannon=()=>beep(120,60,.12,"square",.05);
-/* --- cabinet open/close --- */
-function openCab(){ loadGameAssets(); $("#cabWrap").classList.add("open"); RM=matchMedia("(prefers-reduced-motion: reduce)").matches; ac(); if(!G.started){ G.started=true; resetRun(); } G.phase = (G.phase==="play") ? "play" : "gate"; $("#gate").style.display = G.phase==="gate" ? "flex":"none"; /* v35: focus moves into the dialog on open (the gate’s LET’S GO, or Close when returning to a game in progress). */ const ft=G.phase==="gate"?$("#goBtn"):$("#cabClose"); if(ft)ft.focus(); requestAnimationFrame(loop); }
-function closeCab(){ $("#cabWrap").classList.remove("open"); G.phase="closed"; $("#gate").style.display="none"; $("#gCard").style.display="none"; const sb=$("#startBtn"); if(sb)sb.focus(); }
-$("#startBtn").addEventListener("click",()=>{ if(document.activeElement)document.activeElement.blur(); openCab(); });
-$("#cabClose").addEventListener("click",closeCab);
-$("#gSoundBtn").addEventListener("click",()=>{ soundOn=!soundOn; syncSound(); });
-$("#rotX").addEventListener("click",()=>{ $("#rotChip").style.display="none"; });
-function goStart(){ if(document.activeElement&&document.activeElement.blur)document.activeElement.blur(); ac(); $("#gate").style.display="none"; resetRun(); showCard(STORY,()=>{ G.phase="play"; $("#gHud").style.display="flex"; }); }
-$("#goBtn").addEventListener("click",goStart);
-addEventListener("keydown",e=>{ const wrap=$("#cabWrap"); if(G.phase==="closed"||!wrap.classList.contains("open"))return; if(e.key==="Escape"){ closeCab(); return; }
- /* v35: Tab stays inside the open dialog (it is aria-modal), cycling through the controls that are actually visible. */
- if(e.key==="Tab"){ const f=[...wrap.querySelectorAll("button, a[href], [tabindex]")].filter(el=>el.getClientRects().length>0); if(f.length){ const first=f[0], last=f[f.length-1]; if(e.shiftKey&&document.activeElement===first){ e.preventDefault(); last.focus(); } else if(!e.shiftKey&&document.activeElement===last){ e.preventDefault(); first.focus(); } } return; }
- /* v35: when a cabinet button holds focus, its keys belong to the button: Space and Enter must press it, not feed the game. */
- if(e.target&&e.target.closest&&e.target.closest("#cabWrap button, #cabWrap a"))return;
- keys[e.key.toLowerCase()]=true; if([" ","arrowleft","arrowright","arrowup","arrowdown"].includes(e.key.toLowerCase()))e.preventDefault(); if(e.key===" ")P.buffer=.12; });
-addEventListener("keyup",e=>{ keys[e.key.toLowerCase()]=false; });
-function bindTouch(id,key){ const el=$(id); const on=e=>{e.preventDefault(); keys[key]=true; if(key===" ")P.buffer=.12;}; const off=e=>{e.preventDefault(); keys[key]=false;}; el.addEventListener("pointerdown",on); el.addEventListener("pointerup",off); el.addEventListener("pointerleave",off); }
-bindTouch("#tL","arrowleft"); bindTouch("#tR","arrowright"); bindTouch("#tJ"," "); bindTouch("#tD","shift");
-const hudCache={};
-function hud(){ const oc=orbs.filter(o=>o.got).length;
-  if(hudCache.h!==G.hearts){ hudCache.h=G.hearts; $("#gHearts").textContent=G.hearts; }
-  const os=oc+"/"+orbs.length; if(hudCache.o!==os){ hudCache.o=os; $("#gOrbs").textContent=os; }
-  if(hudCache.s!==G.score){ hudCache.s=G.score; $("#gScore").textContent=G.score; }
-  /* v35: hearts and orbs are announced in words on a polite live region, on change only (hud() runs every frame). */
-  const cst=$("#cabStatus");
-  if(cst){ if(hudCache.ah===undefined){ hudCache.ah=G.hearts; hudCache.ao=oc; } else { let msg="";
-    if(oc>hudCache.ao)msg="Orb collected. "+oc+" of "+orbs.length+". Score "+G.score+".";
-    if(G.hearts<hudCache.ah)msg="Byte was hit. "+G.hearts+(G.hearts===1?" heart":" hearts")+" left.";
-    else if(G.hearts>hudCache.ah)msg="Byte healed. "+G.hearts+" hearts.";
-    hudCache.ah=G.hearts; hudCache.ao=oc;
-    if(msg){ cst.textContent=""; setTimeout(()=>{ cst.textContent=msg; },40); } } }
-  const bb=$("#gBossBox"); let mode="",nm="",pct=0;
-  if(GLI.alive&&(P.x>3880)){ mode="g"; nm="THE GLITCH"; pct=GLI.hp/3*100; }
-  else if(CAP.alive&&Math.abs(P.x-CAP.x)<420){ mode="c"; nm="CAPTCHA"; pct=CAP.hp/2*100; }
-  const bk=mode+"|"+nm+"|"+pct;
-  if(hudCache.b!==bk){ hudCache.b=bk;
-    if(mode){ bb.style.display="block"; $("#gBossName").textContent=nm; $("#bossBar").style.display="block"; $("#bossBar").firstElementChild.style.width=pct+"%"; }
-    else bb.style.display="none"; } }
-function burst(x,y,n,col){ for(let i=0;i<n;i++)parts.push({x,y,vx:(Math.random()-.5)*260,vy:-Math.random()*260-40,t:.5,col}); }
-function hurt(srcX){ if(P.invuln>0)return; G.hearts--; hud(); sHit(); G.shake=RM?0:.25; P.invuln=1.4; P.vy=-380; P.vx=(P.x<srcX?-240:240); burst(P.x+15,P.y+20,10,"#ff5470");
-  if(G.hearts<=0){ G.phase="over"; showCard(OVERL,()=>{ G.hearts=3; P.x=G.checkpoint; P.y=GY-46; P.vx=0; P.vy=0; P.invuln=2; hazards=[]; G.phase="play"; hud(); say("Again. The road, and everything you won on it, is still there.",2600); },{skipCb:()=>{ closeCab(); },last:"Try again",skipLabel:"Back to the page"}); } }
-function stompCommon(e){ G.firstStomp=true; sStomp(); G.hitstop=RM?0:.06; G.shake=RM?0:Math.max(G.shake||0,5); P.vy=-720; burst(e.x+e.w/2,e.y+6,12,"#FFD02E"); popup(e.x+e.w/2,e.y-10,pick(BONKS)); for(let i=0;i<6;i++)parts.push({x:e.x+e.w/2,y:e.y+8,vx:(Math.random()-.5)*330,vy:-Math.random()*300-60,t:.7,col:i%2?"#C9D8F2":"#FFD02E",shape:i%3}); }
-/* ================= UPDATE ================= */
-function step(dt){
-  G.t+=dt; G.playT+=dt; if(G.hitstop>0){ G.hitstop-=dt; return; }
-  if(G.phase==="play"&&!G.objShown&&G.playT>1.2){ G.objShown=true; say("Collect the orbs. Follow the road right. Mind the army.",3400); }
-  if(G.phase==="play"&&!rotDone){ if(window.innerWidth<window.innerHeight){ rotT+=dt; if(rotT>5){ rotDone=true; $("#rotChip").style.display="flex"; } } else rotT=0; }
-  if(G.phase==="play"&&!G.banter&&(G.firstStomp||P.x>900)){ G.banter=true; sayQ([{t:"Did you see the caretaker?",n:"Spam Bot A",ms:1700},{t:"Tiny. Crowned. Furious.",n:"Spam Bot B",ms:1700},{t:"We are four thousand emails strong.",n:"Spam Bot A",ms:1900},{t:"He has a jump button, Greg.",n:"Spam Bot B",ms:2100}]); }
-  G.shake=Math.max(0,G.shake-dt); G.healCD=Math.max(0,G.healCD-dt); G.comboT=Math.max(0,G.comboT-dt); if(G.comboT===0)G.combo=0;
-  const L=keys["arrowleft"]||keys["a"]||padL, R=keys["arrowright"]||keys["d"]||padR;
-  const ACC=P.on?1700:1250, MAX=302;
-  if(L){ P.vx=Math.max(P.vx-ACC*dt,-MAX); P.face=-1; } if(R){ P.vx=Math.min(P.vx+ACC*dt,MAX); P.face=1; }
-  if(!L&&!R){ P.vx*=P.on?Math.pow(.0001,dt):Math.pow(.02,dt); if(Math.abs(P.vx)<4)P.vx=0; }
-  if((keys["shift"]||keys["x"]||padDashLatch)&&P.dashT<=0&&P.dashCD<=0){ P.dashT=.16; P.dashCD=.55; P.vx=P.face*560; P.vy=0; sDash(); burst(P.x+15,P.y+24,6,"#7db4ff"); }
-  padDashLatch=false;
-  P.dashT=Math.max(0,P.dashT-dt); P.dashCD=Math.max(0,P.dashCD-dt);
-  P.coyote=P.on?.1:Math.max(0,P.coyote-dt); P.buffer=Math.max(0,P.buffer-dt);
-  if(P.buffer>0&&P.coyote>0){ P.vy=-828; P.buffer=0; P.coyote=0; sJump(); }
-  let grav=2100; if(P.vy<0&&!(keys[" "]||keys["arrowup"]||padJump))grav=3400; else if(Math.abs(P.vy)<60)grav=1300;
-  if(P.dashT<=0)P.vy=Math.min(P.vy+grav*dt,880);
-  for(const mv of PLATS){ if(mv.mover){ const nx=mv.from+(Math.sin(G.t*mv.spd+mv.ph)+1)/2*(mv.to-mv.from); mv.dx=nx-mv.x; mv.x=nx; if(P.platRef===mv&&P.on)P.x+=mv.dx; } }
-  const prevB=P.y+P.h;
-  if(CANNON){ CANNON.cd-=dt; if(CANNON.cd<=0&&P.x<CANNON.x-30&&P.x>CANNON.x-790){ CANNON.cd=2.6; pops.push({x:CANNON.x-18,y:CANNON.y+14,vx:-185,vy:-30,t:0}); sCannon(); if(!G.cannonSaid){ G.cannonSaid=true; say("Nothing personal. I am a cannon.",2100,"Cannon"); } } }
-  for(let i=pops.length-1;i>=0;i--){ const b=pops[i]; b.t+=dt; b.vy+=520*dt; b.x+=b.vx*dt; b.y+=b.vy*dt;
-    if(b.y>GY-9&&segAt(b.x)){ b.y=GY-9; b.vy*=-.42; b.vx*=.92; }
-    if(b.t>4.5){ pops.splice(i,1); continue; }
-    if(P.invuln<=0&&P.x+P.w>b.x-3&&P.x<b.x+13&&P.y+P.h>b.y-3&&P.y<b.y+13){ if(P.dashT>0){ pops.splice(i,1); G.score+=100; hud(); burst(b.x,b.y,8,"#FFD02E"); sCoin(); } else if(P.vy>60&&prevB<=b.y+8){ pops.splice(i,1); P.vy=-430; G.score+=50; popup(b.x,b.y-14,"PING!"); sStomp(); burst(b.x,b.y,6,"#93A5C4"); hud(); } else hurt(b.x); } }
-  for(const s of SIGNS){ if(!signsSeen.has(s.x)&&Math.abs(P.x-s.x)<64){ signsSeen.add(s.x); say(s.t,3400); } }
-  P.x+=P.vx*dt; P.y+=P.vy*dt;
-  if(GLI.alive&&!G.gateWarned&&P.x+P.w>4100){ G.gateWarned=true; say("THE GLITCH: The Lighthouse is closed. Forever, ideally.",2800,"GLITCH"); }
-  if(GLI.alive&&P.x+P.w>4470&&P.x<4470){ P.x=4470-P.w; }
-  P.x=Math.max(6,Math.min(WORLD-P.w-6,P.x));
-  const wasOn=P.on; P.on=false; P.platRef=null;
-  for(const p of PLATS){ if(P.vy>=0&&P.x+P.w>p.x+3&&P.x<p.x+p.w-3&&prevB<=p.y+14&&P.y+P.h>=p.y){ P.y=p.y-P.h; if(P.vy>560){burst(P.x+15,p.y,7,"#C9D8F2"); P.sq=.32;} P.vy=0; P.on=true; P.platRef=p; if(p.y===GY)G.lastSafe=P.x; } }
-  if(P.on&&P.vy===0)airChain=0;
-  if(P.on&&!wasOn){ for(let i=0;i<5;i++)parts.push({x:P.x+15+(Math.random()-.5)*22,y:P.y+P.h-2,vx:(Math.random()-.5)*90,vy:-Math.random()*36,t:.4,col:"#8ea6c9",shape:1}); }
-  if(P.on&&(keys.l||keys.r)&&Math.random()<.4)parts.push({x:P.x+15-P.f*10,y:P.y+P.h-2,vx:-P.f*46,vy:-18-Math.random()*24,t:.35,col:"#7186a3",shape:1});
-  if(P.y>GY+240){ hurt(P.x); P.y=GY-46; P.x=G.lastSafe||70; P.vy=0; say(pick(PIT_LINES),2200); }
-  P.invuln=Math.max(0,P.invuln-dt); P.sq=Math.max(0,(P.sq||0)-dt*1.9); P.anim+=dt*(Math.abs(P.vx)>20&&P.on?9:2);
-  /* signs */
-  for(const s of SIGNS){ ctx.fillStyle="#5A4632"; ctx.fillRect(s.x,GY-58,7,58); ctx.fillStyle="#0B1B33"; ctx.beginPath(); ctx.roundRect(s.x-24,GY-92,56,38,5); ctx.fill(); ctx.strokeStyle="#FFD02E"; ctx.lineWidth=1.6; ctx.beginPath(); ctx.roundRect(s.x-24,GY-92,56,38,5); ctx.stroke(); ctx.fillStyle="#FFD02E"; ctx.font="900 17px Roboto,sans-serif"; ctx.textAlign="center"; ctx.fillText("!",s.x+4,GY-66); ctx.textAlign="left"; }
-  /* the cannon on the ledge */
-  if(CANNON){ ctx.fillStyle="#1D2E52"; ctx.beginPath(); ctx.moveTo(CANNON.x-26,CANNON.y+52); ctx.lineTo(CANNON.x+30,CANNON.y+52); ctx.lineTo(CANNON.x+18,CANNON.y+22); ctx.lineTo(CANNON.x-14,CANNON.y+22); ctx.closePath(); ctx.fill(); ctx.fillStyle="#314E8F"; ctx.fillRect(CANNON.x-44,CANNON.y+8,52,15); ctx.fillStyle="#0B1B33"; ctx.fillRect(CANNON.x-48,CANNON.y+10,10,11); ctx.fillStyle="#FFD02E"; ctx.beginPath(); ctx.arc(CANNON.x+2,CANNON.y+38,11,0,7); ctx.fill(); ctx.fillStyle="#0B1B33"; ctx.font="900 12px Roboto"; ctx.fillText("!",CANNON.x-2,CANNON.y+43); }
-  for(const b of pops){ ctx.fillStyle="#ff5470"; ctx.beginPath(); ctx.arc(b.x,b.y,9,0,7); ctx.fill(); ctx.strokeStyle="#ff5470"; ctx.lineWidth=2; for(let a=0;a<8;a++){ const an=a/8*6.283+G.t*3; ctx.beginPath(); ctx.moveTo(b.x+Math.cos(an)*9,b.y+Math.sin(an)*9); ctx.lineTo(b.x+Math.cos(an)*14,b.y+Math.sin(an)*14); ctx.stroke(); } ctx.fillStyle="#FFD02E"; ctx.beginPath(); ctx.arc(b.x,b.y,3.4,0,7); ctx.fill(); }
-  /* a citizen on break */
-  if(ATLAS.complete&&ATLAS.naturalWidth){ ctx.drawImage(ATLAS,0,40,32,40,3446,GY-40,32,40); }
-  ctx.fillStyle="#93A5C4"; ctx.font="700 9.5px ui-monospace,monospace"; ctx.fillText("ON BREAK · DO NOT STOMP",3408,GY+22); ctx.fillText("(STOMPING TECHNICALLY ALLOWED)",3392,GY+36);
-  /* the dawn gate */
-  { const gx2=4490; const gg=ctx.createLinearGradient(0,GY-190,0,GY); gg.addColorStop(0,"#FFD02E"); gg.addColorStop(1,"#B8860B"); ctx.fillStyle=gg; ctx.fillRect(gx2,GY-190,14,190); ctx.fillRect(gx2+120,GY-190,14,190); ctx.fillRect(gx2,GY-190,134,14);
-    if(G.dawn){ const bg2=ctx.createRadialGradient(gx2+67,GY-90,8,gx2+67,GY-90,150); bg2.addColorStop(0,"rgba(255,208,46,.4)"); bg2.addColorStop(1,"rgba(255,208,46,0)"); ctx.fillStyle=bg2; ctx.fillRect(gx2-90,GY-260,314,300); }
-    ctx.fillStyle="#FFD02E"; ctx.font="700 11px ui-monospace,monospace"; ctx.fillText("THE LIGHTHOUSE",gx2-8,GY+22); }
-  /* orbs */
-  for(const o of orbs){ if(!o.got&&Math.abs(P.x+15-(o.x+11))<32&&Math.abs(P.y+23-(o.y+11))<38){ o.got=true; G.combo=G.comboT>0?G.combo+1:1; G.comboT=4.5; const pts=100*Math.min(G.combo,4); G.score+=pts; sCoin(); burst(o.x+11,o.y+11,10,"#FFD02E"); hud(); if(G.combo>=3)say("Combo x"+Math.min(G.combo,4)+"! The wall approves.",1800); if(orbs.every(x=>x.got))say("All 14 orbs! Now the villain at the end of the road.",3200); } }
-  /* house heal */
-  if(P.x<140&&G.hearts<3&&G.healCD<=0){ G.hearts++; G.healCD=6; hud(); say("The little house patches Byte up. It has strong opinions about rest.",2800); burst(P.x+15,P.y,8,"#7dff9a"); }
-  /* a citizen shares lunch: one sandwich, once per run */
-  if(!G.sandwich&&G.hearts<3&&Math.abs(P.x-3446)<56){ G.sandwich=true; G.hearts++; hud(); say("Take the sandwich. I have four thousand.",2600,"ON BREAK bot"); burst(3446+16,GY-40,8,"#7dff9a"); }
-  /* foes */
-  for(const f of foes){ if(f.dead)continue; f.t+=dt;
-    if(f.type==="walk"){ f.x+=f.vx*dt; if(f.x<f.min||f.x>f.max)f.vx*=-1; }
-    else { f.x=f.cx+Math.sin(f.t*.8)*130; f.y=f.cy+Math.sin(f.t*2.2)*26; }
-    if(P.invuln<=0&&P.x+P.w>f.x+3&&P.x<f.x+f.w-3&&P.y+P.h>f.y+4&&P.y<f.y+f.h){
-      if(P.vy>60&&prevB<=f.y+18){ f.dead=true; deaths.push({x:f.x,y:f.y,t:0,kind:f.type}); G.combo=G.comboT>0?G.combo+1:1; G.comboT=4.5; G.score+=(f.type==="fly"?150:100)*Math.min(G.combo,4); stompCommon(f);
-        if(f.type==="fly"){ airChain++; if(airChain===2){ G.score+=250; popup(P.x+15,P.y-28,"1UP! +250","#7dff9a"); sCoin(); hud(); } if(airChain>=3){ airChain=0; if(G.hearts<3){ G.hearts++; popup(P.x+15,P.y-28,"1UP! A HEART!","#7dff9a"); } else { G.score+=500; popup(P.x+15,P.y-28,"1UP! +500","#7dff9a"); } sCoin(); hud(); } }
-        hud(); if(Math.random()<.55)say(pick(f.type==="walk"?WALK_LINES:FLY_LINES),2100); }
-      else hurt(f.x+f.w/2);
-    } }
-  /* CAPTCHA */
-  if(CAP.alive){ const dx=P.x-CAP.x; CAP.t+=dt; CAP.spin=Math.max(0,(CAP.spin||0)-dt);
-    if(CAP.state==="idle"&&Math.abs(dx)<280){ CAP.state="tele"; CAP.t=0; showMid(); say("CAPTCHA: Select all squares with a HERO in them.",2600,"CAPTCHA"); }
-    else if(CAP.state==="tele"&&CAP.t>.55){ CAP.state="charge"; CAP.t=0; CAP.dir=dx<0?-1:1; }
-    else if(CAP.state==="charge"){ CAP.x+=CAP.dir*330*dt; if(CAP.x<=1982||CAP.x>=2378)CAP.hitWall=true; if(CAP.t>.75){ CAP.state="rest"; CAP.t=0; if(CAP.hitWall){ CAP.hitWall=false; CAP.spin=.55; say(pick(["CAPTCHA: I am fine. The wall started it.","CAPTCHA: State your name and species. Mine is dizzy."]),2300,"CAPTCHA"); burst(CAP.x+46,CAP.y-6,7,"#FFD02E"); } } }
-    else if(CAP.state==="rest"&&CAP.t>1.1){ CAP.state="idle"; }
-    CAP.x=Math.max(1980,Math.min(2380,CAP.x));
-    if(P.invuln<=0&&P.x+P.w>CAP.x+4&&P.x<CAP.x+CAP.w-4&&P.y+P.h>CAP.y+4&&P.y<CAP.y+CAP.h){
-      if(P.vy>60&&prevB<=CAP.y+22){ CAP.hp--; G.combo=G.comboT>0?G.combo+1:1; G.comboT=4.5; stompCommon(CAP); hud(); if(CAP.hp<=0){ CAP.alive=false; G.score+=300; G.checkpoint=2050; hud(); sCoin(); say("The gate is open. The Lighthouse is close. So is he.",2800); } else say("CAPTCHA: Incorrect. The hero was IN the squares.",2400,"CAPTCHA"); }
-      else hurt(CAP.x+CAP.w/2);
-    } }
-  /* GLITCH */
-  if(GLI.alive){ GLI.t+=dt; GLI.big=Math.max(0,(GLI.big||0)-dt); GLI.x=GLI.cx+Math.sin(GLI.t*.9)*70; GLI.y=262+Math.sin(GLI.t*1.7)*26; const gsc=GLI.big>0?1+Math.sin(Math.min(1,GLI.big/1.5)*3.1416)*0.95:1; GLI.cw=GLI.w*gsc; GLI.ch=GLI.h*gsc; GLI.cx2=GLI.x+GLI.w/2-GLI.cw/2; GLI.cy2=GLI.y+GLI.h/2-GLI.ch/2;
-    GLI.dropT-=dt; if(GLI.dropT<=0){ GLI.dropT=GLI.hp===1?1.5:2.6; hazards.push({x:GLI.x+42,y:GLI.y+80,vy:80}); }
-    const bx=GLI.cx2!==undefined?GLI.cx2:GLI.x, by=GLI.cy2!==undefined?GLI.cy2:GLI.y, bw=GLI.cw||GLI.w, bh=GLI.ch||GLI.h; if(P.invuln<=0&&P.x+P.w>bx+4&&P.x<bx+bw-4&&P.y+P.h>by+4&&P.y<by+bh){
-      if(P.vy>60&&prevB<=by+32){ GLI.hp--; G.combo=G.comboT>0?G.combo+1:1; G.comboT=4.5; stompCommon(GLI); hud(); say(GLI.hp===2?"OW. Rude.":GLI.hp===1?"BEHOLD. MY. FULL. SIZE.":"",2200,"GLITCH");
-        if(GLI.hp===1)GLI.big=1.5; if(GLI.hp<=0){ GLI.alive=false; G.score+=500; G.dawn=true; hud(); sCoin(); setTimeout(sCoin,110); setTimeout(sCoin,230); burst(GLI.x+52,GLI.y+52,30,"#FFD02E"); setTimeout(()=>{ if(G.phase==="play"){ showCard(ENDL,()=>{ closeCab(); },{last:"Back to the page",skipLabel:"Close"}); } },1300); } }
-      else hurt(GLI.x+GLI.w/2);
-    } }
-  for(const h of hazards){ h.vy+=900*dt; h.y+=h.vy*dt; if(P.invuln<=0&&P.x+P.w>h.x&&P.x<h.x+20&&P.y+P.h>h.y&&P.y<h.y+20){ h.y=9999; hurt(GLI.x+52); } if(h.y>GY)h.dead=true; }
-  hazards=hazards.filter(h=>!h.dead);
-  for(const pt of parts){ pt.vy+=800*dt; pt.x+=pt.vx*dt; pt.y+=pt.vy*dt; pt.t-=dt; }
-  parts=parts.filter(pt=>pt.t>0);
-  for(const pu of popups)pu.t-=dt; popups=popups.filter(pu=>pu.t>0);
-  for(const d of deaths)d.t+=dt; deaths=deaths.filter(d=>d.t<.45);
-  { const tgt=Math.max(0,Math.min(WORLD-W,P.x-380+P.face*58)); G.cam+=(tgt-G.cam)*Math.min(1,dt*5.2); } hud();
-}
-function showMid(){ if(G.midShown)return; G.midShown=true; showCard(MID,()=>{ G.phase="play"; }); }
-/* ================= DRAW ================= */
-const STARS=Array.from({length:110},(_,i)=>({x:(i*173)%WORLD,y:(i*97)%300+10,s:i%3}));
-function frame(x,y,w,h,col){ ctx.fillStyle=col; ctx.beginPath(); ctx.roundRect(x,y,w,h,8); ctx.fill(); }
-function draw(){
-  const cam=G.cam, shx=G.shake>0?(Math.random()-.5)*10*G.shake:0, shy=G.shake>0?(Math.random()-.5)*8*G.shake:0;
-  ctx.save(); ctx.translate(shx,shy);
-  const sky=ctx.createLinearGradient(0,0,0,H);
-  if(G.dawn){ sky.addColorStop(0,"#3A4A7D"); sky.addColorStop(.6,"#7D5A7D"); sky.addColorStop(1,"#D98A4A"); }
-  else { sky.addColorStop(0,"#040918"); sky.addColorStop(.7,"#0A1628"); sky.addColorStop(1,"#0D1B31"); }
-  ctx.fillStyle=sky; ctx.fillRect(-12,-12,W+24,H+24);
-  /* stars + moon, deep parallax */
-  ctx.fillStyle="#CFE4FF";
-  for(const s of STARS){ const sx=((s.x-cam*.12)%(W+40)+(W+40))%(W+40)-20; ctx.globalAlpha=.35+.3*Math.sin(G.t*1.4+s.x); ctx.fillRect(sx,s.y,s.s+1,s.s+1); }
-  ctx.globalAlpha=1;
-  if(!(FAR.complete&&FAR.naturalWidth)){ const mx=706-cam*.05, my=84; ctx.fillStyle="#FFFAC8"; ctx.shadowColor="#FFF666"; ctx.shadowBlur=44; ctx.beginPath(); ctx.arc(mx,my,54,0,7); ctx.fill(); ctx.shadowBlur=0; }
-  if(G.dawn){ ctx.fillStyle="rgba(255,150,70,.14)"; ctx.fillRect(0,0,W,H); }
-  /* far vista: the painted castle under its moon (slowest layer) */
-  if(FAR.complete&&FAR.naturalWidth){ const fh=486, fw=fh*(FAR.naturalWidth/FAR.naturalHeight); let fx=-((cam*.10)%fw); if(fx>0)fx-=fw; for(;fx<W;fx+=fw) ctx.drawImage(FAR,fx,GY+6-fh,fw,fh); }
-  /* the grumpy cloud: one citizen of the sky, with opinions */
-  { const clx=((1500-cam*.3)%(W+420)+(W+420))%(W+420)-210, cly=86;
-    ctx.fillStyle="rgba(148,170,205,.85)"; for(const [ox,oy,r] of [[0,0,30],[26,6,22],[-27,7,20],[8,-10,20]]){ ctx.beginPath(); ctx.arc(clx+ox,cly+oy,r,0,7); ctx.fill(); }
-    ctx.strokeStyle="#0A1628"; ctx.lineWidth=2.4; ctx.lineCap="round";
-    if(G.dawn){ ctx.beginPath(); ctx.arc(clx-9,cly+2,3.4,3.4,6.1); ctx.stroke(); ctx.beginPath(); ctx.arc(clx+10,cly+2,3.4,3.4,6.1); ctx.stroke(); ctx.beginPath(); ctx.arc(clx+1,cly+8,6,0.35,2.8); ctx.stroke(); }
-    else if(G.combo>0){ ctx.beginPath(); ctx.moveTo(clx-15,cly-6); ctx.lineTo(clx-4,cly-3); ctx.moveTo(clx+16,cly-6); ctx.lineTo(clx+5,cly-3); ctx.stroke(); ctx.fillStyle="#0A1628"; ctx.fillRect(clx-11,cly+1,4,4); ctx.fillRect(clx+7,cly+1,4,4); ctx.beginPath(); ctx.moveTo(clx-5,cly+12); ctx.lineTo(clx+6,cly+12); ctx.stroke(); }
-    else { ctx.beginPath(); ctx.moveTo(clx-13,cly+2); ctx.lineTo(clx-5,cly+2); ctx.moveTo(clx+6,cly+2); ctx.lineTo(clx+14,cly+2); ctx.stroke(); ctx.fillStyle="rgba(10,22,40,.75)"; ctx.font="700 11px Roboto"; ctx.fillText("z",clx+26,cly-12+Math.sin(G.t*1.3)*2); } }
-  /* the army crosses the far wall in the opening seconds, like the film */
-  if(G.phase==="play"&&G.playT<8){ ctx.save(); ctx.filter="brightness(.3)"; const ay=GY-40; for(let i=0;i<9;i++){ const ax=W+80-(G.playT*46)+i*58-(cam*.10%58); const fr=Math.floor(G.t*7+i)%2; if(ATLAS.complete&&ATLAS.naturalWidth)ctx.drawImage(ATLAS,fr*32,40,32,40,ax,ay,30,38); } ctx.restore(); }
-  /* mid wall: the painted brick band with banners and torches */
-  if(WALLIMG.complete&&WALLIMG.naturalWidth){ const mh=306, mw=mh*(WALLIMG.naturalWidth/WALLIMG.naturalHeight); let mx2=-((cam*.55)%mw); if(mx2>0)mx2-=mw; for(;mx2<W;mx2+=mw) ctx.drawImage(WALLIMG,mx2,GY+4-mh,mw,mh);
-    /* torchlight, alive on the wall */
-    for(const wx of [420,1330,2240,3060,3980]){ const tx2=wx-cam*.55, flick=.75+Math.sin(G.t*11+wx)*0.12+Math.sin(G.t*23+wx*2)*.08; const tg=ctx.createRadialGradient(tx2,GY-128,4,tx2,GY-128,86*flick); tg.addColorStop(0,"rgba(255,176,66,.34)"); tg.addColorStop(1,"rgba(255,176,66,0)"); ctx.fillStyle=tg; ctx.fillRect(tx2-90,GY-218,180,180); } }
-  /* world space */
-  ctx.save(); ctx.translate(-cam,0);
-  /* ground */
-  ctx.fillStyle="#04060D"; ctx.fillRect(cam-10,GY,W+20,H-GY);
-  ctx.fillStyle="#7db4ff"; for(let gx=Math.floor(cam/90)*90; gx<cam+W+90; gx+=90){ ctx.globalAlpha=.25+.2*Math.sin(G.t*2+gx); ctx.fillRect(gx,GY+34,3,3); } ctx.globalAlpha=1;
-  for(const sg of SEGS){ ctx.fillStyle="#131F38"; ctx.fillRect(sg[0],GY,sg[1]-sg[0],H-GY);
-    ctx.fillStyle="#1D2E52"; for(let gx=sg[0]; gx<sg[1]; gx+=62){ ctx.fillRect(gx,GY+14,56,22); ctx.fillRect(gx+30,GY+44,56,22); }
-    ctx.fillStyle="#2E4A7D"; ctx.fillRect(sg[0],GY,sg[1]-sg[0],5); ctx.fillStyle="#7db4ff"; ctx.fillRect(sg[0],GY,sg[1]-sg[0],1.6); }
-  ctx.fillStyle="#5A4632"; for(const px of [1232,1428,1612,1768]){ ctx.fillRect(px,GY,10,64); ctx.fillRect(px-3,GY,16,7); }
-  /* platforms */
-  for(const p of PLATS){ if(p.y===GY)continue; if(p.mover){ ctx.strokeStyle="#93A5C4"; ctx.lineWidth=2; ctx.beginPath(); ctx.moveTo(p.x+10,p.y); ctx.lineTo(p.x+10,p.y-64); ctx.moveTo(p.x+p.w-10,p.y); ctx.lineTo(p.x+p.w-10,p.y-64); ctx.stroke(); } ctx.fillStyle="rgba(0,0,0,.35)"; ctx.beginPath(); ctx.roundRect(p.x+3,p.y+7,p.w,16,6); ctx.fill(); ctx.fillStyle="#22386B"; ctx.beginPath(); ctx.roundRect(p.x,p.y,p.w,16,6); ctx.fill(); ctx.fillStyle="#314E8F"; ctx.beginPath(); ctx.roundRect(p.x,p.y,p.w,7,4); ctx.fill(); ctx.fillStyle="#8FB6FF"; ctx.fillRect(p.x+3,p.y,Math.max(0,p.w-6),1.6); ctx.fillStyle="#182A4E"; for(let vx2=p.x+16; vx2<p.x+p.w-8; vx2+=26)ctx.fillRect(vx2,p.y+9,2,6); }
-  /* the little house */
-  ctx.fillStyle="#233D66"; ctx.fillRect(38,GY-56,74,56); ctx.fillStyle="#0B1B33"; ctx.beginPath(); ctx.moveTo(30,GY-56); ctx.lineTo(75,GY-92); ctx.lineTo(120,GY-56); ctx.closePath(); ctx.fill();
-  ctx.fillStyle="#FFD02E"; ctx.fillRect(52,GY-38,16,16); ctx.fillStyle="#7db4ff"; ctx.fillRect(84,GY-38,16,16);
-  ctx.fillStyle="#93A5C4"; const sm=((G.t*14)%36); ctx.globalAlpha=.5; ctx.beginPath(); ctx.arc(100,GY-96-sm,5+sm*.22,0,7); ctx.fill(); ctx.globalAlpha=1;
-  ctx.fillStyle="#5F7396"; ctx.font="700 11px ui-monospace,monospace"; ctx.fillText("BYTE'S HOUSE · HEALS",26,GY+22);
-  /* the boss gate */
-  if(GLI.alive){ ctx.fillStyle="rgba(255,84,112,.16)"; ctx.fillRect(4470,120,4,GY-120); ctx.fillStyle="#ff5470"; ctx.font="700 11px ui-monospace,monospace"; ctx.fillText("⚠ HIS GATE",4402,110); }
-  if(!GLI.alive){ ctx.strokeStyle="#C9D8F2"; ctx.lineWidth=2.4; ctx.beginPath(); ctx.moveTo(4157,GY); ctx.lineTo(4157,GY-52); ctx.stroke(); ctx.fillStyle="#fff"; ctx.beginPath(); ctx.moveTo(4157,GY-52); ctx.lineTo(4183,GY-44); ctx.lineTo(4157,GY-36); ctx.closePath(); ctx.fill(); ctx.fillStyle="#0A1628"; ctx.font="900 8.5px Roboto"; ctx.fillText("OK",4163,GY-41);
-    ctx.fillStyle="#5F7396"; ctx.fillRect(4080,GY-6,14,6); ctx.fillRect(4120,GY-4,10,4); ctx.fillRect(4200,GY-5,12,5); }
-  /* signs */
-  for(const s of SIGNS){ ctx.fillStyle="#5A4632"; ctx.fillRect(s.x,GY-58,7,58); ctx.fillStyle="#0B1B33"; ctx.beginPath(); ctx.roundRect(s.x-24,GY-92,56,38,5); ctx.fill(); ctx.strokeStyle="#FFD02E"; ctx.lineWidth=1.6; ctx.beginPath(); ctx.roundRect(s.x-24,GY-92,56,38,5); ctx.stroke(); ctx.fillStyle="#FFD02E"; ctx.font="900 17px Roboto,sans-serif"; ctx.textAlign="center"; ctx.fillText("!",s.x+4,GY-66); ctx.textAlign="left"; }
-  /* the cannon on the ledge */
-  if(CANNON){ ctx.fillStyle="#1D2E52"; ctx.beginPath(); ctx.moveTo(CANNON.x-26,CANNON.y+52); ctx.lineTo(CANNON.x+30,CANNON.y+52); ctx.lineTo(CANNON.x+18,CANNON.y+22); ctx.lineTo(CANNON.x-14,CANNON.y+22); ctx.closePath(); ctx.fill(); ctx.fillStyle="#314E8F"; ctx.fillRect(CANNON.x-44,CANNON.y+8,52,15); ctx.fillStyle="#0B1B33"; ctx.fillRect(CANNON.x-48,CANNON.y+10,10,11); ctx.fillStyle="#FFD02E"; ctx.beginPath(); ctx.arc(CANNON.x+2,CANNON.y+38,11,0,7); ctx.fill(); ctx.fillStyle="#0B1B33"; ctx.font="900 12px Roboto"; ctx.fillText("!",CANNON.x-2,CANNON.y+43); }
-  for(const b of pops){ ctx.fillStyle="#ff5470"; ctx.beginPath(); ctx.arc(b.x,b.y,9,0,7); ctx.fill(); ctx.strokeStyle="#ff5470"; ctx.lineWidth=2; for(let a=0;a<8;a++){ const an=a/8*6.283+G.t*3; ctx.beginPath(); ctx.moveTo(b.x+Math.cos(an)*9,b.y+Math.sin(an)*9); ctx.lineTo(b.x+Math.cos(an)*14,b.y+Math.sin(an)*14); ctx.stroke(); } ctx.fillStyle="#FFD02E"; ctx.beginPath(); ctx.arc(b.x,b.y,3.4,0,7); ctx.fill(); }
-  /* a citizen on break */
-  if(ATLAS.complete&&ATLAS.naturalWidth){ ctx.drawImage(ATLAS,0,40,32,40,3446,GY-40,32,40); }
-  ctx.fillStyle="#93A5C4"; ctx.font="700 9.5px ui-monospace,monospace"; ctx.fillText("ON BREAK · DO NOT STOMP",3408,GY+22); ctx.fillText("(STOMPING TECHNICALLY ALLOWED)",3392,GY+36);
-  /* the dawn gate */
-  { const gx2=4490; const gg=ctx.createLinearGradient(0,GY-190,0,GY); gg.addColorStop(0,"#FFD02E"); gg.addColorStop(1,"#B8860B"); ctx.fillStyle=gg; ctx.fillRect(gx2,GY-190,14,190); ctx.fillRect(gx2+120,GY-190,14,190); ctx.fillRect(gx2,GY-190,134,14);
-    if(G.dawn){ const bg2=ctx.createRadialGradient(gx2+67,GY-90,8,gx2+67,GY-90,150); bg2.addColorStop(0,"rgba(255,208,46,.4)"); bg2.addColorStop(1,"rgba(255,208,46,0)"); ctx.fillStyle=bg2; ctx.fillRect(gx2-90,GY-260,314,300); }
-    ctx.fillStyle="#FFD02E"; ctx.font="700 11px ui-monospace,monospace"; ctx.fillText("THE LIGHTHOUSE",gx2-8,GY+22); }
-  /* orbs */
-  for(const o of orbs){ if(o.got)continue; const bob=Math.sin(G.t*2.4+o.x)*4; ctx.fillStyle="#FFD02E"; ctx.shadowColor="#FFD02E"; ctx.shadowBlur=16; ctx.beginPath(); ctx.arc(o.x+11,o.y+11+bob,9,0,7); ctx.fill(); ctx.shadowBlur=0; ctx.fillStyle="#FFF6BF"; ctx.beginPath(); ctx.arc(o.x+8,o.y+8+bob,3,0,7); ctx.fill(); }
-  /* deaths: the cartoon squash */
-  for(const d of deaths){ if(!(ATLAS.complete&&ATLAS.naturalWidth))continue; const k=d.t/.45, col=d.kind==="walk"?0:2; ctx.save(); ctx.globalAlpha=1-k; ctx.translate(d.x+16,d.y+40); ctx.scale(1+.7*k,Math.max(.08,1-1.15*k)); ctx.drawImage(ATLAS,col*32,40,32,40,-16,-40,32,40); ctx.restore(); }
-  /* foes */
-  for(const f of foes){ if(f.dead)continue; if(ATLAS.complete&&ATLAS.naturalWidth){ const row=f.type==="walk"?1:1, col=f.type==="walk"?(Math.floor(f.t*7)%2):(2+(Math.floor(f.t*9)%2)); ctx.drawImage(ATLAS,col*32,row*40,32,40,f.x,f.type==="walk"?f.y+Math.sin(f.t*11)*1.6:f.y,32,40); } else { ctx.fillStyle="#ff5470"; ctx.fillRect(f.x,f.y,32,40); } }
-  /* CAPTCHA */
-  if(CAP.alive){ const jx=CAP.state==="tele"?(Math.random()-.5)*4:0; if(CAP.spin>0){ ctx.save(); ctx.translate(CAP.x+46,CAP.y+46); ctx.rotate((0.55-CAP.spin)/0.55*6.283); ctx.translate(-46,-46); CAP._spun=true; }
-    frame(CAP.x+jx,CAP.y,CAP.w,CAP.h,"#0B1B33"); ctx.strokeStyle="#FFD02E"; ctx.lineWidth=2; ctx.beginPath(); ctx.roundRect(CAP.x+jx,CAP.y,CAP.w,CAP.h,8); ctx.stroke();
-    ctx.fillStyle="#fff"; ctx.fillRect(CAP.x+14+jx,CAP.y+14,20,20); ctx.strokeStyle="#93A5C4"; ctx.strokeRect(CAP.x+14+jx,CAP.y+14,20,20);
-    ctx.fillStyle="#D7E1F2"; ctx.font="700 12px Roboto,sans-serif"; ctx.fillText("I'm not",CAP.x+42+jx,CAP.y+24); ctx.fillText("a robot",CAP.x+42+jx,CAP.y+40);
-    ctx.fillStyle="#5F7396"; ctx.font="700 10px ui-monospace,monospace"; ctx.fillText("CAPTCHA · GATEKEEPER",CAP.x+8+jx,CAP.y+78); if(CAP._spun){ ctx.restore(); CAP._spun=false; }
-    if(CAP.spin>0){ ctx.fillStyle="#FFD02E"; for(let s2=0;s2<3;s2++){ const a2=G.t*10+s2*2.1; ctx.fillRect(CAP.x+46+Math.cos(a2)*30-2,CAP.y-12+Math.sin(a2)*6-2,4,4); } }
-    ctx.fillStyle="#FFD02E"; ctx.beginPath(); ctx.moveTo(CAP.x+22+jx,CAP.y-2); ctx.lineTo(CAP.x+26+jx,CAP.y-18); ctx.lineTo(CAP.x+36+jx,CAP.y-6); ctx.lineTo(CAP.x+46+jx,CAP.y-20); ctx.lineTo(CAP.x+56+jx,CAP.y-6); ctx.lineTo(CAP.x+66+jx,CAP.y-18); ctx.lineTo(CAP.x+70+jx,CAP.y-2); ctx.closePath(); ctx.fill(); }
-  /* GLITCH */
-  if(GLI.alive){ const gx=GLI.x, gy2=GLI.y, jx=GLI.hp===1?(Math.random()-.5)*5:0; const gs=(GLI.big>0)?1+Math.sin(Math.min(1,GLI.big/1.5)*3.1416)*0.95:1; if(gs>1.01){ ctx.save(); ctx.translate(gx+52,gy2+52); ctx.scale(gs,gs); ctx.translate(-(gx+52),-(gy2+52)); GLI._big=true; } ctx.fillStyle="#FFD02E"; ctx.shadowColor="#FFD02E"; ctx.shadowBlur=18; ctx.fillRect(gx-6+jx,gy2-6,GLI.w+12,5); ctx.shadowBlur=0;
-    frame(gx+jx,gy2,GLI.w,GLI.h,"#05070F"); ctx.strokeStyle="#FFD02E"; ctx.lineWidth=2.5; ctx.beginPath(); ctx.roundRect(gx+jx,gy2,GLI.w,GLI.h,8); ctx.stroke();
-    ctx.fillStyle="#FFD02E"; ctx.font="900 17px Roboto,sans-serif"; ctx.textAlign="center"; ctx.fillText("THE",gx+52+jx,gy2+42); ctx.fillText("GLITCH",gx+52+jx,gy2+64); ctx.textAlign="left";
-    ctx.fillStyle="#ff5470"; ctx.fillRect(gx+18+jx,gy2+18,10,10); ctx.fillRect(gx+76+jx,gy2+18,10,10); if(GLI._big){ ctx.restore(); GLI._big=false; } }
-  /* hazards */
-  ctx.fillStyle="#ff5470"; for(const h of hazards){ ctx.fillRect(h.x,h.y,20,20); ctx.fillStyle="#fff"; ctx.font="900 14px Roboto"; ctx.fillText("!",h.x+7,h.y+16); ctx.fillStyle="#ff5470"; }
-  /* particles (squares, bolts and springs) */
-  for(const pt of parts){ ctx.globalAlpha=Math.max(0,pt.t*2); ctx.fillStyle=pt.col; if(pt.shape===1){ ctx.beginPath(); ctx.arc(pt.x,pt.y,3.4,0,7); ctx.fill(); } else if(pt.shape===2){ ctx.save(); ctx.translate(pt.x,pt.y); ctx.rotate(pt.x*.2); ctx.fillRect(-4,-1.6,8,3.2); ctx.fillRect(-1.6,-4,3.2,8); ctx.restore(); } else ctx.fillRect(pt.x,pt.y,4,4); } ctx.globalAlpha=1;
-  /* popup words */
-  for(const pu of popups){ ctx.globalAlpha=Math.min(1,pu.t*1.6); ctx.font="900 21px Roboto,sans-serif"; ctx.textAlign="center"; ctx.lineWidth=4; ctx.strokeStyle="#000"; const yy=pu.y-(1.1-pu.t)*38; ctx.strokeText(pu.str,pu.x,yy); ctx.fillStyle=pu.col; ctx.fillText(pu.str,pu.x,yy); ctx.textAlign="left"; } ctx.globalAlpha=1;
-  /* Byte */
-  if(!(P.invuln>0&&Math.floor(G.t*14)%2)){ const bobbing=P.on&&Math.abs(P.vx)>20; let col=0,row=0;
-    if(P.dashT>0)col=6; else if(!P.on)col=P.vy<0?3:4; else if(Math.abs(P.vx)>20)col=(Math.floor(P.anim)%2)+1; else col=0;
-    ctx.fillStyle="rgba(0,0,0,.4)"; ctx.beginPath(); ctx.ellipse(P.x+P.w/2,(P.on?P.y+P.h+3:GY+4),15,4,0,0,7); ctx.fill();
-    ctx.save(); ctx.translate(P.x+P.w/2,P.y+P.h/2); ctx.scale(P.face*(1+(P.sq||0)*.7),1-(P.sq||0)*.55);
-    if(HERO.complete&&HERO.naturalWidth){ let hc=0,hr=0; if(P.dashT>0){hc=1;hr=3;} else if(!P.on){ if(P.vy<0){hc=1;hr=2;} else {hc=3;hr=2;} } else if(Math.abs(P.vx)>20){ hc=Math.floor(P.anim*1.4)%4; hr=1; } else { hc=Math.floor(G.t*1.7)%4; hr=0; }
-      ctx.drawImage(HERO,hc*170,hr*180,170,180,-38,-72,76,80); }
-    else if(ATLAS.complete&&ATLAS.naturalWidth)ctx.drawImage(ATLAS,col*32,row*40,32,40,-16,-20,32,40);
-    else { ctx.fillStyle="#7db4ff"; ctx.fillRect(-15,-23,30,46); }
-    ctx.restore(); }
-  ctx.restore(); /* world */
-  /* spotlight vignette, the wall at night */
-  const vg=ctx.createRadialGradient(P.x-cam+P.w/2,P.y+P.h/2,60,P.x-cam+P.w/2,P.y+P.h/2,340);
-  vg.addColorStop(0,"rgba(0,0,0,0)"); vg.addColorStop(1,"rgba(1,3,10,.42)"); ctx.fillStyle=vg; ctx.fillRect(0,0,W,H);
-  ctx.restore(); /* shake */
-}
-let lastT=0;
-function loop(ts){ if(G.phase==="closed")return; requestAnimationFrame(loop); padPoll(); let dt=Math.min((ts-lastT)/1000||0,.1); lastT=ts;
-  if(G.phase==="play"){ const n=Math.min(3,Math.max(1,Math.ceil(dt/(1/60)))); const sd=dt/n; for(let i=0;i<n;i++){ if(G.phase!=="play")break; step(sd); } } else if(G.phase!=="gate"){ G.t+=dt; }
-  draw(); }
-/* --- v26: gamepad support. Any modern controller on the standard mapping: left stick
-   or D-pad runs, the bottom button jumps (hold it for the high jump, same as Space),
-   the right button or the right bumper dashes, START confirms through the gate and
-   the cards. Pad state lives in its own flags and is OR-ed with the keyboard and
-   touch flags inside step(), so no source can cancel another source still held,
-   and the physics never forked. Confirms call the game's own functions directly,
-   never a synthetic key or click, so a focused button on the page cannot be
-   re-triggered by the pad; the active element is blurred for good measure. --- */
-let padCur=null, padName="", padL=false, padR=false, padJump=false, padDashLatch=false;
-const padPrev={};
-function padBtn(p,i){ return !!(p&&p.buttons&&p.buttons[i]&&p.buttons[i].pressed); }
-function padPick(){ let list=[]; try{ list=navigator.getGamepads?navigator.getGamepads():[]; }catch(e){ list=[]; } let first=null; for(const p of list){ if(!p)continue; if(p.mapping==="standard")return p; if(!first)first=p; } return first; }
-function padCleanName(id){ let nm=String(id||"Controller").replace(/\s*\([^)]*\)/g,"").trim(); if(nm.length>42)nm=nm.slice(0,42); return nm||"Controller"; }
-function padUI(){ const on=!!padCur; const pill=$("#padPill"); if(on){ $("#padName").textContent=padName; pill.style.display="flex"; } else pill.style.display="none"; const st=$("#gatePadState"); if(st)st.textContent=on?("Connected: "+padName+". Press START, or the bottom button, and you are in."):"Plug one in and press any button, it connects itself."; $("#cabWrap").classList.toggle("pad-on",on); }
-function padConfirm(){ if(document.activeElement&&document.activeElement.blur)document.activeElement.blur(); ac();
-  if(G.phase==="gate"){ goStart(); }
-  else if(G.phase==="card"){ cardNext(); } }
-function padPoll(){ const p=padPick(); const was=!!padCur; padCur=p;
-  if(!!p!==was){ if(p)padName=padCleanName(p.id); padUI(); }
-  if(!p){ padL=padR=padJump=false; padDashLatch=false; for(const k in padPrev)padPrev[k]=false; return; }
-  const nm=padCleanName(p.id); if(nm!==padName){ padName=nm; padUI(); }
-  const ax=p.axes&&p.axes.length?p.axes[0]:0;
-  padL=(ax<-.25)||padBtn(p,14); padR=(ax>.25)||padBtn(p,15);
-  padJump=padBtn(p,0);
-  const edge=i=>{ const now=padBtn(p,i); const wasB=!!padPrev[i]; padPrev[i]=now; return now&&!wasB; };
-  const eJump=edge(0), eDash2=edge(2), eDash5=edge(5), eConf=edge(9);
-  if(G.phase==="play"){ if(eJump)P.buffer=.12; if(eDash2||eDash5)padDashLatch=true; }
-  else if($("#cabWrap").classList.contains("open")){ if(eConf||eJump)padConfirm(); } }
-addEventListener("gamepadconnected",e=>{ padCur=e.gamepad||padCur; if(e.gamepad)padName=padCleanName(e.gamepad.id); padUI(); });
-addEventListener("gamepaddisconnected",()=>{ padCur=null; padL=padR=padJump=false; padDashLatch=false; for(const k in padPrev)padPrev[k]=false; padUI(); });
-window.__padInfo=()=>({connected:!!padCur,name:padName,l:padL,r:padR,jump:padJump});
-/* test hooks */
-window.__G={state:()=>({phase:G.phase,x:Math.round(P.x),y:Math.round(P.y),orbs:orbs.filter(o=>o.got).length,hearts:G.hearts,score:G.score,capHp:CAP.hp,capAlive:CAP.alive,gliHp:GLI.hp,gliAlive:GLI.alive,dawn:G.dawn}),
-  warp:(x)=>{ P.x=x; P.y=GY-46; P.vy=0; }, press:(k,down)=>{ keys[k]=down; if(k===" "&&down)P.buffer=.12; }, open:openCab, go:()=>$("#goBtn").click(), next:()=>cardNext()};
-</script>
 
 <script>
 /* Email links: the address is assembled only when clicked, so it never
