@@ -3,7 +3,6 @@
 I build and run six live websites from Clearfield, Utah: my own products, a subscription business for contractors, client sites, and free learning games for kids. I direct a team of AI agents the way a lead directs a team, and I still write plenty of code myself: JavaScript, React, Vue, and plain hand-built HTML and CSS, with accessibility in every page.
 
 **My portfolio:** https://dgarfield.github.io/
-Poke the buttons while you're there. They do things.
 
 ## Selected work
 
