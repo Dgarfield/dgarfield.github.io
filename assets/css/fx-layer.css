@@ -210,3 +210,53 @@ button:focus-visible {
     filter: none !important;
   }
 }
+
+/* ============================================================
+   v41 POLISH (2026-11-18) — placement, spacing, alignment ONLY.
+   No colors, fonts, sizes, or decoration changed. Every value
+   below is Damon's own standard from styles.css, applied to the
+   blocks that were missing it. styles.css itself is untouched.
+   ------------------------------------------------------------
+   1. His padded sections (#about, #portfolio) use
+      padding: 1rem 1rem 1.5rem. #experience and #contact had NO
+      padding at all, so their text sat against the section edge
+      (1px from the screen edge on phones). Normalized to his
+      standard section padding. */
+#experience,
+#contact {
+  padding: 1rem 1rem 1.5rem;
+}
+
+/* 2. Case studies had no margins at all (0px top/bottom), so
+   each block's separation was whatever stray heading margin
+   leaked in. One standard gap for every case study, and the
+   heading sits flush at the top of its own block (headings
+   moved to the top in the HTML; this removes the old in-body
+   heading margin so the article margin is the single standard
+   gap everywhere). */
+.case-study {
+  margin-top: 2rem;
+}
+.case-study > h3 {
+  margin-top: 0;
+}
+
+/* 3. The hero typewriter line ran the full content width, edge
+   to edge, while the rest of the hero (portrait, hint line) is
+   centered. Set to 60rem (80% of his 75rem container) and
+   centered with auto side margins, so it sits inside the same
+   breathing room as the other sections. Text and centering of
+   the text itself are his, unchanged. */
+#typing {
+  max-width: 60rem;
+  margin-inline: auto;
+}
+
+/* 4. The hero buttons sat at the left edge of the hero while
+   everything else in the hero block is centered (portrait,
+   typewriter line, hint). Centered to match the block they
+   live in. (Contact buttons stay left, matching Contact's
+   left-aligned text, same as his original.) */
+.hero-actions {
+  text-align: center;
+}
